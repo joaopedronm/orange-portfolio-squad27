@@ -43,7 +43,7 @@ main {
     display: flex;
     flex-direction: column;
     width: 517px;
-    height: 258px;
+    height: 348px;
     justify-content: center;
     align-items: flex-start;
     flex-shrink: 0;
@@ -59,7 +59,8 @@ main {
 .nome,
 .sobrenome,
 .email,
-.senha {
+.senha,
+.confirmar-senha {
     position: relative;
     margin: 10px 0;
 }
@@ -67,7 +68,8 @@ main {
 .nome label,
 .sobrenome label,
 .email label,
-.senha label {
+.senha label,
+.confirmar-senha label {
     position: absolute;
     font-family: 'Roboto';
     color: #515255;
@@ -82,7 +84,8 @@ main {
 .nome input,
 .sobrenome input,
 .email input,
-.senha input {
+.senha input,
+.confirmar-senha input {
     display: block;
     box-sizing: border-box;
     width: 100%;
@@ -124,4 +127,12 @@ button {
     font-weight: 500;
     line-height: 26px; /* 173.333% */
     letter-spacing: 0.46px;
+}
+
+#olho, #olho-2 {
+    cursor: pointer;
+    left: 480px;
+    top: 23px;
+    position: absolute;
+    width: 20px;
 }
