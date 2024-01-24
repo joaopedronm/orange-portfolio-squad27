@@ -150,6 +150,39 @@ button {
     width: 20px;
 }
 
+#fazer-login {
+    margin-top: 25px;
+}
+
+#fazer-login a {
+    font-family: 'Roboto';
+    font-size: 14px;
+    text-decoration: none;
+    color: rgb(67, 67, 67);
+    letter-spacing: .8px;
+}
+
+#fazer-login a span {
+    position: relative;
+    color: #F52;
+    font-weight: 500;
+}
+
+#fazer-login a span::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: .5px;
+    background-color: #F52;
+    transition: width 0.4s ease;
+}
+
+#fazer-login a span:hover::before {
+    width: 100%;
+}
+
 
 /* MEDIA QUERIES */
 

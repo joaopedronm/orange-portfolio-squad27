@@ -20,7 +20,7 @@
                     <img src="./img/orange-logo.png" alt="" width="120px">
                 </div>
                 <h2>Cadastre-se</h2>
-                <form id="cadastroForm" action="" onsubmit="verificarSenhas()">
+                <form id="cadastroForm" action="" onsubmit="return verificarSenhas()">
                     <div class="nome-e-sobrenome">
                         <div class="nome">
                             <input type="text" id="nome" name="nome" required>
@@ -50,7 +50,13 @@
 
                     <button type="submit" id="botao-cadastrar">CADASTRAR</button>
                 </form>
+
+                <div id="fazer-login">
+                    <a href="#">Já tem um cadastro? <span>Faça Login</span></a>
+                </div>
             </div>
+
+            
         </section>
     </main>
     

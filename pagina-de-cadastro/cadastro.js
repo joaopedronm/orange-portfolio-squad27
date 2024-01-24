@@ -35,8 +35,7 @@ const verificarSenhas = () => {
 
     if (senha !== confirmarSenha) {
         alert("As senhas não coincidem. Por favor, verifique e tente novamente.");
-    } else {
-        document.getElementById("cadastroForm").submit();
+        return false
     }
 
 }
