@@ -122,31 +122,60 @@ h6 {
     letter-spacing: 0.15px;
 }
 
-subtitle1 {
+.subtitle1 {
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
-    line-height: 16px; /* 100% */
+    line-height: 16px; /* 100% */ 
     letter-spacing: 0.15px;
 }
 
-subtitle2  {
+.subtitle2  {
     font-size: 14px;
     font-style: normal;
     font-weight: 500;
     line-height: 24px; /* 171.429% */
-    letter-spacing: 0.1px;
+    letter-spacing: 0.1px; 
 }
 
-label {
+label, input {
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: 24px; /* 150% */
     letter-spacing: 0.15px;
+    width: 100%;
+    border-radius: 4px;
+    display: flex;
+    min-height: 24px;
+    padding: 16px 0px;
+    align-items: center;
+    gap: 0px;
+    align-self: stretch;
+    border-color: rgba(0, 0, 0, 0.23);
+    color: var(--color-neutral-110);
 }
 
-body1 {
+input:hover {
+    border-color: rgba(0, 0, 0, 1);
+}
+
+input:focus {
+    border-color: var(--color-info-100);
+    color: var(--color-principal-100);
+}
+
+input:disabled {
+    color: rgba(0, 0, 0, 0.38);
+    border-color: rgba(0, 0, 0, 0.23);
+}
+
+input.error {
+    color: rgba(0, 0, 0, 0.6);
+    border-color: rgba(211, 47, 47, 1);
+}
+
+.body1 {
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
@@ -154,7 +183,7 @@ body1 {
     letter-spacing: 0.5px;
 }
 
-body2 {
+.body2 {
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -179,10 +208,100 @@ overline {
 }
 
 button {
+    color: #FFF;
     font-size: 15px;
     font-style: normal;
     font-weight: 500;
     line-height: 26px; /* 173.333% */
     letter-spacing: 0.46px;
     text-transform: uppercase;
+    border-radius: 4px;
+    width: 100%;
+    box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.20), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
 }
+
+.btn-primary {
+    background-color: var(--color-secondary-100);
+}
+
+.btn-secondary {
+    background-color: var(--color-principal-80)
+}
+
+.btn-error {
+    background-color: var(--color-error-100);
+}
+
+.btn-large {
+    display: inline-flex;
+    padding: 8px 22px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0px;
+}
+
+.btn-medium {
+    display: inline-flex;
+    padding: 6px 16px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0px;
+}
+
+.btn-small {
+    display: inline-flex;
+    padding: 4px 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--none, 0px);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-secondary-110);
+    box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.20), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-principal-90);
+    box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.20), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+}
+
+.btn-error:hover {
+    background-color: var(--color-error-110);
+    box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.20), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+}
+
+.btn-primary:focus {
+    background-color: var(--color-secondary-100);
+    box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.20), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+}
+
+.btn-secondary:focus {
+    background-color: var(--color-principal-80);
+    box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.20), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+}
+
+.btn-error:focus {
+    background-color: var(--color-error-100);
+    box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.20), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+}
+
+.btn-primary:disabled {
+    color: rgba(0, 0, 0, 0.38);
+    background-color: rgba(0, 0, 0, 0.12);
+}
+
+.btn-secondary:disabled {
+    color: rgba(0, 0, 0, 0.38);
+    background-color: rgba(0, 0, 0, 0.12);
+}
+
+.btn-error:disabled {
+    color: rgba(0, 0, 0, 0.38);
+    background-color: rgba(0, 0, 0, 0.12);
+}
+
