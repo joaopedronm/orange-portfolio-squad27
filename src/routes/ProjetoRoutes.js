@@ -1,7 +1,7 @@
 const router = require('express').Router()
 
-const ProjetoController = require('../controllers/projetoController.js')
+const projetoController = require('../controllers/projetoController.js')
 
-router.post('/create', ProjetoController.create)
+router.post('/create', projetoController.create)
 
 module.exports = router
