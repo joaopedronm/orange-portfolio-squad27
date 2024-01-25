@@ -1,6 +1,6 @@
-const Projeto = require("../models/Projeto")
+const projeto = require("../models/projeto")
 
-module.exports = class ProjetoController{
+module.exports = class projetoController{
 
     //create a project
     static async create(req, res) {

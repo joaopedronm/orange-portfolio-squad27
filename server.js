@@ -15,9 +15,9 @@ app.use(cors({ credentials: true, origin: 'http://localhost:3000' }))
 app.use(express.static('public'))
 
 //Routes
-const ProjetoRoutes = require('./src/routes/ProjetoRoutes')
+const projetoRoutes = require('./src/routes/projetoRoutes')
 
-app.use('/projeto', ProjetoRoutes)
+app.use('/projeto', projetoRoutes)
 
 app.listen(5000)
 module.exports = app
