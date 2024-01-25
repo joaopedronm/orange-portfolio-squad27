@@ -15,6 +15,10 @@
         /* 100% */
     }
 
+    h5 {
+        margin-bottom: 16px;
+    }
+
     h5,
     a {
         font-size: 16px;
@@ -31,5 +35,9 @@
         flex-direction: column;
         width: 312px;
         gap: 16px
+    }
+
+    div#container {
+        height: 100vh;
     }
 }
