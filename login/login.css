@@ -33,7 +33,7 @@ div#form-container {
 #google-button {
     all: unset;
     display: flex;
-    margin: 35px;
+    margin: 32px;
     justify-content: center;
     align-items: center;
     padding: 11px 8px;

@@ -1,0 +1,43 @@
+@charset "UTF-8";
+
+
+/* Versão mobile/tablet */
+@media screen and (max-width: 992px) {
+    .screen-login {
+        display: none;
+    }
+
+    h3 {
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px;
+        /* 100% */
+    }
+
+    h5 {
+        margin-bottom: 16px;
+    }
+
+    h5,
+    a {
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 16px;
+        /* 100% */
+        letter-spacing: 0.15px;
+    }
+
+    .input-container,
+    .input-container form {
+        display: flex;
+        flex-direction: column;
+        width: 312px;
+        gap: 16px
+    }
+
+    div#container {
+        height: 100vh;
+    }
+}
