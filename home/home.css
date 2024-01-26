@@ -20,6 +20,18 @@ nav {
     border-bottom: 1px solid #113;
 }
 
+.mobile-menu {
+    cursor: pointer;
+    display: none;
+}
+
+nav .mobile-menu div {
+    width: 32px;
+    height: 2px;
+    background: #fff;
+    margin: 8px;
+}
+
 nav li {
     list-style: none;
 }
@@ -48,17 +60,14 @@ nav #menu-navigation-esq img {
 
 nav #menu-navigation-esq #menu-links {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     gap: 24px;
-    /* margin-left: 24px; */
 }
 
 nav #menu-navigation-dir {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* gap: 16px; */
 }
 
 nav #menu-navigation-dir img {
@@ -262,6 +271,11 @@ nav #menu-navigation-dir i {
 }
 
 @media screen and (max-width: 426px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
     #search-container {
         width: 80%;
     }
@@ -298,6 +312,37 @@ nav #menu-navigation-dir i {
 
     .modal-container-2 img {
         margin-bottom: 36px;
+    }
+
+    /* HAMBURGUER */
+
+    #menu-links {
+        margin-top: 20px;
+        z-index: 999;
+        position: absolute;
+        top: 8vh;
+        left: 0;
+        width: 35vw;
+        height: 92vh;
+        background: #113;
+        flex-direction: column;
+        align-items: center;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in;
+    }
+
+    #menu-links li {
+        margin-top: 48px;
+        margin-left: 0;
+        /* opacity: 0; */
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+
+    #menu-links.active {
+        transform: translateX(0);
     }
 
 }
