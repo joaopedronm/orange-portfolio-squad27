@@ -13,4 +13,4 @@ Bem-vindo ao Orange Portfólio, um projeto desenvolvido pela equipe Squad 27 com
 
 - **Front-end:** HTML, CSS, JavaScript
 - **Back-end:** Node.js, Express
-- **Banco de Dados:** MySQL
+- **Banco de Dados:** MongoDB
