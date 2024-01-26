@@ -48,16 +48,17 @@ nav #menu-navigation-esq img {
 
 nav #menu-navigation-esq #menu-links {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     gap: 24px;
+    /* margin-left: 24px; */
 }
 
 nav #menu-navigation-dir {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 16px;
+    /* gap: 16px; */
 }
 
 nav #menu-navigation-dir img {
@@ -68,14 +69,15 @@ nav #menu-navigation-dir img {
 nav #menu-navigation-dir i {
     cursor: pointer;
     color: #fff;
+    margin-left: 16px;
 }
 
 #frase {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 155px 398px;
-    /* width: 48%; */
+    margin: 155px auto;
+    width: 50%;
 }
 
 #frase h4 {
@@ -84,7 +86,8 @@ nav #menu-navigation-dir i {
 
 #search-container {
     position: relative;
-    padding-left: 135px;
+    /* padding-left: 135px; */
+    margin-left: 9%;
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -110,7 +113,7 @@ nav #menu-navigation-dir i {
     color: #515255;
     top: 0;
     background: #fff;
-    left: 153px;
+    left: 3%;
     transform: translateY(-50%);
     font-size: 12px;
     padding: 0 5px;
@@ -188,8 +191,7 @@ nav #menu-navigation-dir i {
     justify-content: space-between;
     align-items: center;
     gap: 12px;
-    padding: 48px 64px 24px 64px;
-    
+    padding: 36px 64px 24px 64px;
 }
 
 .modal-container .user-infos {
@@ -233,4 +235,70 @@ nav #menu-navigation-dir i {
     max-height: 60vh;
 }
 
+
+/* MEDIA QUERY */
+
+@media screen and (max-width: 1024px) {
+    #frase {
+        width: 75%;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    #projetos-container {
+        gap: 24px;
+    }
+
+    #projetos-container .projeto .projeto-imagem img {
+        width: 329px;
+        height: 258px;
+    }
+
+    .modal-container {
+        padding: 8px 8px 14px 8px; 
+    }
+
+}
+
+@media screen and (max-width: 426px) {
+    #search-container {
+        width: 80%;
+    }
+
+    #frase {
+        width: 90%;
+        margin: 120px auto;
+    }
+
+    #frase h4 {
+        font-size: 28px;
+    }
+
+    .modal-container {
+        padding: 6px 6px 20px 6px; 
+    }
+
+    .modal-container .titulo {
+        font-size: 18px;
+        margin-left: 14px;
+    }
+
+    .modal-container .user-dados {
+        gap: 3px;
+    }
+
+    .modal-container .user-dados p {
+        font-size: 12px;
+    }
+
+    .modal-container-2 {
+        padding: 8px 12px 8px 8px;
+    }
+
+    .modal-container-2 img {
+        margin-bottom: 36px;
+    }
+
+}
 
