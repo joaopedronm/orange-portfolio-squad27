@@ -22,7 +22,8 @@ const Projeto = mongoose.model(
         required: true,
       },
       imagem: {
-        type: String,
+        type: Array,
+        required: true,
       },
     },
     { timestamps: true }
