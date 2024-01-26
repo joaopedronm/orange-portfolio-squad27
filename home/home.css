@@ -126,6 +126,16 @@ nav #menu-navigation-dir i {
     justify-content: center;
 }
 
+#projetos-container .projeto .projeto-imagem {
+    cursor: pointer;
+    transition: .3s;
+}
+
+#projetos-container .projeto .projeto-imagem:hover {
+    scale: 1.005;
+    box-shadow: 2px 2px 12px 2px rgba(161,161,161,1);
+}
+
 #projetos-container .projeto .projeto-imagem img {
     width: 389px;
     height: 258px;
@@ -135,10 +145,11 @@ nav #menu-navigation-dir i {
     display: flex;
     align-items: center;
     gap: 8px;
+    margin-top: 5px;
 }
 
 #home-modal {
-    /* display: none; */
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
