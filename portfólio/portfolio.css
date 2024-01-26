@@ -1,0 +1,50 @@
+@charset "UTF-8";
+@import url(../style-guide.css);
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+#menu-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+    height: 73px;
+    padding: 16px 30px;
+    background-color: #111133;
+}
+
+#left-header {
+    display: flex;
+    width: 712px;
+    height: 41px;
+    align-items: center;
+    gap: 100px;
+    flex-shrink: 0;
+}
+
+#links-header {
+    display: flex;
+    height: 41px;
+    align-items: flex-start;
+    gap: 24px;
+    place-items: center;
+}
+
+#links-header a {
+    text-decoration: none;
+    color: var(--color-neutral-60);
+}
+
+#right-header {
+    display: flex;
+    align-items: flex-start;
+    place-items: center;
+    gap: 16px;
+}
+
+#ico-notification {
+    padding: 8px;
+}
