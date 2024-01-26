@@ -62,7 +62,6 @@ nav #menu-navigation-esq #menu-links {
     display: flex;
     align-items: center;
     gap: 24px;
-    /* margin-left: 24px; */
 }
 
 nav #menu-navigation-dir {
