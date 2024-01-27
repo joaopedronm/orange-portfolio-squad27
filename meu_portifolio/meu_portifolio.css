@@ -1,0 +1,175 @@
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body{
+      height: 100vh;
+}
+
+.cabecalho{
+    background-color: #111133;
+    
+    
+ }
+ 
+ .cabecalho__menu{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+ }
+
+ .cabecalho__menu__esquerda{
+    display: flex ;
+    gap: 100px; 
+    align-items: center;
+    height: 73px;
+    width: 100%;
+    padding: 16px 30px;   
+ }
+
+
+ .perfil{
+   border-radius: 300px;  
+
+ }
+
+ #cabecalho__menu__perfil{
+   display: flex;
+   gap: 10px;
+   
+ }
+
+
+ .cabecalho__menu__link{
+    font-family:'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: #f6f6f6;
+ }
+
+ .cabecalho__menu__links{
+   display: flex;
+   gap: 24px;
+ }
+
+ .container{
+   padding: 20px 2% 0 2%;
+   margin: 0 auto;
+ }
+
+   .portfolio{
+ display: flex;
+ flex-direction: column;
+ gap: 2.6rem;
+ padding: 100px 0;
+}
+ 
+.meuperfil__perfil img{
+   border-radius: 50%;
+   width: 122px;
+   height: 122px;
+}
+
+.meuperfil__info{
+   font-family:'Roboto', sans-serif; 
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   
+   
+   
+}
+
+.meuperfil__info h2{
+  font-weight: 400;
+  font-size: 24px;
+  text-align: top;
+  padding-bottom: 20px;
+  
+
+}
+
+.meuperfil__info span{
+  display: inline-block;
+  justify-content: space-between;
+  
+}
+
+
+.meuperfil__add{
+    margin-top: 10px;
+}
+
+ .portfolio__meuperfil{
+   display: flex;
+   align-items: center;
+   width: 364px;
+   gap: 24px;
+   margin: 0 auto;
+
+ }
+ 
+
+ .portfolio__modal{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    top: 0;
+    left: 0;
+    background-color:  #FEFEFE;
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+   z-index: 999 ;
+   
+ }
+
+ .bnt:hover{
+  background-color: #888;
+
+ }
+
+ .modal__novo{
+  width: 890px;
+  height: 522px;
+  background-color: #ffffff92;  
+
+ }
+
+ .portfolio__modal .modal__novo{
+   width:389px;
+   height:258x;
+   background-color: red;
+  } 
+
+
+ button {
+   padding: 8px 22px;
+   background-color: #888;
+   color: #fff;
+   border: none;
+   cursor: pointer;
+   opacity: 0.9;
+   font-size: 1rem;
+ }
+
+ .portfolio__meusprojetos{
+  width: 250px;
+  
+
+ }
+ 
+ .portfolio__meusprojetos input{
+  width: 98%;
+  display: inline-block ;
+ }
+
+ 
+
+
+
+  
+
+ 
