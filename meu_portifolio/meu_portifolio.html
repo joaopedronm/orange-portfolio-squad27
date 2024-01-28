@@ -12,17 +12,19 @@
             <nav class="cabecalho__menu">
                 <div  class="cabecalho__menu__esquerda">
                     <div class="cabecalho__menu__img">
-                        <img src="./Logo orange.png" alt="Logo" height="41px" width="111px">
+                          <a href="../home/home.html">
+                              <img src="./Logo orange.png" alt="Logo">
+                         </a>
                 </div>
 
                 <div class="cabecalho__menu__links">
-                        <a class="cabecalho__menu__link">Meus projetos</a>
-                        <a class="cabecalho__menu__link">Descobrir</a>
+                        <a class="cabecalho__menu__link" href="">Meus projetos</a>
+                        <a class="cabecalho__menu__link" href="">Descobrir</a>
                  </div>       
 
                 </div>
                 <div id="cabecalho__menu__perfil">
-                    <img class="perfil" src="./Image.png" alt="perfil" height="40px" width="40px">
+                    <img class="perfil" src="./Image.png" alt="perfil">
                     <img src="./Icon-notifications.png" alt="not">
                 </div>                     
             </nav>
@@ -43,25 +45,73 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="portfolio_meusprojetos">
-                            <h3>Meus projetos</h3>
-                            <input type="text" placeholder="Buscar tags">
-                        </div>
-
-                        <div class="bnt">Adicione seu primeiro projeto</div>
-
-                        <div class="portfolio__modal" id="portfolio__modal">
-                            <div class="modal__novo">Modal</div>
-                            <h1>Adicione projeto</h1>
-                            <p>Selecionar conteudo que você deseja fazer uploud</p>
-                            <input type="text"  placeholder="Titulo">
-                            <input type="text"  placeholder="Tags">
-                            <input type="text"  placeholder="Links">
-                            <input type="text"  placeholder="Descrição">
-                        </div>
+                        <div class="portfolio_meusprojetos">                            
+                                <h6>Meus projetos</h6>
+                                <input type="text" name="tags" id="tags" placeholder="Buscar tags">
+                        </div>  
                     </div>
                 </div>
             </section>
+
+            <section id="projetos-container">
+                <div class="card">
+
+                    <div class="container__botao">            
+                        <figure>
+                            <img src="../meu_portifolio/collections.png" alt="botao">
+                        </figure>
+                        <p>Adicione seu primeiro projeto</p>
+                        <p>Compartilhe seu talento com milhares de pessoas</p>
+                    </div>
+
+                </div>
+ 
+                     <!-- <div class="card"></div>
+                     <div class="card"></div> -->
+        
+            </section>
+
+        <!------------------------------- modal---------------------------->
+        
+            <section id="home-modal">
+                <div id="modal" class="modal">
+                    <span class="close" id="closeModalBtn">&times;</span>
+            
+                    <div class="modal-container">
+                        <div class="user-infos">
+                            <div class="user-img">
+                                <img src="../meu_portifolio/collections.png" alt="" width="122px">
+                            </div>
+                            <div class="user-dados">
+                                <h2>Adicionar projeto</h2>
+                                <p>Selecione o conteúdo que você deseja fazer upload</p>
+                                
+                            </div>
+                        </div>
+                        
+                        <div class="titulo">
+                            <input type="text" name="tags" id="tags" placeholder="Titulo">
+                            <input type="text" name="tags" id="tags" placeholder="Tags">
+                            <input type="text" name="tags" id="tags" placeholder="Links">
+                            <input type="text" name="tags" id="tags" placeholder="Descrição">
+                        </div>
+                        
+                        <div class="tags">
+                            <p>Visualizar publicação</p>
+                            <button>Salvar</button>
+                            <button>Cancelar</button>
+                            
+                        </div>
+                        
+                    </div>
+        
+                    <div class="modal-container-2">
+                        <img src="./img/project-01.jpeg" alt="">
+                    </div>
+                </div>
+            </section>
+        
+            <script src="./home.js" defer></script>
         </main>
      
         <footer></footer>
