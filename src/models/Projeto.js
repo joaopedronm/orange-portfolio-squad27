@@ -25,6 +25,7 @@ const Projeto = mongoose.model(
         type: Array,
         required: true,
       },
+      user: Object,
     },
     { timestamps: true }
   ),
