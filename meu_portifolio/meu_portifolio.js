@@ -1,11 +1,19 @@
 
 // const openModalBtns = document.getElementsByClassName('.projeto-imagem')
-const openModalBtns = document.getElementsByClassName('projeto-imagem')
+const openModalBtns = document.getElementsByClassName('card')
+const openModalBtns2 = document.getElementsByClassName('meuperfil__add')
+
 
 const closeModalBtn = document.getElementById('closeModalBtn')
 const modal = document.getElementById('home-modal')
 
 for (const btn of openModalBtns) {
+    btn.addEventListener('click', () => {
+      modal.style.display = 'block';
+    });
+  }
+
+  for (const btn of openModalBtns2) {
     btn.addEventListener('click', () => {
       modal.style.display = 'block';
     });

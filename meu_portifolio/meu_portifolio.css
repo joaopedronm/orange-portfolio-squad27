@@ -67,10 +67,10 @@ body{
  }
 
    .portfolio{
- display: flex;
- flex-direction: column;
- gap: 2.6rem;
- padding: 100px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2.6rem;
+  padding: 100px 0;
 }
  
 .meuperfil__perfil img{
@@ -131,7 +131,7 @@ h2{
  .portfolio_meusprojetos{
   display: flex;
     flex-direction: column;
-    width: 517px;
+    width: 620px;
     gap: 16px;
     font-family:'Roboto', sans-serif;
     font-weight: 500; 
@@ -141,7 +141,7 @@ h2{
     
  }
  
- input{
+ .portfolio_meusprojetos input{
     
     letter-spacing: 0.15px;
     width: 100%;
@@ -176,19 +176,30 @@ h6{
 
 }
 
+
+
 #projetos-container {
-  margin-top: 48px;
   margin-bottom: 48px;
   display: flex;
-  /* padding-left: 30px; */
   justify-content: space-between;
-  padding: 20px 2% 0 2%;
+  padding: 10px 0 0 2%;
 
 
 }
 
 #projetos-container .card {
  width: 470px;
+ height: 290px;
+ background-color: #E6E9F2;
+ display: flex;
+ justify-content: center;
+ cursor: pointer;
+ 
+}
+
+
+.modal-container .card{
+  width: 100%;
  height: 310px;
  background-color: #E6E9F2;
  display: flex;
@@ -214,6 +225,7 @@ h6{
   margin-bottom: 16px;
   
 }
+
  
 #projetos-container .container__botao p{
 margin-bottom: 7px;
@@ -231,7 +243,7 @@ margin-bottom: 7px;
 
 
 #home-modal {
-  /* display: none; */
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -240,19 +252,18 @@ margin-bottom: 7px;
   background-color: rgba(0, 0, 0, 0.5);
   overflow-y: auto;
 }
-/* não mecher */
+
 
 .modal {
   width: 1000px;
   max-width: 90%;
   margin: 50px auto; /* Centraliza o modal na tela */
   background-color: #fff;
-  padding: 20px;
+  padding: 30px;
   position: relative;
 }
-/* não mecher */
 
-/* não mecher */
+
 .close {
   cursor: pointer;
   font-size: 26px;
@@ -261,76 +272,132 @@ margin-bottom: 7px;
   left: 96%;
   color: #515255;
 }
-/* não mecher */
+
 
 /* Evitar que o modal ultrapasse a tela */
 .modal-container, .modal-container-2 {
   max-height: 70vh;
-  overflow-y: auto; /* Torna o conteúdo do modal rolável na direção vertical */
+  overflow-y: auto;
 }
 
-/* não mecher */
 
-/* ----------------------------------mecher apartir daqui------------------------------ */
 
 .modal-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 12px;
-  padding: 36px 64px 24px 64px;
+  width: 1000px;
+  gap: 20px;
+  height: 350px;
 }
 
-.modal-container h2{
-  /* display: flex; */
+.user-infos__titulo h2{
+  color: var(--color-neutral-110);
+  font-family: 'Roboto';
+  font-weight: 400;
 }
 
-
-.modal-container .user-infos {
+.modal-container .titulo{
   display: flex;
-  gap: 8px;
+  flex-direction: column;
+  justify-content: space-between; 
+  width: 50%;
+  height: 100%;
 }
 
-.modal-container .user-img img {
+.user-infos{
+  width: 50%;
+  height: 100%;
+  color: var(--color-neutral-110);
+  font-family: 'Roboto';
+  font-weight: 400;
+}
+
+  
+
+
+.modal-container .user-infos p{
+  margin-bottom: 16px;
+ 
+}
+
+.modal-container img {
   width: 40px;
   border-radius: 300px;
 }
 
-.modal-container .user-dados {
-  /* display: flex;
-  flex-direction: column;
-  gap: 6px; */
 
-  margin: 0px;
+
+.titulo input {
+  width: 88%;
+  
+  
+  
+}
+
+.titulo textarea{
+  font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    resize: none;
+     height: 120px;
+    letter-spacing: 0.15px;
+    width: 87%;
+    border-radius: 4px;
+    display: flex;
+    min-height: 24px;
+    padding: 16px 0px;
+    align-items: center;
+    gap: 0px;
+    align-self: stretch;
+    border-color: rgba(0, 0, 0, 0.23);
+    color: var(--color-neutral-110);
+    padding: 16px 12px;
+}
+
+.modal-container .card__botao{
+  font-family:'Roboto', sans-serif;
   font-weight: 400;
-  font-size: 24px;
-  text-align: top;
-}
-
-.modal-container .tags {
+  color: var(--color-neutral-110);
   display: flex;
-  gap: 8px;
-}
-
-.modal-container .tags p {
-  border-radius: 100px;
-  background: var(--action-selected, rgba(0, 0, 0, 0.08));
-  padding: 4px;
-}
-
-.modal-container-2 {
-  width: 100%;
-  display: flex;
+  align-items: center;
   flex-direction: column;
-  padding: 24px 64px 48px 64px;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 20px;
+
 }
 
 
-.modal-container-2 img {
-  height: 586px;
-  margin-bottom: 58px;
-  max-height: 60vh;
+
+.call-to-actions{
+  margin-top: 10px;
 }
+
+
+.call-to-actions #salvar{
+  background-color: var(--color-secondary-100); 
+  font-family:'Roboto', sans-serif;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  margin-right: 10px;
+  
+}
+
+.buttons { 
+  margin-top: 10px;
+  display: flex;
+}
+
+
+.buttons button{
+  width: 120px;
+  border-radius: 3px;
+  
+}
+
  
  
 

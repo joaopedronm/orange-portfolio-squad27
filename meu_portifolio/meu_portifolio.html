@@ -74,44 +74,57 @@
         <!------------------------------- modal---------------------------->
         
             <section id="home-modal">
-                <div id="modal" class="modal">
+                <div class="modal">
                     <span class="close" id="closeModalBtn">&times;</span>
             
+                    <div class="user-infos__titulo">
+                        <h2>Adicionar projeto</h2>
+                    </div>
+                    
+                    
                     <div class="modal-container">
+                        
                         <div class="user-infos">
-                            <div class="user-img">
-                                <img src="../meu_portifolio/collections.png" alt="" width="122px">
+
+                            <p>Selecione o conteúdo que você deseja fazer upload</p>
+
+                            <div class="card">
+                                    
+                                <div class="card__botao">                                    
+                                    <figure>
+                                        <img src="../meu_portifolio/collections.png" alt="botao">
+                                    </figure>
+                                    <p>Compartilhe seu talento com milhares de pessoas</p>
+                                </div>
+            
                             </div>
-                            <div class="user-dados">
-                                <h2>Adicionar projeto</h2>
-                                <p>Selecione o conteúdo que você deseja fazer upload</p>
-                                
-                            </div>
+                            
                         </div>
                         
                         <div class="titulo">
                             <input type="text" name="tags" id="tags" placeholder="Titulo">
                             <input type="text" name="tags" id="tags" placeholder="Tags">
                             <input type="text" name="tags" id="tags" placeholder="Links">
-                            <input type="text" name="tags" id="tags" placeholder="Descrição">
-                        </div>
-                        
-                        <div class="tags">
-                            <p>Visualizar publicação</p>
-                            <button>Salvar</button>
-                            <button>Cancelar</button>
-                            
+                            <textarea name="text" id="tags" cols="30" rows="10" placeholder="Descrição"></textarea>
                         </div>
                         
                     </div>
-        
-                    <div class="modal-container-2">
-                        <img src="./img/project-01.jpeg" alt="">
+
+                    <div class="call-to-actions">
+                        <p>Visualizar publicação</p>
+
+                        <div class="buttons">
+                            <div class="buttons_call">
+                                <button id="salvar">Salvar</button>
+                                 <button id="Cancelar">Cancelar</button>
+                            </div>
+                            
+                        </div>
                     </div>
                 </div>
             </section>
         
-            <script src="./home.js" defer></script>
+            <script src="../meu_portifolio/meu_portifolio.js" defer></script>
         </main>
      
         <footer></footer>
