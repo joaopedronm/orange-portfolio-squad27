@@ -4,7 +4,7 @@
 
 
 :root {
-        /* Brand Colors */
+    /* Brand Colors */
     /* Primary Color Palette */
     --color-principal-70: #EDEFF2;
     --color-principal-80: #444466;
@@ -29,7 +29,7 @@
     --color-neutral-100: #818388;
     --color-neutral-110: #515255;
 
-    
+
     /* Support Colors */
     /* Success Color Palette */
     --color-success-60: #EEFFBB;
@@ -80,7 +80,8 @@ h1 {
     font-size: 96px;
     font-style: normal;
     font-weight: 300;
-    line-height: 40px; /* 41.667% */
+    line-height: 40px;
+    /* 41.667% */
     letter-spacing: -1.5px;
 }
 
@@ -88,7 +89,8 @@ h2 {
     font-size: 60px;
     font-style: normal;
     font-weight: 300;
-    line-height: 50px; /* 83.333% */
+    line-height: 50px;
+    /* 83.333% */
     letter-spacing: -0.5px;
 }
 
@@ -96,14 +98,16 @@ h3 {
     font-size: 48px;
     font-style: normal;
     font-weight: 400;
-    line-height: 40px; /* 83.333% */
+    line-height: 40px;
+    /* 83.333% */
 }
 
 h4 {
     font-size: 34px;
     font-style: normal;
     font-weight: 400;
-    line-height: 34px; /* 100% */
+    line-height: 34px;
+    /* 100% */
     letter-spacing: 0.25px;
 }
 
@@ -111,14 +115,16 @@ h5 {
     font-size: 24px;
     font-style: normal;
     font-weight: 400;
-    line-height: 24px; /* 100% */
+    line-height: 24px;
+    /* 100% */
 }
 
 h6 {
     font-size: 20px;
     font-style: normal;
     font-weight: 500;
-    line-height: 20px; /* 100% */
+    line-height: 20px;
+    /* 100% */
     letter-spacing: 0.15px;
 }
 
@@ -127,23 +133,27 @@ h6 {
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
-    line-height: 16px; /* 100% */ 
+    line-height: 16px;
+    /* 100% */
     letter-spacing: 0.15px;
 }
 
-.subtitle2  {
+.subtitle2 {
     font-size: 14px;
     font-style: normal;
     font-weight: 500;
-    line-height: 24px; /* 171.429% */
-    letter-spacing: 0.1px; 
+    line-height: 24px;
+    /* 171.429% */
+    letter-spacing: 0.1px;
 }
 
-label, input {
+label,
+input {
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
-    line-height: 24px; /* 150% */
+    line-height: 24px;
+    /* 150% */
     letter-spacing: 0.15px;
     width: 100%;
     border-radius: 4px;
@@ -181,7 +191,8 @@ input.error {
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
-    line-height: 16px; /* 100% */
+    line-height: 16px;
+    /* 100% */
     letter-spacing: 0.5px;
 }
 
@@ -189,7 +200,8 @@ input.error {
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
-    line-height: 14px; /* 100% */
+    line-height: 14px;
+    /* 100% */
     letter-spacing: 0.25px;
 }
 
@@ -197,7 +209,8 @@ caption {
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
-    line-height: 16px; /* 133.333% */
+    line-height: 16px;
+    /* 133.333% */
     letter-spacing: 0.4px;
 }
 
@@ -205,7 +218,8 @@ caption {
     font-size: 10px;
     font-style: normal;
     font-weight: 400;
-    line-height: 12px; /* 120% */
+    line-height: 12px;
+    /* 120% */
     letter-spacing: 1.5px;
 }
 
@@ -214,13 +228,15 @@ button {
     font-size: 15px;
     font-style: normal;
     font-weight: 500;
-    line-height: 26px; /* 173.333% */
+    line-height: 26px;
+    /* 173.333% */
     letter-spacing: 0.46px;
     text-transform: uppercase;
     border-radius: 4px;
     width: 100%;
     border: 0px;
     box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.20), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+    padding: 8px 22px;
 }
 
 .btn-primary {
@@ -307,4 +323,3 @@ button {
     color: rgba(0, 0, 0, 0.38);
     background-color: rgba(0, 0, 0, 0.12);
 }
-
