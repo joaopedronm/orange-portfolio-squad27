@@ -65,9 +65,7 @@ module.exports = class projetoController {
     }
   }
 
-  static async getAllUserProjetos(req, res) {
-    const token = getToken(req);
-    const user = await getUserByToken(token);
+  static async getAllProjetos(req, res) {
 
     const projeto = await Projeto.find().sort("-createdAt");
 
@@ -76,8 +74,20 @@ module.exports = class projetoController {
     });
   }
 
+  static async getAllUserProjetos(req, res) {
+    const token = getToken(req);
+    const user = await getUserByToken(token);
+
+    const projeto = await Projeto.find({ 'user._id': user._id }).sort("-createdAt");
+
+    res.status(200).json({
+      projeto,
+    });
+  }
+
   static async getProjetoById(req, res) {
     const id = req.params.id;
+
 
     if (!ObjectId.isValid(id)) {
       res.status(422).json({ message: "ID inválido!" });

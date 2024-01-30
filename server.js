@@ -7,7 +7,7 @@ const app = express()
 app.use(express.json())
 
 //Solve CORS
-app.use(cors({ credentials: true, origin: 'http://localhost:3000' }))
+//app.use(cors({ credentials: true, origin: 'http://localhost:3000' }))
 
 // Public folder for images
 app.use(express.static('public'))
@@ -19,6 +19,8 @@ const userRoutes = require('./src/routes/userRoutes')
 app.use('/projeto', projetoRoutes)
 app.use('/user', userRoutes)
 
-app.listen(5000)
-
-//module.exports = app
+//app.listen(5000)
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Servidor está rodando na porta ${PORT}`);
+});
