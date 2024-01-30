@@ -88,6 +88,18 @@ window.onclick = function (event) {
   }
 }
 
+/* ------------------------------ Modal Delete ------------------------------ */
+function openModalDelete() {
+  document.getElementById("overlay-delete").style.display = "flex";
+}
+
+window.onclick = function (event) {
+  var overlay = document.getElementById("overlay-delete");
+  if (event.target == overlay) {
+    overlay.style.display = "none";
+  }
+}
+
 /* ------------------------------ Modal Delete Sucess ------------------------------ */
 function openModalDeleteSucess() {
   document.getElementById("overlay-delete2").style.display = "flex";

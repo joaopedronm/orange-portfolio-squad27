@@ -373,8 +373,44 @@ h6 {
   width: 40px;
 }
 
-/* ------------------------------ Modal Delete Sucess ------------------------------ */
+/* ------------------------------ Modal Delete ------------------------------ */
 .modal-delete {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  background-color: var(--color-neutral-60);
+  padding: 40px 42px;
+  text-align: center;
+  width: 421px;
+  justify-content: center;
+  border: 1px solid #000;
+  text-align: left;
+}
+
+.modal-delete h5,
+p {
+  color: var(--color-neutral-110);
+}
+
+
+#container-button {
+  display: flex;
+  gap: 16px;
+}
+
+#container-button .btn-primary {
+  width: 106px;
+  height: 42px;
+}
+
+#container-button .btn-error:disabled {
+  width: 124px;
+  height: 42px;
+  color: rgba(0, 0, 0, 0.38);
+}
+
+/* ------------------------------ Modal Delete Sucess ------------------------------ */
+.modal-delete-sucess {
   display: flex;
   flex-direction: column;
   gap: 24px;
