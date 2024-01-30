@@ -64,13 +64,25 @@ mobileNavBar.init()
 
 
 /* ------------------------------ Modal Sucess ------------------------------ */
-function openModal() {
+function openModalSucess() {
   document.getElementById("overlay-sucess").style.display = "flex";
 }
 
 // Fechar o modal se o usuário clicar fora dele
 window.onclick = function (event) {
   var overlay = document.getElementById("overlay-sucess");
+  if (event.target == overlay) {
+    overlay.style.display = "none";
+  }
+}
+
+/* ------------------------------ Modal Update ------------------------------ */
+function openModalUpdate() {
+  document.getElementById("overlay-update").style.display = "flex";
+}
+
+window.onclick = function (event) {
+  var overlay = document.getElementById("overlay-update");
   if (event.target == overlay) {
     overlay.style.display = "none";
   }

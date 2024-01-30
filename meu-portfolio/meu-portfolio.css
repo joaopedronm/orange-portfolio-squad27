@@ -336,19 +336,46 @@ h6 {
   border: 1px solid #000;
 }
 
-#isucess h5 {
+.modal-sucess h5 {
   color: var(--color-neutral-110);
 }
 
-#isucess img {
+.modal-sucess img {
   height: 40px;
   width: 40px;
 }
 
-#btn-sucess {
+.btn-modal {
   width: 100%;
 }
 
+/* ------------------------------ Modal Update ------------------------------ */
+.modal-update {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  background-color: var(--color-neutral-60);
+  padding: 32px 48px;
+  text-align: center;
+  width: 351px;
+  height: 242px;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #000;
+}
+
+.modal-update h5 {
+  color: var(--color-neutral-110);
+}
+
+.modal-update img {
+  height: 40px;
+  width: 40px;
+}
+
+.btn-modal {
+  width: 100%;
+}
 
 /* MEDIA QUERY */
 
