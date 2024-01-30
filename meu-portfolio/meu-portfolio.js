@@ -87,3 +87,15 @@ window.onclick = function (event) {
     overlay.style.display = "none";
   }
 }
+
+/* ------------------------------ Modal Delete Sucess ------------------------------ */
+function openModalDeleteSucess() {
+  document.getElementById("overlay-delete2").style.display = "flex";
+}
+
+window.onclick = function (event) {
+  var overlay = document.getElementById("overlay-delete2");
+  if (event.target == overlay) {
+    overlay.style.display = "none";
+  }
+}

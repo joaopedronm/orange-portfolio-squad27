@@ -373,8 +373,30 @@ h6 {
   width: 40px;
 }
 
-.btn-modal {
-  width: 100%;
+/* ------------------------------ Modal Delete Sucess ------------------------------ */
+.modal-delete {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  background-color: var(--color-neutral-60);
+  padding: 32px 48px;
+  text-align: center;
+  width: 351px;
+  height: 242px;
+  max-width: 351px;
+  max-height: 242px;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #000;
+}
+
+.modal-delete h5 {
+  color: var(--color-neutral-110);
+}
+
+.modal-delete img {
+  height: 40px;
+  width: 40px;
 }
 
 /* MEDIA QUERY */
