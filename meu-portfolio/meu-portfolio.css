@@ -331,7 +331,6 @@ h6 {
   padding: 32px 48px;
   text-align: center;
   width: 351px;
-  height: 242px;
   justify-content: center;
   align-items: center;
   border: 1px solid #000;
@@ -359,7 +358,6 @@ h6 {
   padding: 32px 48px;
   text-align: center;
   width: 351px;
-  height: 242px;
   justify-content: center;
   align-items: center;
   border: 1px solid #000;
@@ -419,9 +417,6 @@ p {
   padding: 32px 48px;
   text-align: center;
   width: 351px;
-  height: 242px;
-  max-width: 351px;
-  max-height: 242px;
   justify-content: center;
   align-items: center;
   border: 1px solid #000;
@@ -510,6 +505,34 @@ p {
     height: 40vh;
   }
 
+  /* Modal Sucess */
+  .modal-sucess {
+    padding: 32px 29px;
+    width: 312px;
+    border: none;
+  }
+
+  /* Modal Update */
+  .modal-update {
+    padding: 32px 29px;
+    width: 312px;
+    border: none;
+  }
+
+  /* Modal Delete */
+  .modal-delete {
+    padding: 24px;
+    width: 312px;
+    border: none;
+    gap: 24px;
+  }
+
+  /* Modal Delete Sucess */
+  .modal-delete-sucess {
+    padding: 32px 29px;
+    width: 312px;
+    border: none;
+  }
 
   /* HAMBURGUER */
 
