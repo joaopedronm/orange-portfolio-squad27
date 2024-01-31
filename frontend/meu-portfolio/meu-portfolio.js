@@ -5,26 +5,26 @@ const closeModalBtn = document.getElementById('btn-cancel')
 const modal = document.getElementById('home-modal')
 
 for (const btn of openModalBtn) {
-    btn.addEventListener('click', () => {
-      modal.style.display = 'block';
-    });
-  }
+  btn.addEventListener('click', () => {
+    modal.style.display = 'block';
+  });
+}
 
-  for (const btn of openModalBtn2) {
-    btn.addEventListener('click', () => {
-      modal.style.display = 'block';
-    });
-  }
+for (const btn of openModalBtn2) {
+  btn.addEventListener('click', () => {
+    modal.style.display = 'block';
+  });
+}
 
 closeModalBtn.addEventListener('click', () => {
-    modal.style.display = 'none'
+  modal.style.display = 'none'
 })
 
 // A função abaixo fecha o modal caso o usuário clique fora dele
 window.addEventListener('click', function (e) {
-    if (e.target == modal) {
-      modal.style.display = 'none';
-    }
+  if (e.target == modal) {
+    modal.style.display = 'none';
+  }
 });
 
 // A FUNÇÃO ABAIXO É RESPONSÁVEL POR ATIVAR/DESATIVAR O MENU HAMBÚRGUER
@@ -47,7 +47,7 @@ class MobileNavbar {
   }
 
   init() {
-    if(this.mobileMenu) {
+    if (this.mobileMenu) {
       this.addClickEvent()
     }
     return this
@@ -55,7 +55,7 @@ class MobileNavbar {
 }
 
 
-const mobileNavBar = new MobileNavbar (
+const mobileNavBar = new MobileNavbar(
   ".mobile-menu",
   "#menu-links",
   "#menu-links li",

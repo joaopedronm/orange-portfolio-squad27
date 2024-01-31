@@ -10,7 +10,15 @@ function fazPost(url, corpo) {
       "Content-Type": "application/json",
     },
   }).then((response) => {
-    return response.json();
+    if (response.ok) {
+      return response.json();
+    }
+    throw new Error();
+  }).then((response) => {
+    console.log(response);
+    alert("Usuário cadastrado com sucesso");
+  }).catch((err) => {
+    alert("Erro no cadastro");
   });
 }
 
@@ -18,14 +26,14 @@ const cadastroButton = document.getElementById("botao-cadastrar");
 cadastroButton.addEventListener("click", (event) => cadastrarUsuario(event));
 
 function cadastrarUsuario(event) {
-   // URL da sua rota de registro de usuário
-   event.preventDefault()
+  // URL da sua rota de registro de usuário
+  event.preventDefault()
   const nome = document.getElementById("nome").value;
   const sobrenome = document.getElementById("sobrenome").value;
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
   const confirmPassword = document.getElementById("confirmar-password").value;
- 
+
 
   const corpo = {
     nome: nome,
@@ -36,5 +44,4 @@ function cadastrarUsuario(event) {
   };
 
   fazPost(url, corpo);
-  alert("Produto cadastrado com sucesso");
 }
