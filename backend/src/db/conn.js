@@ -1,7 +1,8 @@
 const mongoose = require('mongoose')
 
 async function main() {
-    await mongoose.connect('mongodb://127.0.0.1:27017/orangeportifolio')
+    const uri = "mongodb://root:example@localhost:27017/mydatabase?authSource=admin";
+    await mongoose.connect(uri);
     console.log("Conectou ao Mongoose!")
 }
 
