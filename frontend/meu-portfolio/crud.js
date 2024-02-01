@@ -1,6 +1,9 @@
 const url = "http://localhost:3000/projeto/create"
 
 function criaProjeto(url, projeto) {
+  const token = localStorage.getItem("token"); // Obter o token JWT do localStorage
+
+  if (token) {
   return fetch(url, {
     method: "POST",
     mode: "cors",
@@ -8,7 +11,7 @@ function criaProjeto(url, projeto) {
     headers: {
       "Access-Control-Allow-Headers": "*",
       "Content-Type": "application/json",
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub21lIjoiYWxleCAiLCJpZCI6IjY1YmFiZWRjMjI4OGI1ZWRjY2QzNmE1MiIsImlhdCI6MTcwNjczNzM3Mn0.89WN18hIkAu-Iorh4AJZsAdTS2FYBBZFZcJfkq4Qq-o"
+      "Authorization": `Bearer ${token}`
     },
   }).then(async (response) => {
     if (response.ok) {
@@ -19,6 +22,7 @@ function criaProjeto(url, projeto) {
       alert(error.message);
     }
   });
+}
 }
 
 const adicionarProjetoButton = document.getElementById("adicionar-projeto");
