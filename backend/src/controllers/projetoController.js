@@ -30,10 +30,10 @@ module.exports = class projetoController {
       return;
     }
 
-    /* if (!imagem) {
+    if (!imagem) {
       res.status(422).json({ message: "A imagem é obrigatória!" });
       return;
-    } */
+    }
 
     const token = getToken(req);
     const user = await getUserByToken(token);

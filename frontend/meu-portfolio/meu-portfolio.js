@@ -113,10 +113,54 @@ window.onclick = function (event) {
   }
 }
 
-document.getElementById('modal-left').addEventListener('click', function () {
+
+
+document.getElementById('user-img').addEventListener('click', function () {
   document.getElementById('file-input').click();
 });
 
 document.getElementById('file-input').addEventListener('change', function () {
-  // Lógica para lidar com os arquivos selecionados
+  var userImgElement = document.getElementById('user-img');
+  var fileInput = this;
+
+  // Verifique se há um arquivo selecionado
+  if (fileInput.files && fileInput.files[0]) {
+    var reader = new FileReader();
+
+    // Quando a leitura do arquivo estiver concluída
+    reader.onload = function (e) {
+      // Obtenha a URL da imagem
+      var imageUrl = e.target.result;
+
+      // Aqui você pode enviar a 'imageUrl' para o seu servidor ou usar de acordo com a sua lógica
+      enviarImagemParaBancoDeDados(imageUrl);
+
+      // Restante do código para exibir a imagem como fundo da div
+      var imageElement = document.getElementById('img-input');
+      var paragraphElement = document.querySelector('.user-img p.body2');
+
+      // Quando a imagem estiver totalmente carregada
+      imageElement.onload = function () {
+        // Apagar o conteúdo de texto da div
+        paragraphElement.style.display = 'none';
+        imageElement.style.display = 'none';
+
+        // Defina a imagem de fundo usando a URL do arquivo
+        userImgElement.style.backgroundImage = 'url(' + imageUrl + ')';
+      };
+
+      // Configurar a fonte da imagem
+      imageElement.src = imageUrl;
+    };
+
+    // Leia o arquivo como uma URL de dados
+    reader.readAsDataURL(fileInput.files[0]);
+  }
 });
+
+// Função para enviar a imagem para o banco de dados (exemplo, você precisa adaptar para sua lógica)
+function enviarImagemParaBancoDeDados(imageUrl) {
+  // Aqui você deve adicionar a lógica para enviar a imagem para o seu servidor ou banco de dados
+  // Isso pode envolver uma solicitação AJAX ou outro método dependendo do seu backend
+  console.log('Imagem enviada para o banco de dados:', imageUrl);
+}
