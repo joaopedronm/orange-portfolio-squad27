@@ -1,6 +1,18 @@
 
 @import url(../style-guide.css);
 
+:root {
+  --cor-primaria: #111133;
+  --cor-secundaria: #E6E9F2;
+  --cor-terciaria: #fff ;
+  --cor-quaternaria:#515255;
+
+  /*---------fontes----------*/
+
+  --font-primaria:'Roboto', sans-serif;
+  
+}
+
 *{
    margin: 0;
    padding: 0;
@@ -12,7 +24,7 @@ body{
 }
 
 .cabecalho{
-    background-color: #111133;
+    background-color: var(--cor-primaria);
     
     
  }
@@ -49,7 +61,7 @@ body{
 
 
  .cabecalho__menu__link{
-    font-family:'Roboto', sans-serif;
+    font-family: var(--font-primaria);
     font-size: 20px;
     font-weight: 500;
     color: #f6f6f6;
@@ -80,7 +92,7 @@ body{
 }
 
 .meuperfil__info{
-   font-family:'Roboto', sans-serif; 
+   font-family:var(--font-primaria); 
    display: flex;
    flex-direction: column;
    gap: 16px;
@@ -133,7 +145,7 @@ h2{
     flex-direction: column;
     width: 620px;
     gap: 16px;
-    font-family:'Roboto', sans-serif;
+    font-family:var(--font-primaria);
     font-weight: 500; 
     width: auto 130px;
     height: auto 20px;
@@ -160,10 +172,10 @@ h2{
 .portfolio_meusprojetos label{
   width: auto;
   position: absolute;
-  font-family: 'Roboto';
-  color: #515255;
+  font-family: var(--font-primaria);
+  color: var(--cor-quaternaria);
   top: 100%;
-  background: #fff;
+  background: var(--cor-terciaria);
   left: 3%;
   transform: translateY(-50%);
   font-size: 12px;
@@ -190,7 +202,7 @@ h6{
 #projetos-container .card {
  width: 470px;
  height: 290px;
- background-color: #E6E9F2;
+ background-color: var(--cor-secundaria);
  display: flex;
  justify-content: center;
  cursor: pointer;
@@ -201,7 +213,7 @@ h6{
 .modal-container .card{
   width: 100%;
  height: 310px;
- background-color: #E6E9F2;
+ background-color: var(--cor-secundaria);
  display: flex;
  justify-content: center;
  cursor: pointer;
@@ -258,7 +270,7 @@ margin-bottom: 7px;
   width: 1000px;
   max-width: 90%;
   margin: 50px auto; /* Centraliza o modal na tela */
-  background-color: #fff;
+  background-color: var(--cor-terciaria);
   padding: 30px;
   position: relative;
 }
@@ -270,7 +282,7 @@ margin-bottom: 7px;
   position: absolute;
   top: 10px;
   left: 96%;
-  color: #515255;
+  color: var(--cor-quaternaria);
 }
 
 
@@ -293,7 +305,7 @@ margin-bottom: 7px;
 
 .user-infos__titulo h2{
   color: var(--color-neutral-110);
-  font-family: 'Roboto';
+  font-family: var(--font-primaria);
   font-weight: 400;
 }
 
@@ -309,7 +321,7 @@ margin-bottom: 7px;
   width: 50%;
   height: 100%;
   color: var(--color-neutral-110);
-  font-family: 'Roboto';
+  font-family: var(--font-primaria);
   font-weight: 400;
 }
 
@@ -356,7 +368,7 @@ margin-bottom: 7px;
 }
 
 .modal-container .card__botao{
-  font-family:'Roboto', sans-serif;
+  font-family:var(--font-primaria);
   font-weight: 400;
   color: var(--color-neutral-110);
   display: flex;
@@ -377,7 +389,7 @@ margin-bottom: 7px;
 
 .call-to-actions #salvar{
   background-color: var(--color-secondary-100); 
-  font-family:'Roboto', sans-serif;
+  font-family:var(--font-primaria);
   border: none;
   color: white;
   text-align: center;
