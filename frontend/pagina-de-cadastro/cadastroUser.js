@@ -19,7 +19,8 @@ function fazPost(url, corpo) {
     .then((response) => {
       console.log(response);
       alert("Usuário cadastrado com sucesso!");
-      window.location.href = "meu-portifolio.html"; //verificar se é dessa forma
+      localStorage.setItem("token", response.token);
+      window.location.href = "../meu-portfolio/meu-portfolio.html";
     })
     .catch((err) => {
       alert("E-mail já cadastrado!");
