@@ -1,4 +1,4 @@
-const url = "http://localhost:3000/project/create"
+const url = "http://localhost:3000/projeto/create"
 
 function criaProjeto(url, projeto) {
   return fetch(url, {
@@ -8,11 +8,12 @@ function criaProjeto(url, projeto) {
     headers: {
       "Access-Control-Allow-Headers": "*",
       "Content-Type": "application/json",
-      "Authorization": localStorage.getItem("batata")
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub21lIjoiYWxleCAiLCJpZCI6IjY1YmFiZWRjMjI4OGI1ZWRjY2QzNmE1MiIsImlhdCI6MTcwNjczNzM3Mn0.89WN18hIkAu-Iorh4AJZsAdTS2FYBBZFZcJfkq4Qq-o"
     },
   }).then(async (response) => {
     if (response.ok) {
       alert("Projeto adicionado com sucesso!");
+      console.log(projeto);
     } else {
       const error = await response.json();
       alert(error.message);
@@ -41,5 +42,6 @@ function cadastrarProjeto(event) {
   }
 
   criaProjeto(url, projeto);
+
 }
 

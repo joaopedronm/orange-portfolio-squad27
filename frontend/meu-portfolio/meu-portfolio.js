@@ -112,3 +112,11 @@ window.onclick = function (event) {
     overlay.style.display = "none";
   }
 }
+
+document.getElementById('modal-left').addEventListener('click', function () {
+  document.getElementById('file-input').click();
+});
+
+document.getElementById('file-input').addEventListener('change', function () {
+  // Lógica para lidar com os arquivos selecionados
+});
