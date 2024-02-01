@@ -21,7 +21,7 @@ function fazPostLogin(url, dados) {
       alert("Login realizado com sucesso!");
 
       localStorage.setItem("token", response.token);
-      window.location.href = "../meu-portfolio/meu-portfolio.html";; // vai para a página de portfólio
+      window.location.href = "../meu-portfolio/meu-portfolio.html"; // vai para a página de portfólio
     })
     .catch((err) => {
       alert("Dados incorretos!");
