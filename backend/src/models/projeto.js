@@ -10,7 +10,8 @@ const Projeto = mongoose.model(
         required: true,
       },
       tags: {
-        type: String,
+        /* Array de string para separar as tags por palavras */
+        type: [String],
         required: true,
       },
       link: {

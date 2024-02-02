@@ -27,6 +27,30 @@ window.addEventListener('click', function (e) {
   }
 });
 
+/* Faz um fetch e retorna todos os projetos do usuário */
+fetch('http://localhost:3000/projeto/meusprojetos', {
+  headers: {
+    Authorization: `Bearer ${localStorage.getItem('token')}`,
+  },
+})
+  .then(res => res.json())
+  .then(projetos => {
+    projetos.projeto.forEach(projeto => {
+      console.log(projeto);
+      console.log(projeto.titulo);
+      console.log(projeto.tags);
+      console.log(projeto.link);
+      console.log(projeto.descricao);
+      console.log(projeto.imagem);
+      exibirProjeto(projeto)
+      /* Alterar a imagem do avatar */
+      /* document.getElementById('avatar-test').src = 'http://localhost:3000/imgs/projeto/' + projeto.imagem[0] */
+    })
+  })
+
+/* Seta nome e sobrenome do usuário */
+document.getElementById('info-user').innerText = localStorage.getItem('nome') + ' ' + localStorage.getItem('sobrenome')
+
 // A FUNÇÃO ABAIXO É RESPONSÁVEL POR ATIVAR/DESATIVAR O MENU HAMBÚRGUER
 
 class MobileNavbar {
@@ -132,9 +156,6 @@ document.getElementById('file-input').addEventListener('change', function () {
       // Obtenha a URL da imagem
       var imageUrl = e.target.result;
 
-      // Aqui você pode enviar a 'imageUrl' para o seu servidor ou usar de acordo com a sua lógica
-      enviarImagemParaBancoDeDados(imageUrl);
-
       // Restante do código para exibir a imagem como fundo da div
       var imageElement = document.getElementById('img-input');
       var paragraphElement = document.querySelector('.user-img p.body2');
@@ -157,10 +178,3 @@ document.getElementById('file-input').addEventListener('change', function () {
     reader.readAsDataURL(fileInput.files[0]);
   }
 });
-
-// Função para enviar a imagem para o banco de dados (exemplo, você precisa adaptar para sua lógica)
-function enviarImagemParaBancoDeDados(imageUrl) {
-  // Aqui você deve adicionar a lógica para enviar a imagem para o seu servidor ou banco de dados
-  // Isso pode envolver uma solicitação AJAX ou outro método dependendo do seu backend
-  console.log('Imagem enviada para o banco de dados:', imageUrl);
-}

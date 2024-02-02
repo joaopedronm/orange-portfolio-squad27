@@ -4,7 +4,8 @@ const path = require("path");
 // Destination to store image
 const imageStorage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, `src/public/imgs/projeto/`);
+    /* pasta publica deve ser na raiz do projeto */
+    cb(null, `public/imgs/projeto/`);
   },
   filename: (req, file, cb) => {
     cb(null, Date.now() + path.extname(file.originalname));
