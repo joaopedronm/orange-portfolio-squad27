@@ -40,13 +40,14 @@ module.exports = class projetoController {
 
     const projeto = new Projeto({
       titulo,
-      tags,
+      tags: tags.split(' '),
       link,
       descricao,
       imagem: [],
       user: {
         _id: user._id,
         nome: user.nome,
+        sobrenome: user.sobrenome,
       },
     });
 
