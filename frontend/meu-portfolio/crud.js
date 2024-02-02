@@ -2,6 +2,10 @@ const url = "http://localhost:3000/projeto/create";
 const projetosContainer = document.getElementById('projetos-container')
 const homeModal = document.getElementById('home-modal')
 const editarExcluir = document.getElementById('editar-excluir')
+const fazerLogout = document.getElementById('fazer-logout')
+
+const userMenu = document.getElementById('user-menu')
+const logout = document.getElementById('logout-modal')
 
 function criaProjeto(url, projeto) {
   const token = localStorage.getItem("token");
@@ -44,7 +48,7 @@ function exibirProjeto(projeto) {
     </div>
     <div class="projeto-infos">
       <img src="./user-menu.png" alt="" width="24px" style="border-radius: 24px;" class="imagem-do-autor">
-      <p class="subtitle1"><span class="nome-do-autor">${projeto.user.nome} ${projeto.user.sobrenome}</span> &#x2022; <span class="data">12/2023</span></p>
+      <p class="subtitle1"><span class="nome-do-autor">${projeto.user.nome} ${projeto.user.sobrenome}</span> &#x2022; <span class="data">${projeto.user.createdAt}</span></p>
       <div class="tags">
         ${projeto.tags.map(tag => `<p class="subtitle1">${tag}</p>`).join('')}
       </div>
@@ -101,6 +105,19 @@ function mostrarEditarExcluir(botaoLapis) {
     editarExcluir.style.display = 'block';
   }
 }
+
+// A função abaixo é responsável por abrir o modal de fazer logout
+
+userMenu.addEventListener('click', () => {
+  if (logout.style.display === 'block') {
+    // Se estiver visível, oculta
+    logout.style.display = 'none';
+  } else {
+    // Se não estiver visível, exibe
+    logout.style.display = 'block';
+  }
+})
+
 
 function editarProjeto() {
   alert('Opção Editar selecionada');

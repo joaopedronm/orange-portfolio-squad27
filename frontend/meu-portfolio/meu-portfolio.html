@@ -29,9 +29,13 @@
                 </div>
             </ul>
             <ul id="menu-navigation-dir">
-                <li><img src="./user-menu.png" alt=""></li>
+                <li><img src="./user-menu.png" alt="" id="user-menu"></li>
                 <i class="fa-solid fa-bell"></i>
             </ul>
+
+            <div id="logout-modal" class="logout">
+                <a href="#">Sair</a>
+            </div>
         </nav>
     </header>
 
@@ -88,7 +92,7 @@
             <div class="projeto" style="display: none;">
                 <div class="projeto-imagem">
                     <img src="../home/img/project-01.jpeg" alt="">
-                    <div class="botao-lapis" onclick="mostrarEditarExcluir(this)">
+                    <div class="botao-lapis" id="botao-lapis" onclick="mostrarEditarExcluir()">
                         <i class="fa-solid fa-pencil"></i>
                     </div>
                     <div class="editar-excluir" id="editar-excluir">

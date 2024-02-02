@@ -77,6 +77,22 @@ nav #menu-navigation-dir i {
   margin-left: 16px;
 }
 
+#logout-modal {
+  display: none;
+}
+
+.logout {
+  width: 100px;
+  position: absolute;
+  top: 8%;
+  right: 4%;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
 .container {
   padding: 20px 2% 0 2%;
   margin: 0 auto;
@@ -391,7 +407,8 @@ h6 {
   text-align: left;
 }
 
-.editar-excluir a {
+.editar-excluir a,
+.logout a {
   font-size: 14px;
   font-family: 'Roboto';
   text-align: left;
@@ -401,11 +418,13 @@ h6 {
   color: #333;
 }
 
-.editar-excluir a:hover {
+.editar-excluir a:hover,
+.logout a:hover {
   background-color: #f5f5f5;
 }
 
-.editar-excluir::before {
+.editar-excluir::before,
+.logout::before {
   content: '';
   position: absolute;
   top: -9px; /* Posiciona a seta acima da div */
