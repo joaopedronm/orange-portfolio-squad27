@@ -253,10 +253,6 @@ h6 {
   padding: 30px;
 }
 
-
-/* ----------------------------------mexer apartir daqui------------------------------ */
-
-
 .user-dados {
   font-weight: 400;
   font-size: 24px;
@@ -348,6 +344,95 @@ h6 {
 
 .btn-modal {
   width: 100%;
+}
+
+/* PROJETO ADICIONADO - JAVASCRIPT */
+
+.projeto {
+  position: relative;
+}
+
+.projeto .projeto-imagem {
+  transition: .3s;
+}
+
+.projeto .projeto-imagem img {
+  margin-top: 24px;
+  cursor: pointer;
+  width: 470px;
+  height: 310px;
+}
+
+.botao-lapis {
+  position: absolute;
+  top: 8%;
+  right: 2%;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 100%;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.botao-lapis:hover {
+  background-color: #ebebeb;
+}
+
+.editar-excluir {
+  width: 140px;
+  display: none;
+  position: absolute;
+  top: 20%;
+  right: 2%;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.editar-excluir a {
+  font-size: 14px;
+  font-family: 'Roboto';
+  text-align: left;
+  display: block;
+  padding: 14px;
+  text-decoration: none;
+  color: #333;
+}
+
+.editar-excluir a:hover {
+  background-color: #f5f5f5;
+}
+
+.editar-excluir::before {
+  content: '';
+  position: absolute;
+  top: -9px; /* Posiciona a seta acima da div */
+  right: 10px; /* Ajuste para alinhar a seta com o canto superior direito */
+  border-width: 0 10px 10px 10px; /* Cria uma seta voltada para cima */
+  border-style: solid;
+  border-color: transparent transparent #fff transparent;
+  z-index: 10; /* Garante que a seta esteja acima do conteúdo interno */
+}
+
+.projeto-infos {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 5px;
+}
+
+.tags {
+  display: flex;
+  gap: 8px;
+  /* margin-left: 7%; */
+}
+
+.tags p {
+  border-radius: 100px;
+  background: var(--action-selected, rgba(0, 0, 0, 0.08));
+  padding: 4px;
 }
 
 /* ------------------------------ Modal Update ------------------------------ */
@@ -444,6 +529,10 @@ p {
     width: 45vw;
   }
 
+  #projetos-container .projeto .projeto-imagem img {
+    width: 45vw;
+  }
+
   .modal {
     margin: 50px auto;
   }
@@ -480,6 +569,10 @@ p {
   #projetos-container .main-card,
   #projetos-container .card {
     margin: 10px 8px;
+    width: 90vw;
+  }
+
+  #projetos-container .projeto .projeto-imagem img {
     width: 90vw;
   }
 

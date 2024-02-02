@@ -85,6 +85,27 @@
                 </div>
             </div>
 
+            <div class="projeto">
+                <div class="projeto-imagem">
+                  <img src="../home/img/project-01.jpeg" alt="">
+                  <div class="botao-lapis" onclick="mostrarEditarExcluir(this)">
+                    <i class="fa-solid fa-pencil"></i>
+                  </div>
+                  <div class="editar-excluir">
+                    <a href="#" onclick="editarProjeto()">Editar</a>
+                    <a href="#" onclick="excluirProjeto()">Excluir</a>
+                  </div>
+                </div>
+                <div class="projeto-infos">
+                  <img src="./user-menu.png" alt="" width="24px" style="border-radius: 24px;" class="imagem-do-autor">
+                  <p class="subtitle1"><span class="nome-do-autor">João Pedro</span> &#x2022; <span class="data">12/2023</span></p>
+                  <div class="tags">
+                    <p class="subtitle1">UX</p>
+                    <p class="subtitle1">Web</p>
+                  </div>
+                </div>
+              </div>
+
         </section>
 
         <!------------------------------- Modal Editar Projeto ---------------------------->
@@ -176,6 +197,29 @@
 
     <script src="./meu-portfolio.js" defer></script>
     <script src="./crud.js" defer></script>
+
+    <script>
+        function mostrarEditarExcluir(botaoLapis) {
+          const editarExcluir = botaoLapis.parentElement.querySelector('.editar-excluir');
+          if (editarExcluir.style.display === 'block') {
+            // Se estiver visível, oculta
+            editarExcluir.style.display = 'none';
+          } else {
+            // Se não estiver visível, exibe
+            editarExcluir.style.display = 'block';
+          }
+        }
+      
+        function editarProjeto() {
+          alert('Opção Editar selecionada');
+          // Lógica de edição aqui
+        }
+      
+        function excluirProjeto() {
+          alert('Opção Excluir selecionada');
+          // Lógica de exclusão aqui
+        }
+      </script>
 </body>
 
 </html>
