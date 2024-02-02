@@ -85,13 +85,13 @@
                 </div>
             </div>
 
-            <div class="projeto">
+            <div class="projeto" style="display: none;">
                 <div class="projeto-imagem">
                   <img src="../home/img/project-01.jpeg" alt="">
                   <div class="botao-lapis" onclick="mostrarEditarExcluir(this)">
                     <i class="fa-solid fa-pencil"></i>
                   </div>
-                  <div class="editar-excluir">
+                  <div class="editar-excluir" id="editar-excluir">
                     <a href="#" onclick="editarProjeto()">Editar</a>
                     <a href="#" onclick="excluirProjeto()">Excluir</a>
                   </div>
@@ -104,7 +104,7 @@
                     <p class="subtitle1">Web</p>
                   </div>
                 </div>
-              </div>
+            </div>
 
         </section>
 
@@ -197,29 +197,6 @@
 
     <script src="./meu-portfolio.js" defer></script>
     <script src="./crud.js" defer></script>
-
-    <script>
-        function mostrarEditarExcluir(botaoLapis) {
-          const editarExcluir = botaoLapis.parentElement.querySelector('.editar-excluir');
-          if (editarExcluir.style.display === 'block') {
-            // Se estiver visível, oculta
-            editarExcluir.style.display = 'none';
-          } else {
-            // Se não estiver visível, exibe
-            editarExcluir.style.display = 'block';
-          }
-        }
-      
-        function editarProjeto() {
-          alert('Opção Editar selecionada');
-          // Lógica de edição aqui
-        }
-      
-        function excluirProjeto() {
-          alert('Opção Excluir selecionada');
-          // Lógica de exclusão aqui
-        }
-      </script>
 </body>
 
 </html>
