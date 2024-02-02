@@ -58,6 +58,7 @@ function exibirProjeto(projeto) {
   homeModal.style.display = 'none'
   removerDivsPorClasse('card')
   projetosContainer.appendChild(div)
+  console.log(projeto.user.createdAt)
 }
 
 //A FUNÇÃO ABAIXO REMOVE AS DIVS COM AS CLASSES DE .CARD (DIVS VAZIAS)
