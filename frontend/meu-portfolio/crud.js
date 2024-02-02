@@ -41,9 +41,9 @@ function exibirProjeto(projeto) {
       <div class="botao-lapis" onclick="mostrarEditarExcluir(this)">
         <i class="fa-solid fa-pencil"></i>
       </div>
-      <div class="editar-excluir">
+      <div class="editar-excluir" data-projeto-id="${projeto._id}">
         <a href="#" onclick="editarProjeto()">Editar</a>
-        <a href="#" onclick="excluirProjeto()">Excluir</a>
+        <a href="#" onclick="excluirProjeto(event)">Excluir</a>
       </div>
     </div>
     <div class="projeto-infos">
@@ -125,7 +125,37 @@ function editarProjeto() {
   // Lógica de edição aqui
 }
 
-function excluirProjeto() {
-  alert('Opção Excluir selecionada');
-  // Lógica de exclusão aqui
+function excluirProjeto(event) {
+  const projetoDiv = event.currentTarget.closest('.projeto');
+  if (projetoDiv) {
+      const projetoId = projetoDiv.querySelector('.editar-excluir').dataset.projetoId; 
+      const url = `http://localhost:3000/projeto/${projetoId}`;
+      const token = localStorage.getItem("token");
+
+      if (token) {
+          return fetch(url, {
+              method: "DELETE",
+              headers: {
+                  Authorization: `Bearer ${token}`,
+              },
+          })
+          .then(async (response) => {
+              if (response.ok) {
+                  alert("Projeto excluído com sucesso!");
+                  location.reload();
+              } else {
+                  const error = await response.json();
+                  alert(error.message);
+              }
+          })
+          .catch((error) => {
+              console.error('Erro ao excluir o projeto:', error);
+          });
+      }
+  }
 }
+
+// const btnsExcluirProjeto = document.querySelectorAll('.btn-excluir');
+// btnsExcluirProjeto.forEach(btn => {
+//   btn.addEventListener('click', excluirProjeto);
+// });
