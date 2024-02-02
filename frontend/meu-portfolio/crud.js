@@ -27,12 +27,13 @@ function criaProjeto(url, projeto) {
   }
 }
 
+/* Renderização dos projetos */
 function exibirProjeto(projeto) {
   const div = document.createElement('div')
   div.innerHTML = `
   <div class="projeto">
     <div class="projeto-imagem">
-      <img src="../home/img/project-01.jpeg" alt="">
+      <img src="${'http://localhost:3000/imgs/projeto/' + projeto.imagem[0]}" alt="">
       <div class="botao-lapis" onclick="mostrarEditarExcluir(this)">
         <i class="fa-solid fa-pencil"></i>
       </div>
@@ -43,10 +44,9 @@ function exibirProjeto(projeto) {
     </div>
     <div class="projeto-infos">
       <img src="./user-menu.png" alt="" width="24px" style="border-radius: 24px;" class="imagem-do-autor">
-      <p class="subtitle1"><span class="nome-do-autor">João Pedro</span> &#x2022; <span class="data">12/2023</span></p>
+      <p class="subtitle1"><span class="nome-do-autor">${projeto.user.nome} ${projeto.user.sobrenome}</span> &#x2022; <span class="data">12/2023</span></p>
       <div class="tags">
-        <p class="subtitle1">UX</p>
-        <p class="subtitle1">Web</p>
+        ${projeto.tags.map(tag => `<p class="subtitle1">${tag}</p>`).join('')}
       </div>
     </div>
   </div>
