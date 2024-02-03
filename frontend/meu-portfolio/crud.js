@@ -34,6 +34,7 @@ function criaProjeto(url, projeto) {
 /* Renderização dos projetos */
 function exibirProjeto(projeto) {
   const div = document.createElement('div')
+  const data = new Date(projeto.createdAt);
   div.innerHTML = `
   <div class="projeto">
     <div class="projeto-imagem">
@@ -48,7 +49,7 @@ function exibirProjeto(projeto) {
     </div>
     <div class="projeto-infos">
       <img src="./user-menu.png" alt="" width="24px" style="border-radius: 24px;" class="imagem-do-autor">
-      <p class="subtitle1"><span class="nome-do-autor">${projeto.user.nome} ${projeto.user.sobrenome}</span> &#x2022; <span class="data">${projeto.user.createdAt}</span></p>
+      <p class="subtitle1"><span class="nome-do-autor">${projeto.user.nome} ${projeto.user.sobrenome}</span> &#x2022; <span class="data">${data.getMonth() + 1}/${data.getFullYear().toString().slice(-2)}</span></p>
       <div class="tags">
         ${projeto.tags.map(tag => `<p class="subtitle1">${tag}</p>`).join('')}
       </div>
@@ -58,7 +59,6 @@ function exibirProjeto(projeto) {
   homeModal.style.display = 'none'
   removerDivsPorClasse('card')
   projetosContainer.appendChild(div)
-  console.log(projeto.user.createdAt)
 }
 
 //A FUNÇÃO ABAIXO REMOVE AS DIVS COM AS CLASSES DE .CARD (DIVS VAZIAS)
@@ -128,30 +128,30 @@ function editarProjeto() {
 function excluirProjeto(event) {
   const projetoDiv = event.currentTarget.closest('.projeto');
   if (projetoDiv) {
-      const projetoId = projetoDiv.querySelector('.editar-excluir').dataset.projetoId; 
-      const url = `http://localhost:3000/projeto/${projetoId}`;
-      const token = localStorage.getItem("token");
+    const projetoId = projetoDiv.querySelector('.editar-excluir').dataset.projetoId;
+    const url = `http://localhost:3000/projeto/${projetoId}`;
+    const token = localStorage.getItem("token");
 
-      if (token) {
-          return fetch(url, {
-              method: "DELETE",
-              headers: {
-                  Authorization: `Bearer ${token}`,
-              },
-          })
-          .then(async (response) => {
-              if (response.ok) {
-                  alert("Projeto excluído com sucesso!");
-                  location.reload();
-              } else {
-                  const error = await response.json();
-                  alert(error.message);
-              }
-          })
-          .catch((error) => {
-              console.error('Erro ao excluir o projeto:', error);
-          });
-      }
+    if (token) {
+      return fetch(url, {
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+        .then(async (response) => {
+          if (response.ok) {
+            alert("Projeto excluído com sucesso!");
+            location.reload();
+          } else {
+            const error = await response.json();
+            alert(error.message);
+          }
+        })
+        .catch((error) => {
+          console.error('Erro ao excluir o projeto:', error);
+        });
+    }
   }
 }
 
