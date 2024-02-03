@@ -1,3 +1,5 @@
+const { OAuth2Client } = require('google-auth-library');
+const client = new OAuth2Client('103164851235-suior8k6dm4u6nhfud1en503v9i8kf5s.apps.googleusercontent.com');
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
@@ -112,6 +114,56 @@ module.exports = class userController {
       res.status(500).json({ message: "Erro interno ao fazer login" });
     }
   }
+
+  static googleLogin(req, res) {
+    const authUrl = client.generateAuthUrl({
+      scope: ['https://www.googleapis.com/auth/plus.me', 'https://www.googleapis.com/auth/userinfo.email'],
+    });
+    res.redirect(authUrl);
+  }
+
+  static async googleLoginCallback(req, res) {
+    const { code } = req.query;
+
+    try {
+      // Trocar o código de autorização por um token de acesso
+      const { tokens } = await client.getToken({
+        code,
+      });
+
+      // Obter informações do usuário usando o token de acesso
+      const googleUser = await client.verifyIdToken({
+        idToken: tokens.id_token,
+        audience: '103164851235-suior8k6dm4u6nhfud1en503v9i8kf5s.apps.googleusercontent.com', // Substitua 'SEU_CLIENT_ID' pelo seu ID de cliente OAuth do Google
+      });
+
+      // Encontrar ou criar o usuário com base nas informações do Google
+      let user = await User.findOne({ email: googleUser.payload.email });
+
+      if (!user) {
+        // criar um novo usuário caso não exista
+        user = new User({
+          nome: googleUser.given_name,
+          sobrenome: googleUser.family_name,
+          email: googleUser.email,
+        });
+
+        // Salvar o novo usuário
+        await user.save();
+      }
+
+      // Gerar token JWT para o usuário
+      await createUserToken(user, req, res);
+
+      window.location.href = "../meu-portfolio/meu-portfolio.html"; // vai para a página de portfólio 
+      // Redirecionar ou enviar o token para o cliente conforme necessário
+      res.status(200).json({ token });
+    } catch (error) {
+      console.error('Erro ao lidar com o callback do Google:', error);
+      res.status(500).json({ message: 'Erro interno ao fazer login com o Google' });
+    }
+  }
+
 
   static async checkUser(req, res) {
     let currentUser;
