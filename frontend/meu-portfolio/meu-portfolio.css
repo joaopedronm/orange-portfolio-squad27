@@ -208,7 +208,7 @@ h6 {
   margin-bottom: 72px;
   display: flex;
   gap: 20px;
-  /* justify-content: space-evenly; */
+  /* justify-content: space-between; */
   padding: 20px 2% 0 2%;
 }
 
@@ -560,6 +560,7 @@ p {
 
 /* MEDIA QUERY */
 
+
 @media screen and (max-width: 1441px) {
   .projeto {
     width: 440px;
@@ -661,21 +662,18 @@ p {
     cursor: pointer;
   }
 
-  /* Modal Sucess */
   .modal-sucess {
     padding: 32px 29px;
     width: 312px;
     border: none;
   }
 
-  /* Modal Update */
   .modal-update {
     padding: 32px 29px;
     width: 312px;
     border: none;
   }
 
-  /* Modal Delete */
   .modal-delete {
     padding: 24px;
     width: 312px;
@@ -683,14 +681,12 @@ p {
     gap: 24px;
   }
 
-  /* Modal Delete Sucess */
   .modal-delete-sucess {
     padding: 32px 29px;
     width: 312px;
     border: none;
   }
 
-  /* HAMBURGUER */
 
   #menu-links {
     margin-top: 20px;
