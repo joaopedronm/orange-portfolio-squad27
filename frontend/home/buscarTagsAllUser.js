@@ -39,11 +39,9 @@ document.getElementById("tags").addEventListener("input", function () {
 
 function exibirProjetosPorTags(projetos) {
   projetosContainer.innerHTML = "";
-  const userId = localStorage.getItem("userId");
 
   if (projetos && Array.isArray(projetos) && projetos.length > 0) {
     projetos.forEach((projeto) => {
-      if (projeto.user._id == userId) {
       const divProjeto = document.createElement("div");
       divProjeto.classList.add("projeto");
 
@@ -53,17 +51,11 @@ function exibirProjetosPorTags(projetos) {
       <div class="projeto">
         <div class="projeto-imagem">
           <img src="${'http://localhost:3000/imgs/projeto/' + projeto.imagem[0]}" alt="">
-          <div class="botao-lapis" onclick="mostrarEditarExcluir(this)">
-            <i class="fa-solid fa-pencil"></i>
-          </div>
-          <div class="editar-excluir" data-projeto-id="${projeto._id}">
-            <a href="#" onclick="editarProjeto()">Editar</a>
-            <a href="#" onclick="excluirProjeto(event)">Excluir</a>
-          </div>
         </div>
         <div class="projeto-infos">
           <img src="./user-menu.png" alt="" width="24px" style="border-radius: 24px;" class="imagem-do-autor">
           <p class="subtitle1"><span class="nome-do-autor">${projeto.user.nome} ${projeto.user.sobrenome}</span> &#x2022; <span class="data">${data.getMonth() + 1}/${data.getFullYear().toString().slice(-2)}</span></p>
+          
           <div class="tags">
             ${projeto.tags.map(tag => `<p class="subtitle1">${tag}</p>`).join('')}
           </div>
@@ -72,7 +64,6 @@ function exibirProjetosPorTags(projetos) {
       `;
       
       projetosContainer.appendChild(divProjeto);
-      }
     });
   } else {
     const mensagem = document.createElement("p");
