@@ -110,6 +110,8 @@ function mostrarEditarExcluir(botaoLapis) {
   }
 }
 
+
+
 // A função abaixo é responsável por abrir o botão de fazer logout
 
 userMenu.addEventListener('click', () => {
