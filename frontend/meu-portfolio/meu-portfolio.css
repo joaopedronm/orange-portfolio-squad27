@@ -122,6 +122,11 @@ h2 {
   font-weight: 400;
   font-size: 24px;
   text-align: top;
+  color: #303133;
+}
+
+.meuperfil__info p{
+  color: #303133;
 }
 
 
@@ -264,6 +269,11 @@ h6 {
   /* overflow-y: auto; */
 }
 
+#home-modal h5{
+  font-size: 26px;
+  color: var(--color-neutral-110);
+}
+
 .modal {
   width: 1000px;
   max-width: 90%;
@@ -308,9 +318,22 @@ h6 {
   height: 100%;
 }
 
-.modal-container .user-input #descricao {
+.modal-container .user-input textarea#descricao {
   height: 116px;
+  resize: none;
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 0.15px;
+    width: 100%;
+    border-radius: 5px;
+    min-height: 24px;
+    padding: 16px 0px 16px 12px;
+    border: 1px solid #0000003B;
+    
+
 }
+
 
 .call-to-actions {
   margin-top: 26px;
