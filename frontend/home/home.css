@@ -91,6 +91,7 @@ nav #menu-navigation-dir i {
 
 #frase h4 {
     text-align: center;
+    color: var(--color-principal-100);
 }
 
 #search-container {

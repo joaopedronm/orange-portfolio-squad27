@@ -7,7 +7,7 @@
     <title>Orange Portfólio</title>
     <link rel="stylesheet" href="login.css">
     <link rel="stylesheet" href="media-query.css">
-    <link rel="shortcut icon" href="../meu_portifolio/IconOrange.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../meu-portfolio/IconOrange.png" type="image/x-icon">
 
 </head>
 
@@ -25,8 +25,14 @@
                 <div class="input-container">
                     <h5>Faça login com email</h5>
                     <form action="#" method="post">
-                        <input type="email" name="email" id="iemail">
-                        <input type="password" name="pass" id="ipass">
+                        <div class="input-container__email">
+                            <label for="email">Email address</label>
+                         <input type="email" name="email" id="iemail">
+                        </div>
+                        <div class="input-container__password">
+                            <label for="password">Password</label>
+                            <input type="password" name="pass" id="ipass">
+                        </div>
                         <button class="btn-primary btn-large" type="submit">entrar</button>
                     </form>
                     <a href="../pagina-de-cadastro/cadastro.html" class="subtitle1">Cadastre-se</a>

@@ -53,7 +53,8 @@ div#form-container {
     display: flex;
     flex-direction: column;
     width: 517px;
-    gap: 16px
+    gap: 16px;
+    position: relative;
 }
 
 h5 {
@@ -72,4 +73,32 @@ a {
 
 a:visited {
     color: var(--color-neutral-100);
+}
+
+
+.input-container label{
+    width: auto;
+    position: absolute;
+    font-family: 'Roboto';
+    color: #515255;
+    background: #fff;
+    left: 3%;
+    transform: translateY(-50%);
+    font-size: 12px;
+    padding: 0 5px;
+
+}
+
+
+.email label,
+.senha label {
+    position: absolute;
+    font-family: 'Roboto';
+    color: #515255;
+    top: 0;
+    background: #fff;
+    left: 12px;
+    transform: translateY(-50%);
+    font-size: 12px;
+    padding: 0 5px;
 }
