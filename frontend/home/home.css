@@ -129,13 +129,12 @@ nav #menu-navigation-dir i {
 }
 
 #projetos-container {
-    margin-top: 48px;
-    margin-bottom: 48px;
-    display: flex;
     flex-wrap: wrap;
-    gap: 36px;
-    /* padding-left: 30px; */
-    justify-content: center;
+    margin-bottom: 72px;
+    display: flex;
+    gap: 20px;
+    /* justify-content: space-evenly; */
+    padding: 20px 2% 0 2%;
 }
 
 #projetos-container .projeto .projeto-imagem {
@@ -145,7 +144,7 @@ nav #menu-navigation-dir i {
 
 #projetos-container .projeto .projeto-imagem:hover {
     scale: 1.005;
-    box-shadow: 2px 2px 12px 2px rgba(161,161,161,1);
+    box-shadow: 2px 2px 12px 2px rgba(161, 161, 161, 1);
 }
 
 #projetos-container .projeto .projeto-imagem img {
@@ -158,6 +157,17 @@ nav #menu-navigation-dir i {
     align-items: center;
     gap: 8px;
     margin-top: 5px;
+}
+
+.tags {
+    display: flex;
+    gap: 8px;
+}
+
+.tags p {
+    border-radius: 100px;
+    background: var(--action-selected, rgba(0, 0, 0, 0.08));
+    padding: 4px;
 }
 
 #home-modal {
@@ -174,7 +184,8 @@ nav #menu-navigation-dir i {
 .modal {
     width: 1000px;
     max-width: 90%;
-    margin: 50px auto; /* Centraliza o modal na tela */
+    margin: 50px auto;
+    /* Centraliza o modal na tela */
     background-color: #fff;
     padding: 20px;
     position: relative;
@@ -190,9 +201,11 @@ nav #menu-navigation-dir i {
 }
 
 /* Evitar que o modal ultrapasse a tela */
-.modal-container, .modal-container-2 {
+.modal-container,
+.modal-container-2 {
     max-height: 70vh;
-    overflow-y: auto; /* Torna o conteúdo do modal rolável na direção vertical */
+    overflow-y: auto;
+    /* Torna o conteúdo do modal rolável na direção vertical */
 }
 
 .modal-container {
@@ -265,7 +278,7 @@ nav #menu-navigation-dir i {
     }
 
     .modal-container {
-        padding: 8px 8px 14px 8px; 
+        padding: 8px 8px 14px 8px;
     }
 
 }
@@ -290,7 +303,7 @@ nav #menu-navigation-dir i {
     }
 
     .modal-container {
-        padding: 6px 6px 20px 6px; 
+        padding: 6px 6px 20px 6px;
     }
 
     .modal-container .titulo {
@@ -346,4 +359,3 @@ nav #menu-navigation-dir i {
     }
 
 }
-
