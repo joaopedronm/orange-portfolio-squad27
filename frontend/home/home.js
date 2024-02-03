@@ -19,6 +19,38 @@ fetch('http://localhost:3000/projeto/descobrir', {
     });
   });
 
+/* Renderização dos projetos */
+function exibirProjeto(projeto) {
+  const div = document.createElement('div')
+  const data = new Date(projeto.createdAt);
+  div.innerHTML = `
+  <div class="projeto">
+    <div class="projeto-imagem">
+      <img src="${'http://localhost:3000/imgs/projeto/' + projeto.imagem[0]}" alt="">
+    </div>
+    <div class="projeto-infos">
+      <img src="./img/user-menu.png" alt="" width="24px" style="border-radius: 24px;" class="imagem-do-autor">
+      <p class="subtitle1"><span class="nome-do-autor">${projeto.user.nome} ${projeto.user.sobrenome}</span> &#x2022; <span class="data">${data.getMonth() + 1}/${data.getFullYear().toString().slice(-2)}</span></p>
+      <div class="tags">
+        ${projeto.tags.map(tag => `<p class="subtitle1">${tag}</p>`).join('')}
+      </div>
+    </div>
+  </div>
+  `
+  homeModal.style.display = 'none'
+  removerDivsPorClasse('card')
+  projetosContainer.appendChild(div)
+}
+
+//A FUNÇÃO ABAIXO REMOVE AS DIVS COM AS CLASSES DE .CARD (DIVS VAZIAS)
+function removerDivsPorClasse(card) {
+  const divs = document.getElementsByClassName(card);
+  const divsArray = Array.from(divs);
+
+  divsArray.forEach(div => {
+    div.parentNode.removeChild(div);
+  });
+}
 
 // const openModalBtns = document.getElementsByClassName('.projeto-imagem')
 const openModalBtns = document.getElementsByClassName('projeto-imagem')
