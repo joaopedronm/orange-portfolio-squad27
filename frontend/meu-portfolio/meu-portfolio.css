@@ -149,14 +149,17 @@ h2 {
 
 button {
   padding: 7px 20px;
-  background-color: rgba(0, 0, 0, 0.12);
-  color: var(--action-disabled, rgba(0, 0, 0, 0.38));
   border: none;
   cursor: pointer;
   opacity: 0.9;
   font-size: 1rem;
   margin-top: 8px;
   border-radius: 2px;
+}
+
+.btn-cancel {
+  color: rgba(0, 0, 0, 0.38);
+  background-color: rgba(0, 0, 0, 0.12);
 }
 
 .portfolio_meusprojetos {
@@ -428,12 +431,16 @@ h6 {
 .logout::before {
   content: '';
   position: absolute;
-  top: -9px; /* Posiciona a seta acima da div */
-  right: 10px; /* Ajuste para alinhar a seta com o canto superior direito */
-  border-width: 0 10px 10px 10px; /* Cria uma seta voltada para cima */
+  top: -9px;
+  /* Posiciona a seta acima da div */
+  right: 10px;
+  /* Ajuste para alinhar a seta com o canto superior direito */
+  border-width: 0 10px 10px 10px;
+  /* Cria uma seta voltada para cima */
   border-style: solid;
   border-color: transparent transparent #fff transparent;
-  z-index: 10; /* Garante que a seta esteja acima do conteúdo interno */
+  z-index: 10;
+  /* Garante que a seta esteja acima do conteúdo interno */
 }
 
 .projeto-infos {

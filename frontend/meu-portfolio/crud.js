@@ -35,6 +35,9 @@ function criaProjeto(url, projeto) {
 function exibirProjeto(projeto) {
   const div = document.createElement('div')
   const data = new Date(projeto.createdAt);
+  var nomeAutor = projeto.user.nome;
+  var sobrenomeAutor = projeto.user.sobrenome;
+
   div.innerHTML = `
   <div class="projeto">
     <div class="projeto-imagem">
@@ -49,7 +52,7 @@ function exibirProjeto(projeto) {
     </div>
     <div class="projeto-infos">
       <img src="./user-menu.png" alt="" width="24px" style="border-radius: 24px;" class="imagem-do-autor">
-      <p class="subtitle1"><span class="nome-do-autor">${projeto.user.nome} ${projeto.user.sobrenome}</span> &#x2022; <span class="data">${data.getMonth() + 1}/${data.getFullYear().toString().slice(-2)}</span></p>
+      <p class="subtitle1"><span class="nome-do-autor">${capitalizarPrimeiraLetra(nomeAutor)} ${capitalizarPrimeiraLetra(sobrenomeAutor)}</span> &#x2022; <span class="data">${data.getMonth() + 1}/${data.getFullYear().toString().slice(-2)}</span></p>
       <div class="tags">
         ${projeto.tags.map(tag => `<p class="subtitle1">${tag}</p>`).join('')}
       </div>

@@ -43,13 +43,26 @@ fetch('http://localhost:3000/projeto/meusprojetos', {
       console.log(projeto.descricao);
       console.log(projeto.imagem);
       exibirProjeto(projeto)
+
+
+      if (projeto.titulo != '') {
+        var btn = document.getElementById('add-btn');
+        btn.disabled = false;
+      }
+
       /* Alterar a imagem do avatar */
       /* document.getElementById('avatar-test').src = 'http://localhost:3000/imgs/projeto/' + projeto.imagem[0] */
-    })
-  })
+    });
+  });
 
 /* Seta nome e sobrenome do usuário */
-document.getElementById('info-user').innerText = localStorage.getItem('nome') + ' ' + localStorage.getItem('sobrenome')
+function capitalizarPrimeiraLetra(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+document.getElementById('info-user').innerText = capitalizarPrimeiraLetra(localStorage.getItem('nome')) + ' ' + capitalizarPrimeiraLetra(localStorage.getItem('sobrenome'));
+
+
 
 // A FUNÇÃO ABAIXO É RESPONSÁVEL POR ATIVAR/DESATIVAR O MENU HAMBÚRGUER
 
