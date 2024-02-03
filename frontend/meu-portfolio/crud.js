@@ -111,6 +111,20 @@ function mostrarEditarExcluir(botaoLapis) {
 }
 
 
+document.addEventListener('click', function (event) {
+  // If the click is inside the edit/delete menu, do nothing
+  if (event.target.closest('.editar-excluir') || event.target.closest('.botao-lapis')) {
+    return;
+  }
+
+  // If the click is outside any edit/delete menu, close all menus
+  const allEditDeleteMenus = document.querySelectorAll('.editar-excluir');
+
+  allEditDeleteMenus.forEach(menu => {
+    menu.style.display = 'none';
+  });
+});
+
 
 // A função abaixo é responsável por abrir o botão de fazer logout
 
