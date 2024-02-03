@@ -16,10 +16,12 @@
 
             <div id="form-container">
                 <h3>Entre no Orange Portfólio</h3>
-                <button id="google-button">
+                <!-- <button id="google-button">
                     <img src="img/google.svg" alt="icon-google">
                     Entrar com o Google
-                </button>
+                </button> -->
+                <div id="buttonDiv"></div>
+
                 <div class="input-container">
                     <h5>Faça login com email</h5>
                     <form action="#" method="post">
@@ -33,6 +35,35 @@
         </div>
     </main>
     <script src="./loginUser.js" defer></script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="https://unpkg.com/jwt-decode@3.1.2/build/jwt-decode.js"></script>
+
+    <script>
+        function handleCredentialResponse(response) {
+            const data = jwt_decode(response.credential)
+            console.log(data)
+            var email = data.email
+            var sobrenome = data.family_name
+            var nome = data.given_name
+            var id = data.sub
+
+            console.log(email, nome, sobrenome, id)
+        }
+        window.onload = function () {
+            google.accounts.id.initialize({
+                client_id: "103164851235-suior8k6dm4u6nhfud1en503v9i8kf5s.apps.googleusercontent.com",
+                callback: handleCredentialResponse
+            });
+            google.accounts.id.renderButton(
+                document.getElementById("buttonDiv"), {
+                theme: "outline",
+                size: "large"
+            }  // customization attributes
+            );
+            google.accounts.id.prompt(); // also display the One Tap dialog
+        }
+    </script>
+
 </body>
 
 </html>
