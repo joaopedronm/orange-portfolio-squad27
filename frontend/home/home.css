@@ -95,17 +95,12 @@ nav #menu-navigation-dir i {
 
 #search-container {
     position: relative;
-    /* padding-left: 135px; */
-    margin-left: 9%;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+    /* margin-left: 20px; */
+    margin-left: 2%;
     width: 55%;
 }
 
 #search-container input {
-    display: block;
-    box-sizing: border-box;
     width: 100%;
     border: 1px solid #0000003B;
     font-size: 14px;
@@ -137,22 +132,25 @@ nav #menu-navigation-dir i {
     padding: 20px 2% 0 2%;
 }
 
-#projetos-container .projeto .projeto-imagem {
+.projeto {
+    position: relative;
+    width: 470px;
+  }
+
+.projeto .projeto-imagem {
     cursor: pointer;
+    width: 100%;
     transition: .3s;
 }
 
-#projetos-container .projeto .projeto-imagem:hover {
-    scale: 1.005;
-    box-shadow: 2px 2px 12px 2px rgba(161, 161, 161, 1);
+.projeto .projeto-imagem img {
+    margin-top: 24px;
+    width: 470px;
+    height: 310px;
 }
 
-#projetos-container .projeto .projeto-imagem img {
-    width: 389px;
-    height: 258px;
-}
-
-#projetos-container .projeto-infos {
+.projeto-infos {
+    width: 100%;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -260,21 +258,38 @@ nav #menu-navigation-dir i {
 
 /* MEDIA QUERY */
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1441px) {
+    .projeto {
+      width: 440px;
+    }
+  
+    .projeto .projeto-imagem img {
+      width: 100%;
+    }
+}
+
+@media screen and (max-width: 1025px) {
     #frase {
         width: 75%;
     }
 
-}
-
-@media screen and (max-width: 768px) {
-    #projetos-container {
-        gap: 24px;
+    .projeto {
+        width: 475px;
+      }
+    
+    .projeto .projeto-imagem img {
+    width: 100%;
     }
 
-    #projetos-container .projeto .projeto-imagem img {
-        width: 329px;
-        height: 258px;
+}
+
+@media screen and (max-width: 769px) {
+    .projeto {
+        width: 46vw;
+    }
+    
+    .projeto .projeto-imagem img {
+    width: 100%;
     }
 
     .modal-container {
@@ -325,6 +340,20 @@ nav #menu-navigation-dir i {
 
     .modal-container-2 img {
         margin-bottom: 36px;
+    }
+
+    #projetos-container .main-card,
+    #projetos-container .card {
+        margin: 10px 8px;
+        min-width: 90vw;
+    }
+
+    #projetos-container .projeto {
+        width: 95vw;
+    }
+
+    #projetos-container .projeto .projeto-imagem img {
+        min-width: 100%;
     }
 
     /* HAMBURGUER */

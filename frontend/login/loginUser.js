@@ -14,6 +14,10 @@ function fazPostLogin(url, dados) {
       if (response.ok) {
         return response.json();
       }
+      if (response.status === 401) {
+        // Redirecionar para o login do Google em caso de falha de autenticação
+        window.location.href = urlGoogleLogin;
+      }
       throw new Error("Erro no login");
     })
     .then((response) => {
