@@ -327,43 +327,6 @@ h6 {
   border-radius: 4px;
 }
 
-/* ------------------------------ Modal Sucess ------------------------------ */
-.overlay {
-  display: none;
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  justify-content: center;
-  place-items: center;
-}
-
-.modal-sucess {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  background-color: var(--color-neutral-60);
-  padding: 32px 48px;
-  text-align: center;
-  width: 351px;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid #000;
-}
-
-.modal-sucess h5 {
-  color: var(--color-neutral-110);
-}
-
-.modal-sucess img {
-  height: 40px;
-  width: 40px;
-}
-
-.btn-modal {
-  width: 100%;
-}
-
 /* PROJETO ADICIONADO - JAVASCRIPT */
 
 .projeto {
@@ -463,6 +426,58 @@ h6 {
   padding: 4px;
 }
 
+/* ------------------------------ MODAIS ------------------------------ */
+#imodal-sucess,
+#imodal-update,
+#imodal-delete,
+#imodal-delete-sucess {
+  display: none;
+
+}
+
+#overlay-delete,
+#overlay-delete2,
+#overlay-update,
+#overlay-sucess {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ------------------------------ Modal Sucess ------------------------------ */
+
+.modal-sucess {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  background-color: var(--color-neutral-60);
+  padding: 32px 48px;
+  text-align: center;
+  width: 351px;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #000;
+}
+
+.modal-sucess h5 {
+  color: var(--color-neutral-110);
+}
+
+.modal-sucess img {
+  height: 40px;
+  width: 40px;
+}
+
+.btn-modal {
+  width: 100%;
+}
+
 /* ------------------------------ Modal Update ------------------------------ */
 .modal-update {
   display: flex;
@@ -512,12 +527,10 @@ p {
 }
 
 #container-button .btn-primary {
-  width: 106px;
   height: 42px;
 }
 
 #container-button .btn-error:disabled {
-  width: 124px;
   height: 42px;
   color: rgba(0, 0, 0, 0.38);
 }

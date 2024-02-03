@@ -47,7 +47,7 @@ function exibirProjeto(projeto) {
       </div>
       <div class="editar-excluir" data-projeto-id="${projeto._id}">
         <a href="#" onclick="editarProjeto()">Editar</a>
-        <a href="#" onclick="excluirProjeto(event)">Excluir</a>
+        <a href="#" onclick="openModalDelete()">Excluir</a>
       </div>
     </div>
     <div class="projeto-infos">
@@ -98,7 +98,7 @@ function cadastrarProjeto(event) {
   criaProjeto(url, projeto);
 }
 
-// A função abaixo é responsável por abrir o modal de editar/excluir projeto
+// A função abaixo é responsável por abrir o botão de editar/excluir projeto
 function mostrarEditarExcluir(botaoLapis) {
   const editarExcluir = botaoLapis.parentElement.querySelector('.editar-excluir');
   if (editarExcluir.style.display === 'block') {
@@ -110,7 +110,7 @@ function mostrarEditarExcluir(botaoLapis) {
   }
 }
 
-// A função abaixo é responsável por abrir o modal de fazer logout
+// A função abaixo é responsável por abrir o botão de fazer logout
 
 userMenu.addEventListener('click', () => {
   if (logout.style.display === 'block') {
