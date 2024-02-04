@@ -32,7 +32,7 @@ function exibirProjeto(projeto) {
       <img src="${'http://localhost:3000/imgs/projeto/' + projeto.imagem[0]}" alt="">
     </div>
     <div class="projeto-infos">
-      <img src="./img/user-menu.png" alt="" width="24px" style="border-radius: 24px;" class="imagem-do-autor">
+      <img src="../meu-portfolio/user-menu.png" alt="" width="24px" style="border-radius: 24px;" class="imagem-do-autor">
       <p class="subtitle1"><span class="nome-do-autor">${nomeAutor.charAt(0).toUpperCase() + nomeAutor.slice(1)} ${sobrenomeAutor.charAt(0).toUpperCase() + sobrenomeAutor.slice(1)}</span> &#x2022; <span class="data">${data.getMonth() + 1}/${data.getFullYear().toString().slice(-2)}</span></p>
       <div class="tags">
         ${projeto.tags.map(tag => `<p class="subtitle1">${tag}</p>`).join('')}

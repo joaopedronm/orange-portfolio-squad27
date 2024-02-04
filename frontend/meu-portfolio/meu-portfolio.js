@@ -116,67 +116,68 @@ document.getElementById('file-input').addEventListener('change', function () {
 
 // MODAL VISUALIZAR DETALHES DO PROJETO
 
-const modalVisualizarProjeto = document.createElement('div')
-modalVisualizarProjeto.id = 'modal-visualizar-projeto'
-modalVisualizarProjeto.style.display = 'none';
-modalVisualizarProjeto.innerHTML = `
-  <div id="modal" class="modal">
-    <span class="close" id="closeModalBtn">&times;</span>
-
-    <div class="modal-container">
-        <div class="user-infos">
-            <div class="user-img">
-                <img src="./img/user-main.png" alt="" width="122px">
-            </div>
-            <div class="user-dados">
-                <p class="subtitle1">João Pedro</p>
-                <p class="subtitle1">01/24</p>
-            </div>
-        </div>
-
-        <div class="titulo">
-            <h5>Ecommerce One Page</h5>
-        </div>
-
-        <div class="tags">
-            <p class="subtitle1">UX</p>
-            <p class="subtitle1">Web</p>
-        </div>
-
-    </div>
-
-    <div class="modal-container-2">
-        <img src="./img/project-01.jpeg" alt="">
-        <p class="subtitle1" style="margin-bottom: 32px;">Lorem ipsum dolor sit amet consectetur, adipisicing
-            elit. Recusandae voluptatum ab officia exercitationem explicabo beatae impedit unde culpa,
-            blanditiis, ipsa aspernatur nobis, sit vero dicta consequatur. Sequi eligendi excepturi veniam.
-            Lorem Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, quod. Vitae veniam id quo
-            accusantium itaque recusandae? Quos sequi quasi at recusandae optio aperiam, quibusdam tempore amet,
-            repudiandae ex facilis.</p>
-        <p class="subtitle1">Download</p>
-        <a class="link-de-download" href="#" style="text-decoration: none;">google</a>
-    </div>
-  </div>
-`
-document.body.appendChild(modalVisualizarProjeto)
-
 document.addEventListener('click', function (e) {
-  // exclude select element action ...
-  if (!(e.target instanceof HTMLSelectElement) && e.target.closest(`.projeto`)) {
-    modalVisualizarProjeto.style.display = 'block'
-    // return console.log(e.target.closest(`.projeto`));
-  }
-});
+  if (!(e.target instanceof HTMLSelectElement) && e.target.closest(`.projeto`) && !e.target.classList.contains('fa-solid')) {
 
-const closeModalBtn = document.getElementById('closeModalBtn');
-closeModalBtn.addEventListener('click', () => {
-  const modalVisualizarProjeto = document.getElementById('modal-visualizar-projeto');
-  modalVisualizarProjeto.style.display = 'none';
+    // Remover modal anterior, se existir
+    const modalAnterior = document.getElementById('modal-visualizar-projeto');
+    if (modalAnterior) {
+      modalAnterior.remove();
+    }
+    
+    const projeto = JSON.parse(e.target.dataset.projeto.replaceAll("'","\""))
+    const data = new Date(projeto.createdAt);
+    console.log(projeto)
+    const modalVisualizarProjeto = document.createElement('div')
+    modalVisualizarProjeto.id = 'modal-visualizar-projeto'
+    modalVisualizarProjeto.innerHTML = `
+      <div id="modal2" class="modal2">
+        <span class="close close-modal" id="closeModalBtn">&times;</span>
+
+        <div class="modal2-container">
+            <div class="user2-infos">
+                <div class="usuario-img">
+                    <img src="./user-menu.png" alt="" width="122px">
+                </div>
+                <div class="user2-dados">
+                    <p class="subtitle1">${projeto.user.nome} ${projeto.user.sobrenome}</p>
+                    <p class="subtitle1">${data.getMonth() + 1}/${data.getFullYear().toString().slice(-2)}</p>
+                </div>
+            </div>
+
+            <div class="titulo">
+                <h5>${projeto.titulo}</h5>
+            </div>
+
+            <div class="tags">
+              ${projeto.tags.map(tag => `<p class="subtitle1">${tag}</p>`).join('')}
+            </div>
+
+        </div>
+
+        <div class="modal-container-2">
+            <img src="${'http://localhost:3000/imgs/projeto/' + projeto.imagem[0]}" alt="">
+            <p class="subtitle1" style="margin-bottom: 32px;" id="modalDescription">${projeto.descricao}</p>
+            <p class="subtitle1">Download</p>
+            <a class="link-de-download" href="#" style="text-decoration: none;">${projeto.link}</a>
+        </div>
+      </div>
+    `
+    document.body.appendChild(modalVisualizarProjeto)
+  }
+
+  if (!(e.target instanceof HTMLSelectElement) && e.target.closest(`.close-modal`)) {
+    const modalVisualizarProjeto = document.getElementById('modal-visualizar-projeto');
+    if (modalVisualizarProjeto) {
+      modalVisualizarProjeto.remove();
+    }
+  }
+
 });
 
 // A função abaixo fecha o modal caso o usuário clique fora dele
-window.addEventListener('click', function (e) {
-  if (e.target == modalVisualizarProjeto) {
-    modalVisualizarProjeto.style.display = 'none';
-  }
-});
+// window.addEventListener('click', function (e) {
+//   if (e.target == modalVisualizarProjeto) {
+//     modalVisualizarProjeto.style.display = 'none';
+//   }
+// });
