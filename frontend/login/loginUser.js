@@ -1,4 +1,4 @@
-const url = "http://localhost:3000/user/login";
+const url_login = "http://localhost:3000/user/login";
 
 function fazPostLogin(url, dados) {
   return fetch(url, {
@@ -54,5 +54,5 @@ function fazerLogin(event) {
     password: password,
   };
 
-  fazPostLogin(url, dados);
+  fazPostLogin(url_login, dados);
 }

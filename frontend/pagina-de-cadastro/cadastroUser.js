@@ -25,7 +25,42 @@ function fazPost(url, corpo) {
       window.location.href = "../meu-portfolio/meu-portfolio.html";
     })
     .catch((err) => {
-      alert("E-mail já cadastrado!");
+      alert("Erro ao cadastrar usuário");
+    });
+}
+
+function fazPostGoogle(url, corpo) {
+  let erro = false;
+  return fetch(url, {
+    method: "POST",
+    mode: "cors",
+    body: JSON.stringify(corpo),
+    headers: {
+      "Access-Control-Allow-Headers": "*",
+      "Content-Type": "application/json",
+    },
+  })
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      }
+      throw new Error();
+    })
+    .then((response) => {
+      console.log(response);
+      alert("Usuário cadastrado com sucesso!");
+      localStorage.setItem("token", response.token);
+      localStorage.setItem("nome", response.nome);
+      localStorage.setItem("sobrenome", response.sobrenome);
+      window.location.href = "../meu-portfolio/meu-portfolio.html";
+    })
+    .catch((err) => {
+      erro = true;
+    })
+    .finally(() => {
+      if (erro) {
+        fazPostLogin(url_login, corpo);
+      }
     });
 }
 
@@ -41,23 +76,28 @@ function cadastrarUsuario(event) {
   const password = document.getElementById("password").value;
   const confirmPassword = document.getElementById("confirmar-password").value;
 
-  if (!nome || !sobrenome || !email || !password || !confirmPassword) {
-    alert("Por favor, preencha todos os campos.");
-    return;
-  }
+  const user = { nome, sobrenome, email, password, confirmPassword };
 
-  if (password !== confirmPassword) {
+  if (user.password !== user.confirmPassword) {
     alert("A senha e a confirmação de senha não correspondem.");
     return;
   }
 
-  const corpo = {
-    nome: nome,
-    sobrenome: sobrenome,
-    email: email,
-    password: password,
-    confirmpassword: confirmPassword,
-  };
+  fazPost(url, user)
+}
 
-  fazPost(url, corpo);
+function validaUsuario(user) {
+  if (!user.nome || !user.sobrenome || !user.email || !user.password || !user.confirmPassword) {
+    alert("Por favor, preencha todos os campos.");
+    return;
+  }
+
+  if (user.password !== user.confirmPassword) {
+    alert("A senha e a confirmação de senha não correspondem.");
+    return;
+  }
+}
+
+function cadastraUsuarioGoogle(userGoogle) {
+  fazPostGoogle(url, userGoogle);
 }
