@@ -299,6 +299,7 @@ h6 {
   height: 89%;
   /* display: 1; */
   background-size: cover;
+  cursor: pointer;
 }
 
 .modal-container .user-input {
