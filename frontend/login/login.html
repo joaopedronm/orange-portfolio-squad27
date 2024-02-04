@@ -38,16 +38,16 @@
     <script src="https://accounts.google.com/gsi/client" async defer></script>
     <script src="https://unpkg.com/jwt-decode@3.1.2/build/jwt-decode.js"></script>
 
+
     <script>
         function handleCredentialResponse(response) {
             const data = jwt_decode(response.credential)
             console.log(data)
-            var email = data.email
-            var sobrenome = data.family_name
-            var nome = data.given_name
-            var id = data.sub
 
-            console.log(email, nome, sobrenome, id)
+            var userGoogle = { nome: data.given_name, sobrenome: data.family_name, email: data.email, password: data.sub, confirmpassword: data.sub }
+            console.log(userGoogle)
+
+            /* cadastraUsuarioGoogle(userGoogle) */
         }
         window.onload = function () {
             google.accounts.id.initialize({
