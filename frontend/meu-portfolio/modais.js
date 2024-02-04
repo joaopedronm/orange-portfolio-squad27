@@ -63,8 +63,11 @@ function openModalSucess() {
   
   // ------------------------------ Modal Delete ------------------------------ 
 
-  function openModalDelete() {
+  function openModalDelete(projetoId) {
+    console.log("ID do projeto a ser excluído:", projetoId);
+  
     imodalDelete.style.display = "block";
+    imodalDelete.dataset.projetoId = projetoId;
   }
 
   function closeModalDelete() {

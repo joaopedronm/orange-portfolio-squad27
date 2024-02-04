@@ -49,7 +49,7 @@ function exibirProjeto(projeto) {
       </div>
       <div class="editar-excluir" data-projeto-id="${projeto._id}">
         <a href="#" onclick="editarProjeto()">Editar</a>
-        <a href="#" onclick="openModalDelete()">Excluir</a>
+        <a href="#" onclick="openModalDelete('${projeto._id}')">Excluir</a>
       </div>
     </div>
     <div class="projeto-infos">
@@ -146,10 +146,9 @@ function editarProjeto() {
   // Lógica de edição aqui
 }
 
-function excluirProjeto(event) {
-  const projetoDiv = event.currentTarget.closest('.projeto');
-  if (projetoDiv) {
-    const projetoId = projetoDiv.querySelector('.editar-excluir').dataset.projetoId;
+function excluirProjeto() {
+    const projetoId = imodalDelete.dataset.projetoId;
+    if (projetoId) {
     const url = `http://localhost:3000/projeto/${projetoId}`;
     const token = localStorage.getItem("token");
 
@@ -175,8 +174,3 @@ function excluirProjeto(event) {
     }
   }
 }
-
-// const btnsExcluirProjeto = document.querySelectorAll('.btn-excluir');
-// btnsExcluirProjeto.forEach(btn => {
-//   btn.addEventListener('click', excluirProjeto);
-// });
