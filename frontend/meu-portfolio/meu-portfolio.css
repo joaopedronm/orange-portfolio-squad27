@@ -558,6 +558,95 @@ p {
   width: 40px;
 }
 
+/* ------------------------------ Modal Editar Projeto ------------------------------ */
+
+#modal-visualizar-projeto {
+  /* display: none; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow-y: auto;
+}
+
+.modal {
+  width: 1000px;
+  max-width: 90%;
+  margin: 50px auto;
+  /* Centraliza o modal na tela */
+  background-color: #fff;
+  padding: 20px;
+  position: relative;
+}
+
+.close {
+  cursor: pointer;
+  font-size: 26px;
+  position: absolute;
+  top: 10px;
+  left: 96%;
+  color: #515255;
+}
+
+/* Evitar que o modal ultrapasse a tela */
+.modal-container,
+.modal-container-2 {
+  max-height: 70vh;
+  overflow-y: auto;
+  /* Torna o conteúdo do modal rolável na direção vertical */
+}
+
+.modal-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 36px 64px 24px 64px;
+}
+
+.modal-container .user-infos {
+  display: flex;
+  gap: 8px;
+}
+
+.modal-container .user-img img {
+  width: 40px;
+  border-radius: 300px;
+}
+
+.modal-container .user-dados {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.modal-container .tags {
+  display: flex;
+  gap: 8px;
+}
+
+.modal-container .tags p {
+  border-radius: 100px;
+  background: var(--action-selected, rgba(0, 0, 0, 0.08));
+  padding: 4px;
+}
+
+.modal-container-2 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 64px 48px 64px;
+}
+
+
+.modal-container-2 img {
+  height: 586px;
+  margin-bottom: 58px;
+  max-height: 60vh;
+}
+
 /* MEDIA QUERY */
 
 
