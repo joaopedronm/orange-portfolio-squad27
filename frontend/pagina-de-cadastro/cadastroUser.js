@@ -1,4 +1,4 @@
-const url = "http://localhost:3000/user/register";
+const url_register = "http://localhost:3000/user/register";
 
 function fazPost(url, corpo) {
   return fetch(url, {
@@ -74,30 +74,30 @@ function cadastrarUsuario(event) {
   const sobrenome = document.getElementById("sobrenome").value;
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
-  const confirmPassword = document.getElementById("confirmar-password").value;
+  const confirmpassword = document.getElementById("confirmar-password").value;
 
-  const user = { nome, sobrenome, email, password, confirmPassword };
+  const user = { nome, sobrenome, email, password, confirmpassword };
 
-  if (user.password !== user.confirmPassword) {
+  if (user.password !== user.confirmpassword) {
     alert("A senha e a confirmação de senha não correspondem.");
     return;
   }
 
-  fazPost(url, user)
+  fazPost(url_register, user)
 }
 
 function validaUsuario(user) {
-  if (!user.nome || !user.sobrenome || !user.email || !user.password || !user.confirmPassword) {
+  if (!user.nome || !user.sobrenome || !user.email || !user.password || !user.confirmpassword) {
     alert("Por favor, preencha todos os campos.");
     return;
   }
 
-  if (user.password !== user.confirmPassword) {
+  if (user.password !== user.confirmpassword) {
     alert("A senha e a confirmação de senha não correspondem.");
     return;
   }
 }
 
 function cadastraUsuarioGoogle(userGoogle) {
-  fazPostGoogle(url, userGoogle);
+  fazPostGoogle(url_register, userGoogle);
 }
