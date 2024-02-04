@@ -21,7 +21,7 @@ function criaProjeto(url, projeto) {
     }).then(async (response) => {
       if (response.ok) {
         alert("Projeto adicionado com sucesso!");
-        console.log(projeto);
+        // console.log(projeto);
         exibirProjeto(projeto)
       } else {
         const error = await response.json();
@@ -38,12 +38,14 @@ function exibirProjeto(projeto) {
   var nomeAutor = projeto.user.nome;
   var sobrenomeAutor = projeto.user.sobrenome;
 
+  const projetoStr = JSON.stringify(projeto).replaceAll("\"","'")
+
   div.innerHTML = `
   <div class="projeto">
-    <div class="projeto-imagem">
-      <img src="${'http://localhost:3000/imgs/projeto/' + projeto.imagem[0]}" alt="">
-      <div class="botao-lapis" onclick="mostrarEditarExcluir(this)">
-        <i class="fa-solid fa-pencil"></i>
+    <div class="projeto-imagem" data-projeto="${projetoStr}">
+      <img src="${'http://localhost:3000/imgs/projeto/' + projeto.imagem[0]}" alt="" data-projeto="${projetoStr}">
+      <div class="botao-lapis" onclick="mostrarEditarExcluir(this)" data-projeto="${projetoStr}">
+        <i class="fa-solid fa-pencil" data-projeto="${projetoStr}"></i>
       </div>
       <div class="editar-excluir" data-projeto-id="${projeto._id}">
         <a href="#" onclick="editarProjeto()">Editar</a>
