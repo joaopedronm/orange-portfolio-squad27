@@ -127,7 +127,6 @@ document.addEventListener('click', function (event) {
 
 
 // A função abaixo é responsável por abrir o botão de fazer logout
-
 userMenu.addEventListener('click', () => {
   if (logout.style.display === 'block') {
     // Se estiver visível, oculta
@@ -140,17 +139,17 @@ userMenu.addEventListener('click', () => {
 
 
 function editarProjeto(projetoId) {
-  alert('Opção Editar selecionada');
+
   editModal.dataset.projetoId = projetoId;
   editModal.style.display = 'block';
-  debugger
+  
 }
 
 function editar(projetoId, projetoEditado) {
   const url = `http://localhost:3000/projeto/${projetoId}`;
   const token = localStorage.getItem("token");
   console.log(`${projetoId}`)
-  debugger
+  
 
   if (token) {
     return fetch(url, {
@@ -171,22 +170,18 @@ function editar(projetoId, projetoEditado) {
   }
 }
 
-
-
 const btnEdit = document.getElementById("btn-edit");
 btnEdit.addEventListener("click", (event) => editaProjeto(event));
 
 async function editaProjeto(event) {
   event.preventDefault();
   console.log("Evento:", event);
-  debugger
 
   const img = document.getElementById("file-input-edit").files[0];
   const titulo = document.getElementById("titulo-edit").value;
   const tags = document.getElementById("tags-form-edit").value;
   const link = document.getElementById("link-edit").value;
   const descricao = document.getElementById("descricao-edit").value;
-
 
   const projetoEditado = new FormData();
   projetoEditado.append("imagem", img);
@@ -201,7 +196,7 @@ async function editaProjeto(event) {
 }
 
 
-//---------------------------------------------------------------------------------------------------------------------
+
 function excluirProjeto() {
   const projetoId = imodalDelete.dataset.projetoId;
   if (projetoId) {

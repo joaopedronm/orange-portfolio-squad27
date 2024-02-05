@@ -18,8 +18,6 @@ function fazPostLogin(url, dados) {
       throw new Error("Erro no login");
     })
     .then((response) => {
-      console.log(response);
-      alert("Login realizado com sucesso!");
 
       localStorage.setItem("token", response.token);
       localStorage.setItem("userId", response.userId);
