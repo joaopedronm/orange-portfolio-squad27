@@ -2,6 +2,8 @@
 const modalEdit = document.getElementById('home-modal-edit');
 const closeModalEdit = document.getElementById('btn-cancel-edit');
 
+
+
 // -------------------- Modal de Adicionar Novo Projeto -----------------------
 
 const openModalBtn = document.getElementsByClassName('card')
