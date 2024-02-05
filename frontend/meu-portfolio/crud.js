@@ -142,11 +142,68 @@ userMenu.addEventListener('click', () => {
 })
 
 
-function editarProjeto() {
+function editarProjeto(projetoId) {
   alert('Opção Editar selecionada');
+  editModal.dataset.projetoId = projetoId;
   editModal.style.display = 'block';
+
 }
 
+function editar(projetoId, projetoEditado) {
+  const url = `http://localhost:3000/projeto/${projetoId}`;
+  const token = localStorage.getItem("token");
+    
+  
+    if (token) {
+      return fetch(url, {
+        method: "PATCH",
+        mode: "cors",
+        body: projetoEditado,
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }).then(async (response) => {
+        if (response.ok) {
+          alert("Projeto editado com sucesso!");
+          console.log(projetoEditado);
+        } else {
+          const error = await response.json();
+          alert(error.message);
+        }
+      });
+    }
+  }
+
+
+  
+  const btnEdit = document.getElementById("btn-edit");
+  btnEdit.addEventListener("click", (event) => editaProjeto(event));  
+  
+  function editaProjeto(event) {
+    console.log("Evento:", event);
+    event.preventDefault();
+    console.log(preventDefault)
+  
+    const img = document.getElementById("file-input-edit").files[0];
+    const titulo = document.getElementById("titulo-edit").value;
+    const tags = document.getElementById("tags-form-edit").value;
+    const link = document.getElementById("link-edit").value;
+    const descricao = document.getElementById("descricao-edit").value;
+  
+    const projetoEditado = new FormData();
+    projetoEditado.append("imagem", img);
+    projetoEditado.append("titulo", titulo);
+    projetoEditado.append("tags", tags);
+    projetoEditado.append("link", link);
+    projetoEditado.append("descricao", descricao);
+  
+    const projetoId = editModal.dataset.projetoId;
+
+    editar(projetoId, projetoEditado);
+  }
+
+  
+//---------------------------------------------------------------------------------------------------------------------
 function excluirProjeto() {
   const projetoId = imodalDelete.dataset.projetoId;
   if (projetoId) {
