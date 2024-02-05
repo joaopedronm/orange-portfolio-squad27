@@ -17,7 +17,7 @@ function buscarProjetosPorTags() {
           return projeto.tags.includes(tagsValue);
         });
         exibirProjetosPorTags(projetosFiltrados);
-        
+
       } else {
         const error = await response.json();
         console.error("Erro:", error.message);
@@ -44,12 +44,12 @@ function exibirProjetosPorTags(projetos) {
   if (projetos && Array.isArray(projetos) && projetos.length > 0) {
     projetos.forEach((projeto) => {
       if (projeto.user._id == userId) {
-      const divProjeto = document.createElement("div");
-      divProjeto.classList.add("projeto");
+        const divProjeto = document.createElement("div");
+        divProjeto.classList.add("projeto");
 
-      const data = new Date(projeto.createdAt);
+        const data = new Date(projeto.createdAt);
 
-      divProjeto.innerHTML = `
+        divProjeto.innerHTML = `
       <div class="projeto">
         <div class="projeto-imagem">
           <img src="${'http://localhost:3000/imgs/projeto/' + projeto.imagem[0]}" alt="">
@@ -70,8 +70,8 @@ function exibirProjetosPorTags(projetos) {
         </div>
       </div>
       `;
-      
-      projetosContainer.appendChild(divProjeto);
+
+        projetosContainer.appendChild(divProjeto);
       }
     });
   } else {

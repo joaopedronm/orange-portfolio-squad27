@@ -1,4 +1,4 @@
-const url = "http://localhost:3000/user/login";
+const url_login = "http://localhost:3000/user/login";
 
 function fazPostLogin(url, dados) {
   return fetch(url, {
@@ -14,10 +14,7 @@ function fazPostLogin(url, dados) {
       if (response.ok) {
         return response.json();
       }
-      if (response.status === 401) {
-        // Redirecionar para o login do Google em caso de falha de autenticação
-        window.location.href = urlGoogleLogin;
-      }
+
       throw new Error("Erro no login");
     })
     .then((response) => {
@@ -54,5 +51,5 @@ function fazerLogin(event) {
     password: password,
   };
 
-  fazPostLogin(url, dados);
+  fazPostLogin(url_login, dados);
 }

@@ -143,6 +143,7 @@ userMenu.addEventListener('click', () => {
 
 
 function editarProjeto() {
+  alert('Opção Editar selecionada');
   editModal.style.display = 'block';
 }
 

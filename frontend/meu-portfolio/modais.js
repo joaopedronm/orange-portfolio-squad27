@@ -1,10 +1,11 @@
+// Modal de Editar Projeto
+const modalEdit = document.getElementById('home-modal-edit');
+const closeModalEdit = document.getElementById('btn-cancel-edit');
 
 // -------------------- Modal de Adicionar Novo Projeto -----------------------
 
 const openModalBtn = document.getElementsByClassName('card')
 const openModalBtn2 = document.getElementsByClassName('adicionar-projeto')
-
-
 
 const closeModalBtn = document.getElementById('btn-cancel')
 const modal = document.getElementById('home-modal')
@@ -31,6 +32,19 @@ closeModalBtn.addEventListener('click', () => {
 window.addEventListener('click', function (e) {
   if (e.target == modal) {
     modal.style.display = 'none';
+  }
+});
+
+
+
+closeModalEdit.addEventListener('click', () => {
+  modalEdit.style.display = 'none'
+})
+
+// A função abaixo fecha o modal caso o usuário clique fora dele
+window.addEventListener('click', function (e) {
+  if (e.target == modalEdit) {
+    modalEdit.style.display = 'none';
   }
 });
 
@@ -72,15 +86,8 @@ function openModalDelete(projetoId) {
 }
 
 function closeModalDelete() {
-  document.getElementById("imodal-delete").style.display = "none";
+  imodalDelete.style.display = "none";
 }
-
-//   window.onclick = function (event) {
-//     var overlay = document.getElementById("overlay-delete");
-//     if (event.target == overlay) {
-//       overlay.style.display = "none";
-//     }
-//   }
 
 // ------------------------------ Modal Delete Sucess ------------------------------ 
 
