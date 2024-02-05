@@ -212,12 +212,12 @@ module.exports = class projetoController {
     if (!imagem) {
       res.status(422).json({ message: "A imagem é obrigatória!" });
       return;
-    } else {
-      updateData.imagem = [];
-      imagem.map((image) => {
-        updateData.imagem.push(image.filename);
-      });
     }
+
+    updateData.imagem = [];
+    imagem?.map((image) => {
+      updateData.imagem.push(image.filename);
+    });
 
     await Projeto.findByIdAndUpdate(id, updateData);
 
