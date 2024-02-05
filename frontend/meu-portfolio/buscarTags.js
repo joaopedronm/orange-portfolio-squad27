@@ -57,7 +57,7 @@ function exibirProjetosPorTags(projetos) {
             <i class="fa-solid fa-pencil"></i>
           </div>
           <div class="editar-excluir" data-projeto-id="${projeto._id}">
-            <a href="#" onclick="editarProjeto()">Editar</a>
+            <a href="#" onclick="editarProjeto('${projeto._id}')">Editar</a>
             <a href="#" onclick="openModalDelete('${projeto._id}')">Excluir</a>
           </div>
         </div>

@@ -1,28 +1,20 @@
 
 // FUNÇÃO QUE ATIVA/DESATIVA O VISUALIZADOR DE SENHAS
 
-document.getElementById('olho').addEventListener('mousedown', function() {
-    document.getElementById('password').type = 'text';
-  });
-  
-document.getElementById('olho').addEventListener('mouseup', function() {
-    document.getElementById('password').type = 'password';
+function toggleVisibility(inputId) {
+    const passwordInput = document.getElementById(inputId);
+    const type = passwordInput.type === 'password' ? 'text' : 'password';
+    passwordInput.type = type;
+}
+
+// Adiciona evento de clique ao primeiro ícone do olho
+document.getElementById('olho').addEventListener('click', function () {
+    toggleVisibility('password');
 });
 
-document.getElementById('olho').addEventListener('mousemove', function() {
-    document.getElementById('password').type = 'password';
-});
-
-document.getElementById('olho-2').addEventListener('mousedown', function() {
-    document.getElementById('confirmar-password').type = 'text';
-  });
-  
-document.getElementById('olho-2').addEventListener('mouseup', function() {
-    document.getElementById('confirmar-password').type = 'password';
-});
-
-document.getElementById('olho-2').addEventListener('mousemove', function() {
-    document.getElementById('confirmar-password').type = 'password';
+// Adiciona evento de clique ao segundo ícone do olho
+document.getElementById('olho-2').addEventListener('click', function () {
+    toggleVisibility('confirmar-password');
 });
 
 

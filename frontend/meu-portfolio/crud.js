@@ -22,7 +22,6 @@ function criaProjeto(url, projeto) {
     }).then(async (response) => {
       if (response.ok) {
         alert("Projeto adicionado com sucesso!");
-        // console.log(projeto);
         exibirProjeto(projeto)
       } else {
         const error = await response.json();
@@ -49,7 +48,7 @@ function exibirProjeto(projeto) {
         <i class="fa-solid fa-pencil" data-projeto="${projetoStr}"></i>
       </div>
       <div class="editar-excluir" data-projeto-id="${projeto._id}">
-        <a href="#" onclick="editarProjeto()">Editar</a>
+        <a href="#" onclick="editarProjeto('${projeto._id}')">Editar</a>
         <a href="#" onclick="openModalDelete('${projeto._id}')">Excluir</a>
       </div>
     </div>
@@ -115,12 +114,10 @@ function mostrarEditarExcluir(botaoLapis) {
 
 
 document.addEventListener('click', function (event) {
-  // If the click is inside the edit/delete menu, do nothing
   if (event.target.closest('.editar-excluir') || event.target.closest('.botao-lapis')) {
     return;
   }
 
-  // If the click is outside any edit/delete menu, close all menus
   const allEditDeleteMenus = document.querySelectorAll('.editar-excluir');
 
   allEditDeleteMenus.forEach(menu => {
@@ -142,11 +139,69 @@ userMenu.addEventListener('click', () => {
 })
 
 
-function editarProjeto() {
+function editarProjeto(projetoId) {
   alert('Opção Editar selecionada');
+  editModal.dataset.projetoId = projetoId;
   editModal.style.display = 'block';
+  debugger
 }
 
+function editar(projetoId, projetoEditado) {
+  const url = `http://localhost:3000/projeto/${projetoId}`;
+  const token = localStorage.getItem("token");
+  console.log(`${projetoId}`)
+  debugger
+
+  if (token) {
+    return fetch(url, {
+      method: "PATCH",
+      mode: "cors",
+      body: projetoEditado,
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }).then(async (response) => {
+      if (response.ok) {
+        alert("Projeto editado com sucesso!");
+      } else {
+        const error = await response.json();
+        alert(error.message);
+      }
+    });
+  }
+}
+
+
+
+const btnEdit = document.getElementById("btn-edit");
+btnEdit.addEventListener("click", (event) => editaProjeto(event));
+
+async function editaProjeto(event) {
+  event.preventDefault();
+  console.log("Evento:", event);
+  debugger
+
+  const img = document.getElementById("file-input-edit").files[0];
+  const titulo = document.getElementById("titulo-edit").value;
+  const tags = document.getElementById("tags-form-edit").value;
+  const link = document.getElementById("link-edit").value;
+  const descricao = document.getElementById("descricao-edit").value;
+
+
+  const projetoEditado = new FormData();
+  projetoEditado.append("imagem", img);
+  projetoEditado.append("titulo", titulo);
+  projetoEditado.append("tags", tags);
+  projetoEditado.append("link", link);
+  projetoEditado.append("descricao", descricao);
+
+  const projetoId = editModal.dataset.projetoId;
+
+  editar(projetoId, projetoEditado);
+}
+
+
+//---------------------------------------------------------------------------------------------------------------------
 function excluirProjeto() {
   const projetoId = imodalDelete.dataset.projetoId;
   if (projetoId) {
