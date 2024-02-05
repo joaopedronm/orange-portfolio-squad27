@@ -1,4 +1,4 @@
-const url = "http://localhost:3000/user/register"
+const url = "http://localhost:3000/user/register";
 
 function fazPost(url, corpo) {
   return fetch(url, {
@@ -9,23 +9,47 @@ function fazPost(url, corpo) {
       "Access-Control-Allow-Headers": "*",
       "Content-Type": "application/json",
     },
-  }).then((response) => {
-    return response.json();
-  });
+  })
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      }
+      throw new Error();
+    })
+    .then((response) => {
+      console.log(response);
+      alert("Usuário cadastrado com sucesso!");
+      localStorage.setItem("token", response.token);
+      localStorage.setItem("nome", response.nome);
+      localStorage.setItem("sobrenome", response.sobrenome);
+      window.location.href = "../meu-portfolio/meu-portfolio.html";
+    })
+    .catch((err) => {
+      alert("E-mail já cadastrado!");
+    });
 }
 
 const cadastroButton = document.getElementById("botao-cadastrar");
 cadastroButton.addEventListener("click", (event) => cadastrarUsuario(event));
 
 function cadastrarUsuario(event) {
-   // URL da sua rota de registro de usuário
-   event.preventDefault()
+  event.preventDefault();
+
   const nome = document.getElementById("nome").value;
   const sobrenome = document.getElementById("sobrenome").value;
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
   const confirmPassword = document.getElementById("confirmar-password").value;
- 
+
+  if (!nome || !sobrenome || !email || !password || !confirmPassword) {
+    alert("Por favor, preencha todos os campos.");
+    return;
+  }
+
+  if (password !== confirmPassword) {
+    alert("A senha e a confirmação de senha não correspondem.");
+    return;
+  }
 
   const corpo = {
     nome: nome,
@@ -36,5 +60,4 @@ function cadastrarUsuario(event) {
   };
 
   fazPost(url, corpo);
-  alert("Produto cadastrado com sucesso");
 }

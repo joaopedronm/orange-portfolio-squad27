@@ -40,17 +40,18 @@ module.exports = class projetoController {
 
     const projeto = new Projeto({
       titulo,
-      tags,
+      tags: tags.split(" "),
       link,
       descricao,
       imagem: [],
       user: {
         _id: user._id,
         nome: user.nome,
+        sobrenome: user.sobrenome,
       },
     });
 
-    imagem.map((image) => {
+    imagem?.map((image) => {
       projeto.imagem.push(image.filename);
     });
 
@@ -66,7 +67,6 @@ module.exports = class projetoController {
   }
 
   static async getAllProjetos(req, res) {
-
     const projeto = await Projeto.find().sort("-createdAt");
 
     res.status(200).json({
@@ -78,7 +78,9 @@ module.exports = class projetoController {
     const token = getToken(req);
     const user = await getUserByToken(token);
 
-    const projeto = await Projeto.find({ 'user._id': user._id }).sort("-createdAt");
+    const projeto = await Projeto.find({ "user._id": user._id }).sort(
+      "-createdAt"
+    );
 
     res.status(200).json({
       projeto,
@@ -87,7 +89,6 @@ module.exports = class projetoController {
 
   static async getProjetoById(req, res) {
     const id = req.params.id;
-
 
     if (!ObjectId.isValid(id)) {
       res.status(422).json({ message: "ID inválido!" });
@@ -104,6 +105,25 @@ module.exports = class projetoController {
     res.status(200).json({
       projeto: projeto,
     });
+  }
+
+  static async getProjetosByTags(req, res) {
+    try {
+      const { tags } = req.query;
+
+      if (!tags) {
+        return res.status(400).json({ message: "Tags inválidas!" });
+      }
+
+      const tagsArray = tags.split(",");
+
+      const projetos = await Projeto.find({ tags: { $in: tagsArray } });
+
+      res.status(200).json({ projetos });
+    } catch (error) {
+      console.error("Erro ao buscar projetos por tags:", error);
+      res.status(500).json({ message: "Erro interno do servidor" });
+    }
   }
 
   static async removeProjetoById(req, res) {

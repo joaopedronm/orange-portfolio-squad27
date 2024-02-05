@@ -4,10 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../style-guide.css">
     <link rel="stylesheet" href="./meu-portfolio.css">
-    <link rel="javascript" href="./meu-portfolio.js">
+    <!-- <link rel="javascript" href="./meu-portfolio.js"> -->
     <title>Meu portfolio</title>
 </head>
 
@@ -27,9 +29,13 @@
                 </div>
             </ul>
             <ul id="menu-navigation-dir">
-                <li><img src="./user-menu.png" alt=""></li>
+                <li><img src="./user-menu.png" alt="" id="user-menu"></li>
                 <i class="fa-solid fa-bell"></i>
             </ul>
+
+            <div id="logout-modal" class="logout">
+                <a href="#">Sair</a>
+            </div>
         </nav>
     </header>
 
@@ -42,10 +48,11 @@
                             <img src="./Image.png" alt="foto de perfil">
                         </div>
                         <div class="meuperfil__info">
-                            <h2>Camila Soares</h2>
+                            <h2 id="info-user">Camila Soares</h2>
                             <span>Brasil</span>
                             <div class="meuperfil__add">
-                                <button class="adicionar-projeto">ADICIONAR PROJETO</button>
+                                <button class="btn-primary adicionar-projeto" disabled id="add-btn">ADICIONAR
+                                    PROJETO</button>
                             </div>
                         </div>
                     </div>
@@ -83,6 +90,28 @@
                 </div>
             </div>
 
+            <div class="projeto" style="display: none;">
+                <div class="projeto-imagem">
+                    <img src="../home/img/project-01.jpeg" alt="">
+                    <div class="botao-lapis" id="botao-lapis" onclick="mostrarEditarExcluir()">
+                        <i class="fa-solid fa-pencil"></i>
+                    </div>
+                    <div class="editar-excluir" id="editar-excluir">
+                        <a href="#" onclick="editarProjeto()">Editar</a>
+                        <a href="#" onclick="openModalDelete()" id="btn-excluir">Excluir</a>
+                    </div>
+                </div>
+                <div class="projeto-infos">
+                    <img src="./user-menu.png" alt="" width="24px" style="border-radius: 24px;" class="imagem-do-autor">
+                    <p class="subtitle1"><span class="nome-do-autor">João Pedro</span> &#x2022; <span
+                            class="data">12/2023</span></p>
+                    <div class="tags">
+                        <p class="subtitle1">UX</p>
+                        <p class="subtitle1">Web</p>
+                    </div>
+                </div>
+            </div>
+
         </section>
 
         <!------------------------------- Modal Editar Projeto ---------------------------->
@@ -90,24 +119,26 @@
         <section id="home-modal">
             <div id="modal" class="modal">
                 <div class="user-dados">
-                    <h2>Adicionar projeto</h2>
+                    <h5>Adicionar projeto</h5>
                 </div>
 
                 <div class="modal-container">
                     <div class="modal-left">
                         <p style="margin-bottom: 18px;">Selecione o conteúdo que você deseja fazer upload</p>
-                        <div class="user-img">
+                        <div class="user-img" id="user-img">
                             <img src="./collections.png" alt="" width="46px" id="img-input">
                             <p class="body2" style="color: #303133; margin-top: 14px; line-height: 20px;">Compartilhe
                                 seu talento com milhares de <br>pessoas</p>
+                            <input type="file" id="file-input" style="display: none;" multiple />
                         </div>
                     </div>
 
                     <div class="user-input">
                         <input type="text" name="titulo" id="titulo" placeholder="Titulo">
-                        <input type="text" name="tags" id="tags" placeholder="Tags">
+                        <input type="text" name="tags" id="tags-form" placeholder="Tags">
                         <input type="text" name="link" id="link" placeholder="Link">
-                        <input type="text" name="descricao" id="descricao" placeholder="Descrição">
+                        <textarea type="text" name="descricao" id="descricao" placeholder="Descrição"></textarea>
+                            
                     </div>
                 </div>
 
@@ -115,7 +146,7 @@
                     <a href="#" style="text-decoration: none; color: #1f1f1f;">Visualizar publicação</a>
                     <div class="buttons">
                         <button class="btn-primary" style="color: #fff;" id="adicionar-projeto">Salvar</button>
-                        <button id="btn-cancel">Cancelar</button>
+                        <button id="btn-cancel" class="btn-cancel">Cancelar</button>
                     </div>
                 </div>
 
@@ -124,7 +155,7 @@
 
         <!--  ------------------------------ Modal Sucess ------------------------------  -->
         <section id="imodal-sucess">
-            <div class="overlay" id="overlay-sucess">
+            <div id="overlay-sucess">
                 <div class="modal-sucess">
                     <h5>Projeto adicionado com sucesso!</h5>
                     <img src="img/Text input.svg" alt="check">
@@ -135,7 +166,7 @@
 
         <!--  ------------------------------ Modal Update ------------------------------  -->
         <section id="imodal-update">
-            <div class="overlay" id="overlay-update">
+            <div id="overlay-update">
                 <div class="modal-update" id="iupdate">
                     <h5>Edição concluída com sucesso!</h5>
                     <img src="img/Text input.svg" alt="check">
@@ -146,13 +177,13 @@
 
         <!--  ------------------------------ Modal Delete ------------------------------  -->
         <section id="imodal-delete">
-            <div class="overlay" id="overlay-delete">
+            <div id="overlay-delete">
                 <div class="modal-delete" id="idelete">
                     <h5>Deseja Excluir?</h5>
                     <p class="body1">Se você prosseguir irá excluir o projeto do seu portfólio</p>
                     <div id="container-button">
-                        <button class="btn-primary">EXCLUIR</button>
-                        <button class="btn-error" disabled>CANCELAR</button>
+                        <button class="btn-primary" onclick="excluirProjeto(target)">EXCLUIR</button>
+                        <button class="btn-cancel" onclick="closeModalDelete()">CANCELAR</button>
                     </div>
                 </div>
             </div>
@@ -160,7 +191,7 @@
 
         <!--  ------------------------------ Modal Delete Sucess ------------------------------  -->
         <section id="imodal-delete-sucess">
-            <div class="overlay" id="overlay-delete2">
+            <div id="overlay-delete2">
                 <div class="modal-delete-sucess" id="idelete2">
                     <h5>Projeto deletado com sucesso!</h5>
                     <img src="img/Text input.svg" alt="check">
@@ -173,5 +204,10 @@
 
     <script src="./meu-portfolio.js" defer></script>
     <script src="./crud.js" defer></script>
+    <script src="./buscarTags.js" defer></script>
+
+    <!-- MODAIS -->
+    <script src="./modais.js" defer></script>
 </body>
+
 </html>
