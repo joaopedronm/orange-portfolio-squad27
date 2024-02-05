@@ -9,12 +9,14 @@ Bem-vindo ao Orange Portfólio, um projeto desenvolvido pela equipe Squad 27 com
 - **Compartilhamento de Projetos:** Os usuários podem adicionar projetos ao seu perfil, fornecendo detalhes como nome, descrição, tecnologias utilizadas e links relacionados.
 - **Visualização de Projetos:** Visitantes podem navegar pelos perfis dos usuários e explorar os projetos compartilhados.
 <br>
+
 ## 🖥️ Tecnologias Utilizadas
 
 - **Front-end:** HTML, CSS, JavaScript
 - **Back-end:** Node.js, Express
 - **Banco de Dados:** MongoDB
 <br>
+
 ## 💡  Como Rodar a Aplicação
 
 ### 📌 Passo a Passo:
