@@ -1,7 +1,15 @@
 const express = require('express')
 const cors = require('cors')
 const path = require('path')
+const connectDatabase = require('./src/db/conn')
+const dotenv = require('dotenv')
+
 const app = express()
+
+dotenv.config()
+
+//Conexão com o MongoDBAtlas
+connectDatabase()
 
 //Config JSON resonse
 app.use(express.json())
