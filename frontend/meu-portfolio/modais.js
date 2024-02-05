@@ -1,3 +1,6 @@
+// Modal de Editar Projeto
+const modalEdit = document.getElementById('home-modal-edit');
+const closeModalEdit = document.getElementById('btn-cancel-edit');
 
 // -------------------- Modal de Adicionar Novo Projeto -----------------------
 
@@ -34,62 +37,67 @@ window.addEventListener('click', function (e) {
 
 
 
+closeModalEdit.addEventListener('click', () => {
+  modalEdit.style.display = 'none'
+})
+
+// A função abaixo fecha o modal caso o usuário clique fora dele
+window.addEventListener('click', function (e) {
+  if (e.target == modalEdit) {
+    modalEdit.style.display = 'none';
+  }
+});
+
+
 // ------------------------------ Modal Sucess ------------------------------ 
 
 function openModalSucess() {
-    document.getElementById("overlay-sucess").style.display = "flex";
-  }
-  
-  // Fechar o modal se o usuário clicar fora dele
-  window.onclick = function (event) {
-    var overlay = document.getElementById("overlay-sucess");
-    if (event.target == overlay) {
-      overlay.style.display = "none";
-    }
-  }
-  
-  // ------------------------------ Modal Update ------------------------------ 
+  document.getElementById("overlay-sucess").style.display = "flex";
+}
 
-  function openModalUpdate() {
-    document.getElementById("overlay-update").style.display = "flex";
+// Fechar o modal se o usuário clicar fora dele
+window.onclick = function (event) {
+  var overlay = document.getElementById("overlay-sucess");
+  if (event.target == overlay) {
+    overlay.style.display = "none";
   }
-  
-  window.onclick = function (event) {
-    var overlay = document.getElementById("overlay-update");
-    if (event.target == overlay) {
-      overlay.style.display = "none";
-    }
-  }
-  
-  // ------------------------------ Modal Delete ------------------------------ 
+}
 
-  function openModalDelete(projetoId) {
-    console.log("ID do projeto a ser excluído:", projetoId);
-  
-    imodalDelete.style.display = "block";
-    imodalDelete.dataset.projetoId = projetoId;
-  }
+// ------------------------------ Modal Update ------------------------------ 
 
-  function closeModalDelete() {
-    document.getElementById("imodal-delete").style.display = "none";
-  }
-  
-//   window.onclick = function (event) {
-//     var overlay = document.getElementById("overlay-delete");
-//     if (event.target == overlay) {
-//       overlay.style.display = "none";
-//     }
-//   }
-  
-  // ------------------------------ Modal Delete Sucess ------------------------------ 
+function openModalUpdate() {
+  document.getElementById("overlay-update").style.display = "flex";
+}
 
-  function openModalDeleteSucess() {
-    document.getElementById("overlay-delete2").style.display = "flex";
+window.onclick = function (event) {
+  var overlay = document.getElementById("overlay-update");
+  if (event.target == overlay) {
+    overlay.style.display = "none";
   }
-  
-  window.onclick = function (event) {
-    var overlay = document.getElementById("overlay-delete2");
-    if (event.target == overlay) {
-      overlay.style.display = "none";
-    }
+}
+
+// ------------------------------ Modal Delete ------------------------------ 
+
+function openModalDelete(projetoId) {
+  console.log("ID do projeto a ser excluído:", projetoId);
+
+  imodalDelete.style.display = "block";
+  imodalDelete.dataset.projetoId = projetoId;
+}
+
+function closeModalDelete() {
+  imodalDelete.style.display = "none";
+}
+
+// ------------------------------ Modal Delete Sucess ------------------------------ 
+
+function openModalDeleteSucess() {
+  document.getElementById("overlay-delete2").style.display = "flex";
+}
+
+window.onclick = function (event) {
+  var overlay = document.getElementById("overlay-delete2");
+  if (event.target == overlay) {
+    overlay.style.display = "none";
   }
+}

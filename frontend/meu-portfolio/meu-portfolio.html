@@ -114,7 +114,7 @@
 
         </section>
 
-        <!------------------------------- Modal Editar Projeto ---------------------------->
+        <!------------------------------- Modal Adicionar Projeto ---------------------------->
 
         <section id="home-modal">
             <div id="modal" class="modal">
@@ -146,6 +146,44 @@
                     <div class="buttons">
                         <button class="btn-primary" style="color: #fff;" id="adicionar-projeto">Salvar</button>
                         <button id="btn-cancel" class="btn-cancel">Cancelar</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!------------------------------- Modal Editar Projeto ---------------------------->
+
+        <section id="home-modal-edit">
+            <div id="modal" class="modal">
+                <div class="user-dados">
+                    <h2>Editar projeto</h2>
+                </div>
+
+                <div class="modal-container">
+                    <div class="modal-left">
+                        <p style="margin-bottom: 18px;">Selecione o conteúdo que você deseja fazer upload</p>
+                        <div class="user-img" id="user-img-edit">
+                            <img src="./collections.png" alt="" width="46px" id="img-input-edit">
+                            <p class="body2" style="color: #303133; margin-top: 14px; line-height: 20px;">Compartilhe
+                                seu talento com milhares de <br>pessoas</p>
+                            <input type="file" id="file-input-edit" style="display: none;" multiple />
+                        </div>
+                    </div>
+
+                    <div class="user-input">
+                        <input type="text" name="titulo" id="titulo" placeholder="Titulo">
+                        <input type="text" name="tags" id="tags-form" placeholder="Tags">
+                        <input type="text" name="link" id="link" placeholder="Link">
+                        <input type="text" name="descricao" id="descricao" placeholder="Descrição">
+                    </div>
+                </div>
+
+                <div class="call-to-actions">
+                    <a href="#" style="text-decoration: none; color: #1f1f1f;">Visualizar publicação</a>
+                    <div class="buttons">
+                        <button id="btn-edit" class="btn-primary" style="color: #fff;">Salvar</button>
+                        <button id="btn-cancel-edit" class="btn-cancel">Cancelar</button>
                     </div>
                 </div>
 
