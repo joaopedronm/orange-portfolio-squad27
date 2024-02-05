@@ -28,6 +28,8 @@ div#form-container {
     text-align: center;
     display: grid;
     place-items: center;
+    gap: 16px;
+    
 }
 
 #google-button {
@@ -53,7 +55,7 @@ div#form-container {
     display: flex;
     flex-direction: column;
     width: 517px;
-    gap: 16px;
+    gap: 20px;
     position: relative;
 }
 
@@ -83,22 +85,44 @@ a:visited {
     color: #515255;
     background: #fff;
     left: 3%;
-    transform: translateY(-50%);
+    transform: translateY(-100%);
     font-size: 12px;
     padding: 0 5px;
 
 }
 
 
-.email label,
-.senha label {
+
+.email label{
     position: absolute;
     font-family: 'Roboto';
     color: #515255;
     top: 0;
     background: #fff;
     left: 12px;
-    transform: translateY(-50%);
+    transform: translateY(-40%);
     font-size: 12px;
-    padding: 0 5px;
+
+}
+
+.senha label {
+    position: absolute;
+    font-family: 'Roboto';
+    color: #515255;
+    background: #fff;
+    left: 12px;
+    transform: translateY(-290%);
+    font-size: 12px;
+    width: 12%;
+}
+
+
+#olho {
+    cursor: pointer;
+    left: 92%;
+    top: 102px;
+    position: absolute;
+    width: 20px;
+    
+ 
 }

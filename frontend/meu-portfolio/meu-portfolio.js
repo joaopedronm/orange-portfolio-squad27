@@ -111,3 +111,4 @@ document.getElementById('file-input').addEventListener('change', function () {
     reader.readAsDataURL(fileInput.files[0]);
   }
 });
+
