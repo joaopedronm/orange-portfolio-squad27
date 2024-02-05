@@ -112,7 +112,6 @@ document.getElementById('file-input').addEventListener('change', function () {
   }
 });
 
-
 /* Editar projeto */
 document.getElementById('user-img-edit').addEventListener('click', function () {
   document.getElementById('file-input-edit').click();
