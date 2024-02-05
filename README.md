@@ -1,20 +1,20 @@
-# Orange Portfólio - Squad 27 🍊
+# Orange Portfólio | Squad 27 🍊
 
 Bem-vindo ao Orange Portfólio, um projeto desenvolvido pela equipe Squad 27 como parte do programa de formação da FCamara. Esta aplicação web permite que os usuários criem perfis, compartilhem seus projetos web e visualizem os projetos de outros usuários.
-
+<br>
 ## 🚀 Funcionalidades
 
 - **Cadastro de Usuários:** Os usuários podem se cadastrar na plataforma, fornecendo informações básicas para criar seus perfis.
 - **Perfil do Usuário:** Cada usuário possui um perfil personalizado onde pode adicionar detalhes sobre si mesmo e exibir seus projetos.
 - **Compartilhamento de Projetos:** Os usuários podem adicionar projetos ao seu perfil, fornecendo detalhes como nome, descrição, tecnologias utilizadas e links relacionados.
 - **Visualização de Projetos:** Visitantes podem navegar pelos perfis dos usuários e explorar os projetos compartilhados.
-
+<br>
 ## 🖥️ Tecnologias Utilizadas
 
 - **Front-end:** HTML, CSS, JavaScript
 - **Back-end:** Node.js, Express
 - **Banco de Dados:** MongoDB
-
+<br>
 ## 💡  Como Rodar a Aplicação
 
 ### 📌 Passo a Passo:
@@ -38,7 +38,7 @@ await mongoose.connect(uri);
 Obs: Os comandos estão pré-configurados na pasta backend/db/conn.js
 
 - `npm start`: Inicia o servidor.
-
+<br>
 
 ## 📋 Modelo JSON para teste em Postman:
 
@@ -62,7 +62,7 @@ Obs: Os comandos estão pré-configurados na pasta backend/db/conn.js
         "titulo": "exemplo_titulo",
         "tags": "exemplo_tags",
         "link": "www.exemplo.com.br",
-        "descricao": "xemplo_descricao",
+        "descricao": "exemplo_descricao",
         "imagem": "fazer upload da imagem desejada"
     }
 
@@ -71,11 +71,12 @@ Obs: Os comandos estão pré-configurados na pasta backend/db/conn.js
 
   - Rota: http://localhost:3000/projeto/{requisição desejada}
   - Rota: http://localhost:3000/user/{requisição desejada}
-  
+ <br> 
 
 ## 👤 Participantes
 
-- Estefania Carrer
-- Matheus Thomé
-- João Pedro Nascimento
 - Adriel Luigi
+- Estefania Carrer
+- João Pedro Nascimento
+- Matheus Thomé
+
