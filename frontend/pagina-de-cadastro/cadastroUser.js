@@ -20,6 +20,7 @@ function fazPost(url, corpo) {
       console.log(response);
       alert("Usuário cadastrado com sucesso!");
       localStorage.setItem("token", response.token);
+      localStorage.setItem("userId", response.userId);
       localStorage.setItem("nome", response.nome);
       localStorage.setItem("sobrenome", response.sobrenome);
       window.location.href = "../meu-portfolio/meu-portfolio.html";

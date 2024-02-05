@@ -1,6 +1,7 @@
 const url = "http://localhost:3000/projeto/create";
 const projetosContainer = document.getElementById('projetos-container')
 const homeModal = document.getElementById('home-modal')
+const editModal = document.getElementById('home-modal-edit')
 const editarExcluir = document.getElementById('editar-excluir')
 const fazerLogout = document.getElementById('fazer-logout')
 
@@ -38,7 +39,7 @@ function exibirProjeto(projeto) {
   var nomeAutor = projeto.user.nome;
   var sobrenomeAutor = projeto.user.sobrenome;
 
-  const projetoStr = JSON.stringify(projeto).replaceAll("\"","'")
+  const projetoStr = JSON.stringify(projeto).replaceAll("\"", "'")
 
   div.innerHTML = `
   <div class="projeto">
@@ -49,7 +50,7 @@ function exibirProjeto(projeto) {
       </div>
       <div class="editar-excluir" data-projeto-id="${projeto._id}">
         <a href="#" onclick="editarProjeto()">Editar</a>
-        <a href="#" onclick="openModalDelete()">Excluir</a>
+        <a href="#" onclick="openModalDelete('${projeto._id}')">Excluir</a>
       </div>
     </div>
     <div class="projeto-infos">
@@ -143,13 +144,12 @@ userMenu.addEventListener('click', () => {
 
 function editarProjeto() {
   alert('Opção Editar selecionada');
-  // Lógica de edição aqui
+  editModal.style.display = 'block';
 }
 
-function excluirProjeto(event) {
-  const projetoDiv = event.currentTarget.closest('.projeto');
-  if (projetoDiv) {
-    const projetoId = projetoDiv.querySelector('.editar-excluir').dataset.projetoId;
+function excluirProjeto() {
+  const projetoId = imodalDelete.dataset.projetoId;
+  if (projetoId) {
     const url = `http://localhost:3000/projeto/${projetoId}`;
     const token = localStorage.getItem("token");
 
