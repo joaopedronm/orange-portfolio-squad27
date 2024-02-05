@@ -113,6 +113,48 @@ document.getElementById('file-input').addEventListener('change', function () {
 });
 
 
+/* Editar projeto */
+document.getElementById('user-img-edit').addEventListener('click', function () {
+  document.getElementById('file-input-edit').click();
+});
+
+document.getElementById('file-input-edit').addEventListener('change', function () {
+  var userImgElement = document.getElementById('user-img-edit');
+  var fileInput = this;
+
+  // Verifique se há um arquivo selecionado
+  if (fileInput.files && fileInput.files[0]) {
+    var reader = new FileReader();
+
+    // Quando a leitura do arquivo estiver concluída
+    reader.onload = function (e) {
+      // Obtenha a URL da imagem
+      var imageUrl = e.target.result;
+
+      // Restante do código para exibir a imagem como fundo da div
+      var imageElement = document.getElementById('img-input-edit');
+      var paragraphElement = document.querySelector('.user-img p.body2');
+
+      // Quando a imagem estiver totalmente carregada
+      imageElement.onload = function () {
+        // Apagar o conteúdo de texto da div
+        paragraphElement.style.display = 'none';
+        imageElement.style.display = 'none';
+
+        // Defina a imagem de fundo usando a URL do arquivo
+        userImgElement.style.backgroundImage = 'url(' + imageUrl + ')';
+      };
+
+      // Configurar a fonte da imagem
+      imageElement.src = imageUrl;
+    };
+
+    // Leia o arquivo como uma URL de dados
+    reader.readAsDataURL(fileInput.files[0]);
+  }
+});
+
+
 
 // MODAL VISUALIZAR DETALHES DO PROJETO
 
@@ -124,8 +166,8 @@ document.addEventListener('click', function (e) {
     if (modalAnterior) {
       modalAnterior.remove();
     }
-    
-    const projeto = JSON.parse(e.target.dataset.projeto.replaceAll("'","\""))
+
+    const projeto = JSON.parse(e.target.dataset.projeto.replaceAll("'", "\""))
     const data = new Date(projeto.createdAt);
     console.log(projeto)
     const modalVisualizarProjeto = document.createElement('div')
