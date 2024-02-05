@@ -254,8 +254,19 @@ h6 {
   margin-bottom: 7px;
 }
 
+/* MODAL EDITAR PROJETO */
+#home-modal-edit {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* overflow-y: auto; */
+}
 
-/* MODAL */
+/* MODAL ADICIONAR PROJETO */
 
 
 #home-modal {
@@ -269,9 +280,21 @@ h6 {
   /* overflow-y: auto; */
 }
 
+
 #home-modal h5{
   font-size: 26px;
   color: var(--color-neutral-110);
+
+/* MODAL EDITAR PROJETO */
+#home-modal-edit {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* overflow-y: auto; */
 }
 
 .modal {
@@ -308,6 +331,8 @@ h6 {
   justify-content: center;
   height: 89%;
   /* display: 1; */
+  background-size: cover;
+  cursor: pointer;
 }
 
 .modal-container .user-input {
@@ -581,6 +606,99 @@ p {
   width: 40px;
 }
 
+/* ------------------------------ Modal Visualizar Projeto ------------------------------ */
+
+#modal-visualizar-projeto {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow-y: auto;
+}
+
+.modal2 {
+  width: 1000px;
+  max-width: 90%;
+  margin: 50px auto;
+  /* Centraliza o modal na tela */
+  background-color: #fff;
+  padding: 20px;
+  position: relative;
+}
+
+.close {
+  cursor: pointer;
+  font-size: 26px;
+  position: absolute;
+  top: 10px;
+  left: 96%;
+  color: #515255;
+}
+
+/* Evitar que o modal ultrapasse a tela */
+.modal2-container,
+.modal-container-2 {
+  max-height: 70vh;
+  overflow-y: auto;
+  /* Torna o conteúdo do modal rolável na direção vertical */
+}
+
+.modal2-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 36px 64px 24px 64px;
+}
+
+.modal2-container .user2-infos {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.modal2-container .user2-infos p {
+  margin-bottom: 4px;
+}
+
+.modal2-container .usuario-img img {
+  width: 40px;
+  border-radius: 300px;
+}
+
+.modal2-container .user-dados {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.modal2-container .tags {
+  display: flex;
+  gap: 8px;
+}
+
+.modal2-container .tags p {
+  border-radius: 100px;
+  background: var(--action-selected, rgba(0, 0, 0, 0.08));
+  padding: 4px;
+}
+
+.modal-container-2 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 64px 48px 64px;
+}
+
+
+.modal-container-2 img {
+  height: 586px;
+  margin-bottom: 58px;
+  max-height: 60vh;
+}
+
 /* MEDIA QUERY */
 
 
@@ -708,6 +826,58 @@ p {
     padding: 32px 29px;
     width: 312px;
     border: none;
+  }
+
+  /* MODAL VISUALIZAR PROJETO */
+
+  .modal2 {
+    max-width: 100%;
+    border-radius: 24px;
+    padding-bottom: 42px;
+  }
+
+  .modal2 .close {
+    left: 93%;
+  }
+
+  .modal2-container {
+    padding: 0px 0px 12px 0px;
+    overflow-y: hidden;
+    flex-direction: column;
+  }
+
+  .modal2-container .user2-infos {
+    align-items: center;
+  }
+
+  .modal2-container .user2-infos .user2-dados p {
+    font-size: 12px;
+    line-height: 14px;
+    margin-bottom: 3px;
+  }
+
+  .modal2-container .tags {
+    margin-bottom: 5px;
+  }
+
+  .modal2-container .tags p {
+    font-size: 12px;
+  }
+
+  .modal2-container .titulo {
+    order: 1;
+  }
+
+  .modal2-container .titulo h5{
+    font-size: 26px;
+  }
+
+  .modal2 .modal-container-2 {
+    padding: 0;
+  }
+
+  .modal2 .modal-container-2 img {
+    margin-bottom: 24px;
   }
 
 

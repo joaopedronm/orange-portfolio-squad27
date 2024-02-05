@@ -112,3 +112,113 @@ document.getElementById('file-input').addEventListener('change', function () {
   }
 });
 
+/* Editar projeto */
+document.getElementById('user-img-edit').addEventListener('click', function () {
+  document.getElementById('file-input-edit').click();
+});
+
+document.getElementById('file-input-edit').addEventListener('change', function () {
+  var userImgElement = document.getElementById('user-img-edit');
+  var fileInput = this;
+
+  // Verifique se há um arquivo selecionado
+  if (fileInput.files && fileInput.files[0]) {
+    var reader = new FileReader();
+
+    // Quando a leitura do arquivo estiver concluída
+    reader.onload = function (e) {
+      // Obtenha a URL da imagem
+      var imageUrl = e.target.result;
+
+      // Restante do código para exibir a imagem como fundo da div
+      var imageElement = document.getElementById('img-input-edit');
+      var paragraphElement = document.querySelector('.user-img p.body2');
+
+      // Quando a imagem estiver totalmente carregada
+      imageElement.onload = function () {
+        // Apagar o conteúdo de texto da div
+        paragraphElement.style.display = 'none';
+        imageElement.style.display = 'none';
+
+        // Defina a imagem de fundo usando a URL do arquivo
+        userImgElement.style.backgroundImage = 'url(' + imageUrl + ')';
+      };
+
+      // Configurar a fonte da imagem
+      imageElement.src = imageUrl;
+    };
+
+    // Leia o arquivo como uma URL de dados
+    reader.readAsDataURL(fileInput.files[0]);
+  }
+});
+
+
+
+// MODAL VISUALIZAR DETALHES DO PROJETO
+
+document.addEventListener('click', function (e) {
+  if (!(e.target instanceof HTMLSelectElement) && e.target.closest(`.projeto`) && !e.target.classList.contains('fa-solid')) {
+
+    // Remover modal anterior, se existir
+    const modalAnterior = document.getElementById('modal-visualizar-projeto');
+    if (modalAnterior) {
+      modalAnterior.remove();
+    }
+
+    const projeto = JSON.parse(e.target.dataset.projeto.replaceAll("'", "\""))
+    const data = new Date(projeto.createdAt);
+    console.log(projeto)
+    const modalVisualizarProjeto = document.createElement('div')
+    modalVisualizarProjeto.id = 'modal-visualizar-projeto'
+    modalVisualizarProjeto.innerHTML = `
+      <div id="modal2" class="modal2">
+        <span class="close close-modal" id="closeModalBtn">&times;</span>
+
+        <div class="modal2-container">
+            <div class="user2-infos">
+                <div class="usuario-img">
+                    <img src="./user-menu.png" alt="" width="122px">
+                </div>
+                <div class="user2-dados">
+                    <p class="subtitle1">${projeto.user.nome} ${projeto.user.sobrenome}</p>
+                    <p class="subtitle1">${data.getMonth() + 1}/${data.getFullYear().toString().slice(-2)}</p>
+                </div>
+            </div>
+
+            <div class="titulo">
+                <h5>${projeto.titulo}</h5>
+            </div>
+
+            <div class="tags">
+              ${projeto.tags.map(tag => `<p class="subtitle1">${tag}</p>`).join('')}
+            </div>
+
+        </div>
+
+        <div class="modal-container-2">
+            <img src="${'http://localhost:3000/imgs/projeto/' + projeto.imagem[0]}" alt="">
+            <p class="subtitle1" style="margin-bottom: 32px;" id="modalDescription">${projeto.descricao}</p>
+            <p class="subtitle1">Download</p>
+            <a class="link-de-download" href="#" style="text-decoration: none;">${projeto.link}</a>
+        </div>
+      </div>
+    `
+    document.body.appendChild(modalVisualizarProjeto)
+  }
+
+  if (!(e.target instanceof HTMLSelectElement) && e.target.closest(`.close-modal`)) {
+    const modalVisualizarProjeto = document.getElementById('modal-visualizar-projeto');
+    if (modalVisualizarProjeto) {
+      modalVisualizarProjeto.remove();
+    }
+  }
+
+});
+
+// A função abaixo fecha o modal caso o usuário clique fora dele
+// window.addEventListener('click', function (e) {
+//   if (e.target == modalVisualizarProjeto) {
+//     modalVisualizarProjeto.style.display = 'none';
+//   }
+// });
