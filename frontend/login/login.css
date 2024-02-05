@@ -30,8 +30,7 @@ div#form-container {
     place-items: center;
 }
 
-#google-button {
-    all: unset;
+#buttonDiv {
     display: flex;
     margin: 32px;
     justify-content: center;
@@ -72,4 +71,34 @@ a {
 
 a:visited {
     color: var(--color-neutral-100);
+}
+
+.input-container {
+    position: relative;
+}
+
+.input-container label {
+    width: auto;
+    position: absolute;
+    padding: 0px 5px;
+    left: 10px;
+    z-index: 1;
+    font-family: 'Roboto';
+    color: #515255;
+    background: #fff;
+    transform: translateY(1510%);
+    transform: translateX(2%);
+    font-size: 12px;
+    padding: 0 5px;
+}
+
+.email input,
+.senha input {
+    padding-top: 20px;
+    /* Garante espaço suficiente para o rótulo */
+}
+
+.email label,
+.senha label {
+    transform: translateY(-50%);
 }

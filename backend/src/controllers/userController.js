@@ -1,5 +1,3 @@
-// const { OAuth2Client } = require('google-auth-library');
-// const client = new OAuth2Client('103164851235-suior8k6dm4u6nhfud1en503v9i8kf5s.apps.googleusercontent.com');
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
@@ -134,7 +132,7 @@ module.exports = class userController {
       // Obter informações do usuário usando o token de acesso
       const googleUser = await client.verifyIdToken({
         idToken: tokens.id_token,
-        audience: '103164851235-suior8k6dm4u6nhfud1en503v9i8kf5s.apps.googleusercontent.com', // Substitua 'SEU_CLIENT_ID' pelo seu ID de cliente OAuth do Google
+        audience: '103164851235-suior8k6dm4u6nhfud1en503v9i8kf5s.apps.googleusercontent.com',
       });
 
       // Encontrar ou criar o usuário com base nas informações do Google

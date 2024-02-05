@@ -9,12 +9,6 @@ fetch('http://localhost:3000/projeto/descobrir', {
   .then(res => res.json())
   .then(projetos => {
     projetos.projeto.forEach(projeto => {
-      console.log(projeto);
-      /* console.log(projeto.titulo);
-      console.log(projeto.tags);
-      console.log(projeto.link);
-      console.log(projeto.descricao);
-      console.log(projeto.imagem); */
       exibirProjeto(projeto);
     });
   });
@@ -26,7 +20,7 @@ function exibirProjeto(projeto) {
   var nomeAutor = projeto.user.nome;
   var sobrenomeAutor = projeto.user.sobrenome;
 
-  const projetoStr = JSON.stringify(projeto).replaceAll("\"","'")
+  const projetoStr = JSON.stringify(projeto).replaceAll("\"", "'")
 
   div.innerHTML = `
   <div class="projeto">
@@ -57,7 +51,7 @@ function removerDivsPorClasse(card) {
   });
 }
 
-// const openModalBtns = document.getElementsByClassName('.projeto-imagem')
+
 const openModalBtns = document.getElementsByClassName('projeto-imagem')
 
 const closeModalBtn = document.getElementById('closeModalBtn')
@@ -119,17 +113,17 @@ mobileNavBar.init()
 // MODAL VISUALIZAR DETALHES DO PROJETO
 
 document.addEventListener('click', function (e) {
-  if (!(e.target instanceof HTMLSelectElement) && e.target.closest(`.projeto`)) {
+  if (!(e.target instanceof HTMLSelectElement) && e.target.closest(`.projeto`) && !e.target.classList.contains('fa-solid')) {
 
     // Remover modal anterior, se existir
     const modalAnterior = document.getElementById('modal-visualizar-projeto');
     if (modalAnterior) {
       modalAnterior.remove();
     }
-    
-    const projeto = JSON.parse(e.target.dataset.projeto.replaceAll("'","\""))
-    const data = new Date(projeto.createdAt);
+
+    var projeto = JSON.parse(e.target.dataset.projeto.replace(/'/g, '"'));
     console.log(projeto)
+    const data = new Date(projeto.createdAt);
     const modalVisualizarProjeto = document.createElement('div')
     modalVisualizarProjeto.id = 'modal-visualizar-projeto'
     modalVisualizarProjeto.innerHTML = `
@@ -139,7 +133,7 @@ document.addEventListener('click', function (e) {
         <div class="modal2-container">
             <div class="user2-infos">
                 <div class="usuario-img">
-                    <img src="../meu-portfolio/user-menu.png" alt="" width="122px">
+                    <img src="./user-menu.png" alt="" width="122px">
                 </div>
                 <div class="user2-dados">
                     <p class="subtitle1">${projeto.user.nome} ${projeto.user.sobrenome}</p>
@@ -167,12 +161,19 @@ document.addEventListener('click', function (e) {
     `
     document.body.appendChild(modalVisualizarProjeto)
   }
+  const modalVisualizarProjeto = document.getElementById('modal-visualizar-projeto');
 
   if (!(e.target instanceof HTMLSelectElement) && e.target.closest(`.close-modal`)) {
-    const modalVisualizarProjeto = document.getElementById('modal-visualizar-projeto');
     if (modalVisualizarProjeto) {
       modalVisualizarProjeto.remove();
     }
   }
 
+  document.addEventListener('click', function (e) {
+    if (!(e.target.closest('.modal2-container') || e.target.closest('.modal-container-2'))) {
+      if (modalVisualizarProjeto) {
+        modalVisualizarProjeto.remove();
+      }
+    }
+  });
 });

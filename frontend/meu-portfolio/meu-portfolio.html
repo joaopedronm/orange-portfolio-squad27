@@ -9,7 +9,6 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../style-guide.css">
     <link rel="stylesheet" href="./meu-portfolio.css">
-    <!-- <link rel="javascript" href="./meu-portfolio.js"> -->
     <title>Meu portfolio</title>
 </head>
 
@@ -24,8 +23,12 @@
             <ul id="menu-navigation-esq">
                 <li><a href="../home/home.html"><img src="./Logo orange.png" alt=""></a></li>
                 <div id="menu-links">
-                    <li><a href="../meu-portfolio/meu-portfolio.html">Meus Projetos</a></li>
-                    <li><a href="../home/home.html">Descobrir</a></li>
+                    <li><a href="../meu-portfolio/meu-portfolio.html">
+                            <h6>Meus Projetos</h6>
+                        </a></li>
+                    <li><a href="../home/home.html">
+                            <h6>Descobrir</h6>
+                        </a></li>
                 </div>
             </ul>
             <ul id="menu-navigation-dir">
@@ -34,7 +37,7 @@
             </ul>
 
             <div id="logout-modal" class="logout">
-                <a href="#">Sair</a>
+                <a href="../login/login.html">Sair</a>
             </div>
         </nav>
     </header>
@@ -48,8 +51,8 @@
                             <img src="./Image.png" alt="foto de perfil">
                         </div>
                         <div class="meuperfil__info">
-                            <h2 id="info-user">Camila Soares</h2>
-                            <span>Brasil</span>
+                            <h2 id="info-user"></h2>
+                            <span id="country">Brasil</span>
                             <div class="meuperfil__add">
                                 <button class="btn-primary adicionar-projeto" disabled id="add-btn">ADICIONAR
                                     PROJETO</button>

@@ -58,12 +58,22 @@ nav #menu-navigation-esq #menu-links {
   display: flex;
   align-items: center;
   gap: 24px;
+  color: white;
+}
+
+#menu-navigation-esq h6 {
+  color: white;
+}
+
+#country {
+  color: #303133;
 }
 
 nav #menu-navigation-dir {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 32px;
 }
 
 nav #menu-navigation-dir img {
@@ -74,7 +84,6 @@ nav #menu-navigation-dir img {
 nav #menu-navigation-dir i {
   cursor: pointer;
   color: #fff;
-  margin-left: 16px;
 }
 
 #logout-modal {
@@ -845,7 +854,7 @@ p {
     order: 1;
   }
 
-  .modal2-container .titulo h5{
+  .modal2-container .titulo h5 {
     font-size: 26px;
   }
 

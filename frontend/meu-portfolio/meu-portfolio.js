@@ -7,12 +7,6 @@ fetch('http://localhost:3000/projeto/meusprojetos', {
   .then(res => res.json())
   .then(projetos => {
     projetos.projeto.forEach(projeto => {
-      console.log(projeto);
-      console.log(projeto.titulo);
-      console.log(projeto.tags);
-      console.log(projeto.link);
-      console.log(projeto.descricao);
-      console.log(projeto.imagem);
       exibirProjeto(projeto)
 
 
@@ -20,9 +14,6 @@ fetch('http://localhost:3000/projeto/meusprojetos', {
         var btn = document.getElementById('add-btn');
         btn.disabled = false;
       }
-
-      /* Alterar a imagem do avatar */
-      /* document.getElementById('avatar-test').src = 'http://localhost:3000/imgs/projeto/' + projeto.imagem[0] */
     });
   });
 
@@ -167,9 +158,9 @@ document.addEventListener('click', function (e) {
       modalAnterior.remove();
     }
 
-    const projeto = JSON.parse(e.target.dataset.projeto.replaceAll("'", "\""))
-    const data = new Date(projeto.createdAt);
+    var projeto = JSON.parse(e.target.dataset.projeto.replace(/'/g, '"'));
     console.log(projeto)
+    const data = new Date(projeto.createdAt);
     const modalVisualizarProjeto = document.createElement('div')
     modalVisualizarProjeto.id = 'modal-visualizar-projeto'
     modalVisualizarProjeto.innerHTML = `
@@ -207,19 +198,20 @@ document.addEventListener('click', function (e) {
     `
     document.body.appendChild(modalVisualizarProjeto)
   }
+  const modalVisualizarProjeto = document.getElementById('modal-visualizar-projeto');
 
   if (!(e.target instanceof HTMLSelectElement) && e.target.closest(`.close-modal`)) {
-    const modalVisualizarProjeto = document.getElementById('modal-visualizar-projeto');
     if (modalVisualizarProjeto) {
       modalVisualizarProjeto.remove();
     }
   }
 
-});
+  document.addEventListener('click', function (e) {
+    if (!(e.target.closest('.modal2-container') || e.target.closest('.modal-container-2'))) {
+      if (modalVisualizarProjeto) {
+        modalVisualizarProjeto.remove();
+      }
+    }
+  });
 
-// A função abaixo fecha o modal caso o usuário clique fora dele
-// window.addEventListener('click', function (e) {
-//   if (e.target == modalVisualizarProjeto) {
-//     modalVisualizarProjeto.style.display = 'none';
-//   }
-// });
+});

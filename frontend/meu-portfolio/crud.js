@@ -22,7 +22,6 @@ function criaProjeto(url, projeto) {
     }).then(async (response) => {
       if (response.ok) {
         alert("Projeto adicionado com sucesso!");
-        // console.log(projeto);
         exibirProjeto(projeto)
       } else {
         const error = await response.json();
@@ -115,12 +114,10 @@ function mostrarEditarExcluir(botaoLapis) {
 
 
 document.addEventListener('click', function (event) {
-  // If the click is inside the edit/delete menu, do nothing
   if (event.target.closest('.editar-excluir') || event.target.closest('.botao-lapis')) {
     return;
   }
 
-  // If the click is outside any edit/delete menu, close all menus
   const allEditDeleteMenus = document.querySelectorAll('.editar-excluir');
 
   allEditDeleteMenus.forEach(menu => {
@@ -166,7 +163,6 @@ function editar(projetoId, projetoEditado) {
     }).then(async (response) => {
       if (response.ok) {
         alert("Projeto editado com sucesso!");
-        console.log(projetoEditado);
       } else {
         const error = await response.json();
         alert(error.message);
@@ -198,8 +194,6 @@ async function editaProjeto(event) {
   projetoEditado.append("tags", tags);
   projetoEditado.append("link", link);
   projetoEditado.append("descricao", descricao);
-  console.log(projetoEditado);
-
 
   const projetoId = editModal.dataset.projetoId;
 
