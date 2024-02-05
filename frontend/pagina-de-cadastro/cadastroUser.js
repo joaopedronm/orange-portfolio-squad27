@@ -17,7 +17,6 @@ function fazPost(url, corpo) {
       throw new Error();
     })
     .then((response) => {
-      console.log(response);
       alert("Usuário cadastrado com sucesso!");
       localStorage.setItem("token", response.token);
       localStorage.setItem("userId", response.userId);
@@ -48,7 +47,6 @@ function fazPostGoogle(url, corpo) {
       throw new Error();
     })
     .then((response) => {
-      console.log(response);
       alert("Usuário cadastrado com sucesso!");
       localStorage.setItem("token", response.token);
       localStorage.setItem("nome", response.nome);

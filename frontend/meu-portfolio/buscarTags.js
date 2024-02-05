@@ -29,7 +29,6 @@ function buscarProjetosPorTags() {
 
 document.getElementById("tags").addEventListener("input", function () {
   const tagsValue = this.value.trim();
-  console.log("Valor do campo de tags:", tagsValue);
   if (tagsValue.length > 0) {
     buscarProjetosPorTags();
   } else {

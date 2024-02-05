@@ -46,10 +46,8 @@
     <script>
         function handleCredentialResponse(response) {
             const data = jwt_decode(response.credential)
-            console.log(data)
 
             var userGoogle = { nome: data.given_name, sobrenome: data.family_name, email: data.email, password: data.sub, confirmpassword: data.sub }
-            console.log(userGoogle)
 
             cadastraUsuarioGoogle(userGoogle)
         }

@@ -122,7 +122,7 @@ document.addEventListener('click', function (e) {
     }
 
     var projeto = JSON.parse(e.target.dataset.projeto.replace(/'/g, '"'));
-    console.log(projeto)
+
     const data = new Date(projeto.createdAt);
     const modalVisualizarProjeto = document.createElement('div')
     modalVisualizarProjeto.id = 'modal-visualizar-projeto'

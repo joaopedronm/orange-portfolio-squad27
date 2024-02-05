@@ -18,11 +18,11 @@ function fazPostLogin(url, dados) {
       throw new Error("Erro no login");
     })
     .then((response) => {
-
       localStorage.setItem("token", response.token);
       localStorage.setItem("userId", response.userId);
       localStorage.setItem("nome", response.nome);
       localStorage.setItem("sobrenome", response.sobrenome);
+      alert("Login realizado com sucesso!");
       window.location.href = "../meu-portfolio/meu-portfolio.html"; // vai para a página de portfólio
     })
     .catch((err) => {

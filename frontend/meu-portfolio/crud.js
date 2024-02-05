@@ -142,14 +142,13 @@ function editarProjeto(projetoId) {
 
   editModal.dataset.projetoId = projetoId;
   editModal.style.display = 'block';
-  
+
 }
 
 function editar(projetoId, projetoEditado) {
   const url = `http://localhost:3000/projeto/${projetoId}`;
   const token = localStorage.getItem("token");
-  console.log(`${projetoId}`)
-  
+
 
   if (token) {
     return fetch(url, {
@@ -175,7 +174,6 @@ btnEdit.addEventListener("click", (event) => editaProjeto(event));
 
 async function editaProjeto(event) {
   event.preventDefault();
-  console.log("Evento:", event);
 
   const img = document.getElementById("file-input-edit").files[0];
   const titulo = document.getElementById("titulo-edit").value;

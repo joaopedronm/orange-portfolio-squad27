@@ -81,8 +81,6 @@ window.onclick = function (event) {
 // ------------------------------ Modal Delete ------------------------------ 
 
 function openModalDelete(projetoId) {
-  console.log("ID do projeto a ser excluído:", projetoId);
-
   imodalDelete.style.display = "block";
   imodalDelete.dataset.projetoId = projetoId;
 }

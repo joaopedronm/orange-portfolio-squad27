@@ -17,7 +17,7 @@ function buscarProjetosPorTags() {
           return projeto.tags.includes(tagsValue);
         });
         exibirProjetosPorTags(projetosFiltrados);
-        
+
       } else {
         const error = await response.json();
         console.error("Erro:", error.message);
@@ -29,7 +29,7 @@ function buscarProjetosPorTags() {
 
 document.getElementById("tags").addEventListener("input", function () {
   const tagsValue = this.value.trim();
-  console.log("Valor do campo de tags:", tagsValue);
+
   if (tagsValue.length > 0) {
     buscarProjetosPorTags();
   } else {
@@ -62,7 +62,7 @@ function exibirProjetosPorTags(projetos) {
         </div>
       </div>
       `;
-      
+
       projetosContainer.appendChild(divProjeto);
     });
   } else {
