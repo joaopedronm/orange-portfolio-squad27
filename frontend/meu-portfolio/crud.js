@@ -175,8 +175,3 @@ function excluirProjeto() {
     }
   }
 }
-
-// const btnsExcluirProjeto = document.querySelectorAll('.btn-excluir');
-// btnsExcluirProjeto.forEach(btn => {
-//   btn.addEventListener('click', excluirProjeto);
-// });
