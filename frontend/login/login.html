@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -16,22 +16,57 @@
 
             <div id="form-container">
                 <h3>Entre no Orange Portfólio</h3>
-                <button id="google-button">
-                    <img src="img/google.svg" alt="icon-google">
-                    Entrar com o Google
-                </button>
+
+                <div id="buttonDiv"></div>
+
                 <div class="input-container">
                     <h5>Faça login com email</h5>
                     <form action="#" method="post">
-                        <input type="email" name="email" id="iemail">
-                        <input type="password" name="pass" id="ipass">
-                        <button class="btn-primary btn-large" type="submit">entrar</button>
+                        <div class="email">
+                            <label for="email">Email address</label>
+                            <input type="email" name="email" id="iemail">
+                        </div>
+                        <div class="senha">
+                            <label for="password">Password</label>
+                            <input type="password" id="ipass" name="password" required>
+                            <i class="fa-regular fa-eye" id="olho"></i>
+                        </div>
+                        <button class="btn-primary btn-large" type="submit" id="botao-login">entrar</button>
                     </form>
                     <a href="../pagina-de-cadastro/cadastro.html" class="subtitle1">Cadastre-se</a>
                 </div>
             </div>
         </div>
     </main>
+    <script src="./loginUser.js" defer></script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="https://unpkg.com/jwt-decode@3.1.2/build/jwt-decode.js"></script>
+    <script src="../pagina-de-cadastro/cadastroUser.js" defer></script>
+
+    <script>
+        function handleCredentialResponse(response) {
+            const data = jwt_decode(response.credential)
+
+            var userGoogle = { nome: data.given_name, sobrenome: data.family_name, email: data.email, password: data.sub, confirmpassword: data.sub }
+
+            cadastraUsuarioGoogle(userGoogle)
+        }
+        window.onload = function () {
+            google.accounts.id.initialize({
+                client_id: "103164851235-suior8k6dm4u6nhfud1en503v9i8kf5s.apps.googleusercontent.com",
+                callback: handleCredentialResponse
+            });
+            google.accounts.id.renderButton(
+                document.getElementById("buttonDiv"), {
+                theme: "outline",
+                size: "large",
+                type: "standard"
+            }  // customization attributes
+            );
+            google.accounts.id.prompt(); //
+        }
+    </script>
+
 </body>
 
 </html>

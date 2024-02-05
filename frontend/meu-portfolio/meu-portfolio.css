@@ -1,10 +1,10 @@
 @import url(../style-guide.css);
 
 
-*{
-   margin: 0;
-   padding: 0;
-   box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 nav {
@@ -58,12 +58,22 @@ nav #menu-navigation-esq #menu-links {
   display: flex;
   align-items: center;
   gap: 24px;
+  color: white;
+}
+
+#menu-navigation-esq h6 {
+  color: white;
+}
+
+#country {
+  color: #303133;
 }
 
 nav #menu-navigation-dir {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 32px;
 }
 
 nav #menu-navigation-dir img {
@@ -74,34 +84,49 @@ nav #menu-navigation-dir img {
 nav #menu-navigation-dir i {
   cursor: pointer;
   color: #fff;
-  margin-left: 16px;
 }
 
-.container{
-   padding: 20px 2% 0 2%;
-   margin: 0 auto;
+#logout-modal {
+  display: none;
 }
 
-.portfolio{
+.logout {
+  width: 100px;
+  position: absolute;
+  top: 8%;
+  right: 4%;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.container {
+  padding: 20px 2% 0 2%;
+  margin: 0 auto;
+}
+
+.portfolio {
   margin-top: 82px;
- display: flex;
- flex-direction: column;
- gap: 2.6rem;
-}
- 
-.meuperfil__perfil img{
-   border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 2.6rem;
 }
 
-.meuperfil__info{
-   font-family:'Roboto', sans-serif; 
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   /* gap: 12px; */
+.meuperfil__perfil img {
+  border-radius: 50%;
 }
 
-h2{
+.meuperfil__info {
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* gap: 12px; */
+}
+
+h2 {
   margin: 0px;
   font-weight: 400;
   font-size: 24px;
@@ -109,65 +134,68 @@ h2{
 }
 
 
-.meuperfil__info span{
+.meuperfil__info span {
   display: inline-block;
   justify-content: space-between;
-  
+
 }
 
 
-.meuperfil__info button{
-    margin-top: 20px;
+.meuperfil__info button {
+  margin-top: 20px;
 }
 
- .portfolio__meuperfil{
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   /* width: 364px; */
-   gap: 42px;
-   margin: 0 auto;
+.portfolio__meuperfil {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* width: 364px; */
+  gap: 42px;
+  margin: 0 auto;
 
- }
+}
 
 
- button {
-   padding: 7px 20px;
-   background-color: rgba(0, 0, 0, 0.12);
-   color: var(--action-disabled, rgba(0, 0, 0, 0.38));
-   border: none;
-   cursor: pointer;
-   opacity: 0.9;
-   font-size: 1rem;
-   margin-top: 8px;
-   border-radius: 2px;
- }
+button {
+  padding: 7px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.9;
+  font-size: 1rem;
+  margin-top: 8px;
+  border-radius: 2px;
+}
 
- .portfolio_meusprojetos{
-    display: flex;
-    flex-direction: column;
-    width: 517px;
-    gap: 16px;
-    font-family:'Roboto', sans-serif;
-    font-weight: 500; 
-    width: auto 130px;
-    height: auto 20px;
- }
- 
- input{
-    letter-spacing: 0.15px;
-    width: 100%;
-    border-radius: 5px;
-    display: flex;
-    min-height: 24px;
-    padding: 16px 0px;
-    align-items: center;
-    align-self: stretch;
-    border: 1px solid #0000003B;
-    padding-left: 12px;
- }
+.btn-cancel {
+  color: rgba(0, 0, 0, 0.38);
+  background-color: rgba(0, 0, 0, 0.12);
+}
 
-.portfolio_meusprojetos label{
+.portfolio_meusprojetos {
+  display: flex;
+  flex-direction: column;
+  width: 517px;
+  gap: 16px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  width: auto 130px;
+  height: auto 20px;
+}
+
+input {
+  letter-spacing: 0.15px;
+  width: 100%;
+  border-radius: 5px;
+  display: flex;
+  min-height: 24px;
+  padding: 16px 0px;
+  align-items: center;
+  align-self: stretch;
+  border: 1px solid #0000003B;
+  padding-left: 12px;
+}
+
+.portfolio_meusprojetos label {
   width: auto;
   position: absolute;
   font-family: 'Roboto';
@@ -188,7 +216,8 @@ h6 {
   flex-wrap: wrap;
   margin-bottom: 72px;
   display: flex;
-  justify-content: space-between;
+  gap: 20px;
+  /* justify-content: space-between; */
   padding: 20px 2% 0 2%;
 }
 
@@ -211,26 +240,37 @@ h6 {
 }
 
 
-#projetos-container .container__botao{
+#projetos-container .container__botao {
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 70%;
 }
 
-.container__botao figure{
+.container__botao figure {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 16px;
 }
 
-#projetos-container .container__botao p{
+#projetos-container .container__botao p {
   margin-bottom: 7px;
 }
 
+/* MODAL EDITAR PROJETO */
+#home-modal-edit {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* overflow-y: auto; */
+}
 
-/* MODAL */
+/* MODAL ADICIONAR PROJETO */
 
 
 #home-modal {
@@ -244,17 +284,26 @@ h6 {
   /* overflow-y: auto; */
 }
 
+/* MODAL EDITAR PROJETO */
+#home-modal-edit {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* overflow-y: auto; */
+}
+
 .modal {
   width: 1000px;
   max-width: 90%;
-  margin: 100px auto; /* Centraliza o modal na tela */
+  margin: 100px auto;
+  /* Centraliza o modal na tela */
   background-color: #fff;
   padding: 30px;
 }
-
-
-/* ----------------------------------mexer apartir daqui------------------------------ */
-
 
 .user-dados {
   font-weight: 400;
@@ -272,8 +321,6 @@ h6 {
   width: 100%;
 }
 
-
-
 .modal-container .user-img {
   background: #E6E9F2;
   width: 100%;
@@ -283,6 +330,8 @@ h6 {
   justify-content: center;
   height: 89%;
   /* display: 1; */
+  background-size: cover;
+  cursor: pointer;
 }
 
 .modal-container .user-input {
@@ -312,16 +361,130 @@ h6 {
   border-radius: 4px;
 }
 
-/* ------------------------------ Modal Sucess ------------------------------ */
-.overlay {
+/* PROJETO ADICIONADO - JAVASCRIPT */
+
+.projeto {
+  position: relative;
+  width: 470px;
+}
+
+.projeto .projeto-imagem {
+  transition: .3s;
+  width: 100%;
+}
+
+.projeto .projeto-imagem img {
+  margin-top: 24px;
+  cursor: pointer;
+  width: 470px;
+  height: 310px;
+}
+
+.botao-lapis {
+  position: absolute;
+  top: 8%;
+  right: 2%;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 100%;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.botao-lapis:hover {
+  background-color: #ebebeb;
+}
+
+.editar-excluir {
+  width: 140px;
   display: none;
+  position: absolute;
+  top: 20%;
+  right: 2%;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.editar-excluir a,
+.logout a {
+  font-size: 14px;
+  font-family: 'Roboto';
+  text-align: left;
+  display: block;
+  padding: 14px;
+  text-decoration: none;
+  color: #333;
+}
+
+.editar-excluir a:hover,
+.logout a:hover {
+  background-color: #f5f5f5;
+}
+
+.editar-excluir::before,
+.logout::before {
+  content: '';
+  position: absolute;
+  top: -9px;
+  /* Posiciona a seta acima da div */
+  right: 10px;
+  /* Ajuste para alinhar a seta com o canto superior direito */
+  border-width: 0 10px 10px 10px;
+  /* Cria uma seta voltada para cima */
+  border-style: solid;
+  border-color: transparent transparent #fff transparent;
+  z-index: 10;
+  /* Garante que a seta esteja acima do conteúdo interno */
+}
+
+.projeto-infos {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 5px;
+}
+
+.tags {
+  display: flex;
+  gap: 8px;
+  /* margin-left: 7%; */
+}
+
+.tags p {
+  border-radius: 100px;
+  background: var(--action-selected, rgba(0, 0, 0, 0.08));
+  padding: 4px;
+}
+
+/* ------------------------------ MODAIS ------------------------------ */
+#imodal-sucess,
+#imodal-update,
+#imodal-delete,
+#imodal-delete-sucess {
+  display: none;
+
+}
+
+#overlay-delete,
+#overlay-delete2,
+#overlay-update,
+#overlay-sucess {
   position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
   justify-content: center;
-  place-items: center;
+  align-items: center;
 }
+
+/* ------------------------------ Modal Sucess ------------------------------ */
 
 .modal-sucess {
   display: flex;
@@ -331,7 +494,6 @@ h6 {
   padding: 32px 48px;
   text-align: center;
   width: 351px;
-  height: 242px;
   justify-content: center;
   align-items: center;
   border: 1px solid #000;
@@ -359,7 +521,6 @@ h6 {
   padding: 32px 48px;
   text-align: center;
   width: 351px;
-  height: 242px;
   justify-content: center;
   align-items: center;
   border: 1px solid #000;
@@ -400,12 +561,10 @@ p {
 }
 
 #container-button .btn-primary {
-  width: 106px;
   height: 42px;
 }
 
 #container-button .btn-error:disabled {
-  width: 124px;
   height: 42px;
   color: rgba(0, 0, 0, 0.38);
 }
@@ -419,9 +578,6 @@ p {
   padding: 32px 48px;
   text-align: center;
   width: 351px;
-  height: 242px;
-  max-width: 351px;
-  max-height: 242px;
   justify-content: center;
   align-items: center;
   border: 1px solid #000;
@@ -436,16 +592,130 @@ p {
   width: 40px;
 }
 
+/* ------------------------------ Modal Visualizar Projeto ------------------------------ */
+
+#modal-visualizar-projeto {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow-y: auto;
+}
+
+.modal2 {
+  width: 1000px;
+  max-width: 90%;
+  margin: 50px auto;
+  /* Centraliza o modal na tela */
+  background-color: #fff;
+  padding: 20px;
+  position: relative;
+}
+
+.close {
+  cursor: pointer;
+  font-size: 26px;
+  position: absolute;
+  top: 10px;
+  left: 96%;
+  color: #515255;
+}
+
+/* Evitar que o modal ultrapasse a tela */
+.modal2-container,
+.modal-container-2 {
+  max-height: 70vh;
+  overflow-y: auto;
+  /* Torna o conteúdo do modal rolável na direção vertical */
+}
+
+.modal2-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 36px 64px 24px 64px;
+}
+
+.modal2-container .user2-infos {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.modal2-container .user2-infos p {
+  margin-bottom: 4px;
+}
+
+.modal2-container .usuario-img img {
+  width: 40px;
+  border-radius: 300px;
+}
+
+.modal2-container .user-dados {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.modal2-container .tags {
+  display: flex;
+  gap: 8px;
+}
+
+.modal2-container .tags p {
+  border-radius: 100px;
+  background: var(--action-selected, rgba(0, 0, 0, 0.08));
+  padding: 4px;
+}
+
+.modal-container-2 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 64px 48px 64px;
+}
+
+
+.modal-container-2 img {
+  height: 586px;
+  margin-bottom: 58px;
+  max-height: 60vh;
+}
+
 /* MEDIA QUERY */
+
+
+@media screen and (max-width: 1441px) {
+  .projeto {
+    width: 440px;
+  }
+
+  .projeto .projeto-imagem img {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1025px) {
+  .projeto {
+    width: 475px;
+  }
+
+  .projeto .projeto-imagem img {
+    width: 100%;
+  }
+}
 
 @media screen and (max-width: 769px) {
 
-  #projetos-container {
-    justify-content: space-around;
+  .projeto {
+    width: 46vw;
   }
 
-  #projetos-container .card {
-    width: 45vw;
+  .projeto .projeto-imagem img {
+    width: 100%;
   }
 
   .modal {
@@ -460,7 +730,7 @@ p {
 @media screen and (max-width: 426px) {
 
   body {
-      overflow-x: hidden;
+    overflow-x: hidden;
   }
 
   #home-modal {
@@ -484,7 +754,15 @@ p {
   #projetos-container .main-card,
   #projetos-container .card {
     margin: 10px 8px;
-    width: 90vw;
+    min-width: 90vw;
+  }
+
+  #projetos-container .projeto {
+    width: 95vw;
+  }
+
+  #projetos-container .projeto .projeto-imagem img {
+    min-width: 100%;
   }
 
   .modal {
@@ -494,51 +772,127 @@ p {
   }
 
   .modal-container {
-      display: flex;
-      flex-direction: column;
-      -webkit-flex-direction: column-reverse;
-      flex-direction: column-reverse;
-      
+    display: flex;
+    flex-direction: column;
+    -webkit-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+
   }
 
   .modal-container .titulo {
-      font-size: 18px;
-      margin-left: 14px;
+    font-size: 18px;
+    margin-left: 14px;
   }
 
   .modal-container .modal-left .user-img {
     height: 40vh;
+    cursor: pointer;
+  }
+
+  .modal-sucess {
+    padding: 32px 29px;
+    width: 312px;
+    border: none;
+  }
+
+  .modal-update {
+    padding: 32px 29px;
+    width: 312px;
+    border: none;
+  }
+
+  .modal-delete {
+    padding: 24px;
+    width: 312px;
+    border: none;
+    gap: 24px;
+  }
+
+  .modal-delete-sucess {
+    padding: 32px 29px;
+    width: 312px;
+    border: none;
+  }
+
+  /* MODAL VISUALIZAR PROJETO */
+
+  .modal2 {
+    max-width: 100%;
+    border-radius: 24px;
+    padding-bottom: 42px;
+  }
+
+  .modal2 .close {
+    left: 93%;
+  }
+
+  .modal2-container {
+    padding: 0px 0px 12px 0px;
+    overflow-y: hidden;
+    flex-direction: column;
+  }
+
+  .modal2-container .user2-infos {
+    align-items: center;
+  }
+
+  .modal2-container .user2-infos .user2-dados p {
+    font-size: 12px;
+    line-height: 14px;
+    margin-bottom: 3px;
+  }
+
+  .modal2-container .tags {
+    margin-bottom: 5px;
+  }
+
+  .modal2-container .tags p {
+    font-size: 12px;
+  }
+
+  .modal2-container .titulo {
+    order: 1;
+  }
+
+  .modal2-container .titulo h5 {
+    font-size: 26px;
+  }
+
+  .modal2 .modal-container-2 {
+    padding: 0;
+  }
+
+  .modal2 .modal-container-2 img {
+    margin-bottom: 24px;
   }
 
 
-  /* HAMBURGUER */
-
   #menu-links {
-      margin-top: 20px;
-      z-index: 999;
-      position: absolute;
-      top: 8vh;
-      left: 0;
-      width: 35vw;
-      height: 92vh;
-      background: #113;
-      flex-direction: column;
-      align-items: center;
-      transform: translateX(-100%);
-      transition: transform 0.3s ease-in;
+    margin-top: 20px;
+    z-index: 999;
+    position: absolute;
+    top: 8vh;
+    left: 0;
+    width: 35vw;
+    height: 92vh;
+    background: #113;
+    flex-direction: column;
+    align-items: center;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in;
   }
 
   #menu-links li {
-      margin-top: 48px;
-      margin-left: 0;
+    margin-top: 48px;
+    margin-left: 0;
   }
 
   .mobile-menu {
-      display: block;
+    display: block;
   }
 
   #menu-links.active {
-      transform: translateX(0);
+    transform: translateX(0);
   }
 
 }

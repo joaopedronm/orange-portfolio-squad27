@@ -95,17 +95,12 @@ nav #menu-navigation-dir i {
 
 #search-container {
     position: relative;
-    /* padding-left: 135px; */
-    margin-left: 9%;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+    /* margin-left: 20px; */
+    margin-left: 2%;
     width: 55%;
 }
 
 #search-container input {
-    display: block;
-    box-sizing: border-box;
     width: 100%;
     border: 1px solid #0000003B;
     font-size: 14px;
@@ -129,39 +124,53 @@ nav #menu-navigation-dir i {
 }
 
 #projetos-container {
-    margin-top: 48px;
-    margin-bottom: 48px;
-    display: flex;
     flex-wrap: wrap;
-    gap: 36px;
-    /* padding-left: 30px; */
-    justify-content: center;
+    margin-bottom: 72px;
+    display: flex;
+    gap: 20px;
+    /* justify-content: space-evenly; */
+    padding: 20px 2% 0 2%;
 }
 
-#projetos-container .projeto .projeto-imagem {
+.projeto {
+    position: relative;
+    width: 470px;
+  }
+
+.projeto .projeto-imagem {
     cursor: pointer;
+    width: 100%;
     transition: .3s;
 }
 
-#projetos-container .projeto .projeto-imagem:hover {
-    scale: 1.005;
-    box-shadow: 2px 2px 12px 2px rgba(161,161,161,1);
+.projeto .projeto-imagem img {
+    margin-top: 24px;
+    width: 470px;
+    height: 310px;
 }
 
-#projetos-container .projeto .projeto-imagem img {
-    width: 389px;
-    height: 258px;
-}
-
-#projetos-container .projeto-infos {
+.projeto-infos {
+    width: 100%;
     display: flex;
     align-items: center;
     gap: 8px;
     margin-top: 5px;
 }
 
-#home-modal {
-    display: none;
+.tags {
+    display: flex;
+    gap: 8px;
+}
+
+.tags p {
+    border-radius: 100px;
+    background: var(--action-selected, rgba(0, 0, 0, 0.08));
+    padding: 4px;
+}
+
+/* ------------------------------ Modal Visualizar Projeto ------------------------------ */
+
+#modal-visualizar-projeto {
     position: fixed;
     top: 0;
     left: 0;
@@ -169,103 +178,128 @@ nav #menu-navigation-dir i {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     overflow-y: auto;
-}
-
-.modal {
+  }
+  
+  .modal2 {
     width: 1000px;
     max-width: 90%;
-    margin: 50px auto; /* Centraliza o modal na tela */
+    margin: 50px auto;
+    /* Centraliza o modal na tela */
     background-color: #fff;
     padding: 20px;
     position: relative;
-}
-
-.close {
+  }
+  
+  .close {
     cursor: pointer;
     font-size: 26px;
     position: absolute;
     top: 10px;
     left: 96%;
     color: #515255;
-}
-
-/* Evitar que o modal ultrapasse a tela */
-.modal-container, .modal-container-2 {
+  }
+  
+  /* Evitar que o modal ultrapasse a tela */
+  .modal2-container,
+  .modal-container-2 {
     max-height: 70vh;
-    overflow-y: auto; /* Torna o conteúdo do modal rolável na direção vertical */
-}
-
-.modal-container {
+    overflow-y: auto;
+    /* Torna o conteúdo do modal rolável na direção vertical */
+  }
+  
+  .modal2-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 12px;
     padding: 36px 64px 24px 64px;
-}
-
-.modal-container .user-infos {
+  }
+  
+  .modal2-container .user2-infos {
     display: flex;
+    align-items: center;
     gap: 8px;
-}
-
-.modal-container .user-img img {
+  }
+  
+  .modal2-container .user2-infos p {
+    margin-bottom: 4px;
+  }
+  
+  .modal2-container .usuario-img img {
     width: 40px;
     border-radius: 300px;
-}
-
-.modal-container .user-dados {
+  }
+  
+  .modal2-container .user-dados {
     display: flex;
     flex-direction: column;
     gap: 6px;
-}
-
-.modal-container .tags {
+  }
+  
+  .modal2-container .tags {
     display: flex;
     gap: 8px;
-}
-
-.modal-container .tags p {
+  }
+  
+  .modal2-container .tags p {
     border-radius: 100px;
     background: var(--action-selected, rgba(0, 0, 0, 0.08));
     padding: 4px;
-}
-
-.modal-container-2 {
+  }
+  
+  .modal-container-2 {
     width: 100%;
     display: flex;
     flex-direction: column;
-    padding: 24px 64px 48px 64px;
-}
-
-
-.modal-container-2 img {
+    padding: 10px 64px 48px 64px;
+  }
+  
+  
+  .modal-container-2 img {
     height: 586px;
     margin-bottom: 58px;
     max-height: 60vh;
-}
+  }
 
 
 /* MEDIA QUERY */
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1441px) {
+    .projeto {
+      width: 440px;
+    }
+  
+    .projeto .projeto-imagem img {
+      width: 100%;
+    }
+}
+
+@media screen and (max-width: 1025px) {
     #frase {
         width: 75%;
     }
 
-}
-
-@media screen and (max-width: 768px) {
-    #projetos-container {
-        gap: 24px;
+    .projeto {
+        width: 475px;
+      }
+    
+    .projeto .projeto-imagem img {
+    width: 100%;
     }
 
-    #projetos-container .projeto .projeto-imagem img {
-        width: 329px;
-        height: 258px;
+}
+
+@media screen and (max-width: 769px) {
+    .projeto {
+        width: 46vw;
+    }
+    
+    .projeto .projeto-imagem img {
+    width: 100%;
     }
 
     .modal-container {
-        padding: 8px 8px 14px 8px; 
+        padding: 8px 8px 14px 8px;
     }
 
 }
@@ -290,7 +324,7 @@ nav #menu-navigation-dir i {
     }
 
     .modal-container {
-        padding: 6px 6px 20px 6px; 
+        padding: 6px 6px 20px 6px;
     }
 
     .modal-container .titulo {
@@ -312,6 +346,74 @@ nav #menu-navigation-dir i {
 
     .modal-container-2 img {
         margin-bottom: 36px;
+    }
+
+    #projetos-container .main-card,
+    #projetos-container .card {
+        margin: 10px 8px;
+        min-width: 90vw;
+    }
+
+    #projetos-container .projeto {
+        width: 95vw;
+    }
+
+    #projetos-container .projeto .projeto-imagem img {
+        min-width: 100%;
+    }
+
+    /* MODAL VISUALIZAR PROJETO */
+
+    .modal2 {
+        max-width: 100%;
+        border-radius: 24px;
+        padding-bottom: 42px;
+    }
+
+    .modal2 .close {
+        left: 93%;
+    }
+
+    .modal2-container {
+        padding: 0px 0px 12px 0px;
+        overflow-y: hidden;
+        flex-direction: column;
+    }
+
+    .modal2-container .user2-infos .user2-dados {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .modal2-container .user2-infos .user2-dados p {
+        font-size: 12px;
+        line-height: 14px;
+        margin-bottom: 3px;
+    }
+
+    .modal2-container .tags {
+        /* order: -1; */
+        margin-bottom: 5px;
+    }
+
+    .modal2-container .tags p {
+        font-size: 12px;
+    }
+
+    .modal2-container .titulo {
+        order: 1;
+    }
+
+    .modal2-container .titulo h5{
+        font-size: 26px;
+    }
+
+    .modal2 .modal-container-2 {
+        padding: 0;
+    }
+
+    .modal2 .modal-container-2 img {
+        margin-bottom: 24px;
     }
 
     /* HAMBURGUER */
@@ -346,4 +448,3 @@ nav #menu-navigation-dir i {
     }
 
 }
-
