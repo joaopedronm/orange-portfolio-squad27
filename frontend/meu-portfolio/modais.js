@@ -4,6 +4,8 @@
 const openModalBtn = document.getElementsByClassName('card')
 const openModalBtn2 = document.getElementsByClassName('adicionar-projeto')
 
+
+
 const closeModalBtn = document.getElementById('btn-cancel')
 const modal = document.getElementById('home-modal')
 
@@ -33,63 +35,62 @@ window.addEventListener('click', function (e) {
 });
 
 
-
 // ------------------------------ Modal Sucess ------------------------------ 
 
 function openModalSucess() {
-    document.getElementById("overlay-sucess").style.display = "flex";
-  }
-  
-  // Fechar o modal se o usuário clicar fora dele
-  window.onclick = function (event) {
-    var overlay = document.getElementById("overlay-sucess");
-    if (event.target == overlay) {
-      overlay.style.display = "none";
-    }
-  }
-  
-  // ------------------------------ Modal Update ------------------------------ 
+  document.getElementById("overlay-sucess").style.display = "flex";
+}
 
-  function openModalUpdate() {
-    document.getElementById("overlay-update").style.display = "flex";
+// Fechar o modal se o usuário clicar fora dele
+window.onclick = function (event) {
+  var overlay = document.getElementById("overlay-sucess");
+  if (event.target == overlay) {
+    overlay.style.display = "none";
   }
-  
-  window.onclick = function (event) {
-    var overlay = document.getElementById("overlay-update");
-    if (event.target == overlay) {
-      overlay.style.display = "none";
-    }
-  }
-  
-  // ------------------------------ Modal Delete ------------------------------ 
+}
 
-  function openModalDelete(projetoId) {
-    console.log("ID do projeto a ser excluído:", projetoId);
-  
-    imodalDelete.style.display = "block";
-    imodalDelete.dataset.projetoId = projetoId;
-  }
+// ------------------------------ Modal Update ------------------------------ 
 
-  function closeModalDelete() {
-    document.getElementById("imodal-delete").style.display = "none";
+function openModalUpdate() {
+  document.getElementById("overlay-update").style.display = "flex";
+}
+
+window.onclick = function (event) {
+  var overlay = document.getElementById("overlay-update");
+  if (event.target == overlay) {
+    overlay.style.display = "none";
   }
-  
+}
+
+// ------------------------------ Modal Delete ------------------------------ 
+
+function openModalDelete(projetoId) {
+  console.log("ID do projeto a ser excluído:", projetoId);
+
+  imodalDelete.style.display = "block";
+  imodalDelete.dataset.projetoId = projetoId;
+}
+
+function closeModalDelete() {
+  document.getElementById("imodal-delete").style.display = "none";
+}
+
 //   window.onclick = function (event) {
 //     var overlay = document.getElementById("overlay-delete");
 //     if (event.target == overlay) {
 //       overlay.style.display = "none";
 //     }
 //   }
-  
-  // ------------------------------ Modal Delete Sucess ------------------------------ 
 
-  function openModalDeleteSucess() {
-    document.getElementById("overlay-delete2").style.display = "flex";
+// ------------------------------ Modal Delete Sucess ------------------------------ 
+
+function openModalDeleteSucess() {
+  document.getElementById("overlay-delete2").style.display = "flex";
+}
+
+window.onclick = function (event) {
+  var overlay = document.getElementById("overlay-delete2");
+  if (event.target == overlay) {
+    overlay.style.display = "none";
   }
-  
-  window.onclick = function (event) {
-    var overlay = document.getElementById("overlay-delete2");
-    if (event.target == overlay) {
-      overlay.style.display = "none";
-    }
-  }
+}

@@ -97,7 +97,7 @@
                         <i class="fa-solid fa-pencil"></i>
                     </div>
                     <div class="editar-excluir" id="editar-excluir">
-                        <a href="#" onclick="editarProjeto()">Editar</a>
+                        <a id="btn-edit" href="#" onclick="editarProjeto()">Editar</a>
                         <a href="#" onclick="openModalDelete()" id="btn-excluir">Excluir</a>
                     </div>
                 </div>
@@ -114,7 +114,7 @@
 
         </section>
 
-        <!------------------------------- Modal Editar Projeto ---------------------------->
+        <!------------------------------- Modal Adicionar Projeto ---------------------------->
 
         <section id="home-modal">
             <div id="modal" class="modal">
@@ -152,52 +152,88 @@
             </div>
         </section>
 
-        <!--  ------------------------------ Modal Sucess ------------------------------  -->
-        <section id="imodal-sucess">
-            <div id="overlay-sucess">
-                <div class="modal-sucess">
-                    <h5>Projeto adicionado com sucesso!</h5>
-                    <img src="img/Text input.svg" alt="check">
-                    <button class="btn-primary btn-modal">VOLTAR PARA PROJETOS</button>
+        <!-- Modo editar projeto -->
+        <section id="home-modal-edit">
+            <div id="modal-edit" class="modal">
+                <div class="user-dados">
+                    <h2>Editar projeto</h2>
                 </div>
-            </div>
-        </section>
 
-        <!--  ------------------------------ Modal Update ------------------------------  -->
-        <section id="imodal-update">
-            <div id="overlay-update">
-                <div class="modal-update" id="iupdate">
-                    <h5>Edição concluída com sucesso!</h5>
-                    <img src="img/Text input.svg" alt="check">
-                    <button class="btn-primary btn-modal">VOLTAR PARA PROJETOS</button>
-                </div>
-            </div>
-        </section>
+                <div class="modal-container">
+                    <div class="modal-left">
+                        <p style="margin-bottom: 18px;">Selecione o conteúdo que você deseja fazer upload</p>
+                        <div class="user-img" id="user-img">
+                            <img src="./collections.png" alt="" width="46px" id="img-input">
+                            <p class="body2" style="color: #303133; margin-top: 14px; line-height: 20px;">Compartilhe
+                                seu talento com milhares de <br>pessoas</p>
+                            <input type="file" id="file-input" style="display: none;" multiple />
+                        </div>
+                    </div>
 
-        <!--  ------------------------------ Modal Delete ------------------------------  -->
-        <section id="imodal-delete">
-            <div id="overlay-delete">
-                <div class="modal-delete" id="idelete">
-                    <h5>Deseja Excluir?</h5>
-                    <p class="body1">Se você prosseguir irá excluir o projeto do seu portfólio</p>
-                    <div id="container-button">
-                        <button class="btn-primary" onclick="excluirProjeto()">EXCLUIR</button>
-                        <button class="btn-cancel" onclick="closeModalDelete()">CANCELAR</button>
+                    <div class="user-input">
+                        <input type="text" name="titulo" id="titulo" placeholder="Titulo">
+                        <input type="text" name="tags" id="tags-form" placeholder="Tags">
+                        <input type="text" name="link" id="link" placeholder="Link">
+                        <input type="text" name="descricao" id="descricao" placeholder="Descrição">
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <!--  ------------------------------ Modal Delete Sucess ------------------------------  -->
-        <section id="imodal-delete-sucess">
-            <div id="overlay-delete2">
-                <div class="modal-delete-sucess" id="idelete2">
-                    <h5>Projeto deletado com sucesso!</h5>
-                    <img src="img/Text input.svg" alt="check">
-                    <button class="btn-primary btn-modal">VOLTAR PARA PROJETOS</button>
+                <div class="call-to-actions">
+                    <a href="#" style="text-decoration: none; color: #1f1f1f;">Visualizar publicação</a>
+                    <div class="buttons">
+                        <button class="btn-primary" style="color: #fff;" id="editar-projeto">Salvar</button>
+                        <button id="btn-cancel" class="btn-cancel">Cancelar</button>
+                    </div>
                 </div>
-            </div>
-        </section>
+
+
+
+                <!--  ------------------------------ Modal Sucess ------------------------------  -->
+                <section id="imodal-sucess">
+                    <div id="overlay-sucess">
+                        <div class="modal-sucess">
+                            <h5>Projeto adicionado com sucesso!</h5>
+                            <img src="img/Text input.svg" alt="check">
+                            <button class="btn-primary btn-modal">VOLTAR PARA PROJETOS</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!--  ------------------------------ Modal Update ------------------------------  -->
+                <section id="imodal-update">
+                    <div id="overlay-update">
+                        <div class="modal-update" id="iupdate">
+                            <h5>Edição concluída com sucesso!</h5>
+                            <img src="img/Text input.svg" alt="check">
+                            <button class="btn-primary btn-modal">VOLTAR PARA PROJETOS</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!--  ------------------------------ Modal Delete ------------------------------  -->
+                <section id="imodal-delete">
+                    <div id="overlay-delete">
+                        <div class="modal-delete" id="idelete">
+                            <h5>Deseja Excluir?</h5>
+                            <p class="body1">Se você prosseguir irá excluir o projeto do seu portfólio</p>
+                            <div id="container-button">
+                                <button class="btn-primary" onclick="excluirProjeto()">EXCLUIR</button>
+                                <button class="btn-cancel" onclick="closeModalDelete()">CANCELAR</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!--  ------------------------------ Modal Delete Sucess ------------------------------  -->
+                <section id="imodal-delete-sucess">
+                    <div id="overlay-delete2">
+                        <div class="modal-delete-sucess" id="idelete2">
+                            <h5>Projeto deletado com sucesso!</h5>
+                            <img src="img/Text input.svg" alt="check">
+                            <button class="btn-primary btn-modal">VOLTAR PARA PROJETOS</button>
+                        </div>
+                    </div>
+                </section>
     </main>
 
 
