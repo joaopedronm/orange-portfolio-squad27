@@ -1,0 +1,449 @@
+{
+	"info": {
+		"_postman_id": "448faf16-4dc4-4bb8-bdca-d62138833fdd",
+		"name": "Portfolio-Oranje",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24322573",
+		"_collection_link": "https://dark-trinity-192414.postman.co/workspace/41c0b865-7d3d-4a21-8bbb-6e0f64e1d563/collection/24322573-448faf16-4dc4-4bb8-bdca-d62138833fdd?action=share&source=collection_link&creator=24322573"
+	},
+	"item": [
+		{
+			"name": "2_Projeto",
+			"item": [
+				{
+					"name": "projeto/create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "titulo",
+									"value": "Projeto2",
+									"type": "text"
+								},
+								{
+									"key": "tags",
+									"value": "tag5 tag6 tag4",
+									"type": "text"
+								},
+								{
+									"key": "link",
+									"value": "www.exemplo2.com.br",
+									"type": "text"
+								},
+								{
+									"key": "descricao",
+									"value": "projeto realizado para o hackathon da FCamara",
+									"type": "text"
+								},
+								{
+									"key": "imagem",
+									"type": "file",
+									"src": "/C:/Users/estef/OneDrive/Imagens/Alexa5.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}projeto/create",
+							"host": [
+								"{{URL}}projeto"
+							],
+							"path": [
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "projeto/getAll",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}projeto/descobrir",
+							"host": [
+								"{{URL}}projeto"
+							],
+							"path": [
+								"descobrir"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "projeto/delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}projeto/65b947e2593b4e6b52040271",
+							"host": [
+								"{{URL}}projeto"
+							],
+							"path": [
+								"65b947e2593b4e6b52040271"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "projeto/update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "titulo",
+									"value": "Projeto5",
+									"type": "text"
+								},
+								{
+									"key": "tags",
+									"value": "Teste50 Teste51",
+									"type": "text"
+								},
+								{
+									"key": "link",
+									"value": "www.exemplo.com.br",
+									"type": "text"
+								},
+								{
+									"key": "descricao",
+									"value": "projeto para o hackathon da FCamara",
+									"type": "text"
+								},
+								{
+									"key": "imagem",
+									"type": "file",
+									"src": "/C:/Users/estef/OneDrive/Imagens/Alexa2.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}projeto/65c1518321dda6f93a41d47f",
+							"host": [
+								"{{URL}}projeto"
+							],
+							"path": [
+								"65c1518321dda6f93a41d47f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "projeto/getId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}projeto/65b948e0593b4e6b52040287",
+							"host": [
+								"{{URL}}projeto"
+							],
+							"path": [
+								"65b948e0593b4e6b52040287"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "projeto/getUserAll",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}projeto/meusprojetos",
+							"host": [
+								"{{URL}}projeto"
+							],
+							"path": [
+								"meusprojetos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "projeto/gettags",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}projeto/?tags=ProjetoTop",
+							"host": [
+								"{{URL}}projeto"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "tags",
+									"value": "ProjetoTop"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "1_Usuario",
+			"item": [
+				{
+					"name": "user/register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Alice\",\r\n    \"sobrenome\": \"Silva\",\r\n    \"email\": \"alicecarrer@gmail.com\",\r\n    \"password\": \"1234\",\r\n    \"confirmpassword\":\"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}user/register",
+							"host": [
+								"{{URL}}user"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user/login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"estefania.carrer@hotmail.com\",\r\n    \"password\": \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}user/login",
+							"host": [
+								"{{URL}}user"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user/check",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}user/checkuser",
+							"host": [
+								"{{URL}}user"
+							],
+							"path": [
+								"checkuser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user/:id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}user/65b947b4593b4e6b5204026b",
+							"host": [
+								"{{URL}}user"
+							],
+							"path": [
+								"65b947b4593b4e6b5204026b"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "inherit"
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "http://localhost:3000/",
+			"type": "string"
+		},
+		{
+			"key": "TOKEN",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub21lIjoiQWxpY2UiLCJpZCI6IjY1YzE0ZjVkMjFkZGE2ZjkzYTQxZDQ3NyIsImlhdCI6MTcwNzE2NzU4MX0.NmBR5m6ernCSWc0WAU0C2RugdQ9CaU3TIcivXKkcUgs",
+			"type": "string"
+		}
+	]
+}
